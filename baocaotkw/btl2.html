@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập - Web Nghe Nhạc</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #7b2ff7, #f107a3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .login-box {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #7b2ff7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background: #6a20d9;
+      }
+      a {
+        display: block;
+        margin-top: 10px;
+        color: #7b2ff7;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>🎵 Đăng nhập Nghe Nhạc 🎵</h2>
+      <input type="text" id="username" placeholder="Tên đăng nhập" />
+      <input type="password" id="password" placeholder="Mật khẩu" />
+      <button onclick="login()">Đăng nhập</button>
+      <a href="#">Quên mật khẩu?</a>
+      <a href="#">Tạo tài khoản mới</a>
+    </div>
+
+    <script>
+      function login() {
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
+
+        if (user === "" || pass === "") {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+        } else {
+          alert("Đăng nhập thành công!");
+          // Ở đây bạn có thể chuyển sang trang chính:
+          // window.location.href = "trang-nghe-nhac.html";
+        }
+      }
+    </script>
+  </body>
+</html>

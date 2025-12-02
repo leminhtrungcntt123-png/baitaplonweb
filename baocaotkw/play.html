@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Player</title>
+    <style>
+        /* GIAO DIỆN TỐI GIẢN - KHÔNG CẦN TẢI GÌ TỪ MẠNG */
+        body {
+            background-color: #0f172a; /* Nền tối */
+            color: white;
+            font-family: sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .player-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 0 20px rgba(0, 242, 234, 0.2);
+        }
+
+        /* Đĩa nhạc tự vẽ bằng CSS (Không cần ảnh) */
+        .disk {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #00f2ea, #ff0050);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            position: relative;
+            animation: xoayTron 5s linear infinite;
+            animation-play-state: paused; /* Mặc định đứng yên */
+            box-shadow: 0 0 20px rgba(0, 242, 234, 0.5);
+        }
+
+        /* Tâm đĩa */
+        .disk::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px; height: 30px;
+            background: #0f172a;
+            border-radius: 50%;
+        }
+
+        @keyframes xoayTron {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Tên bài hát */
+        h2 { margin: 10px 0 5px; font-size: 1.2rem; text-shadow: 0 0 5px #00f2ea; }
+        p { margin: 0 0 20px; color: #888; font-size: 0.9rem; }
+
+        /* Thanh thời lượng */
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            cursor: pointer;
+            accent-color: #ff0050; /* Màu thanh kéo */
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        /* Nút Play to bự */
+        .btn-play {
+            background: #ff0050;
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 0 15px #ff0050;
+            transition: 0.2s;
+        }
+        .btn-play:hover { transform: scale(1.1); }
+
+    </style>
+</head>
+<body>
+
+    <div class="player-box">
+        <div class="disk" id="disk"></div>
+
+        <h2>Nơi Này Có Anh</h2>
+        <p>Sơn Tùng M-TP</p>
+
+        <div class="progress-container">
+            <input type="range" id="progress" value="0" min="0" max="100">
+            <div class="time">
+                <span id="current">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <button class="btn-play" id="playBtn">▶</button>
+    </div>
+
+    <audio id="audio" src="NoiNayCoAnh.mp3"></audio>
+
+    <script>
+        const audio = document.getElementById('audio');
+        const playBtn = document.getElementById('playBtn');
+        const progress = document.getElementById('progress');
+        const disk = document.getElementById('disk');
+        const currentEl = document.getElementById('current');
+        const durationEl = document.getElementById('duration');
+
+        let isPlaying = false;
+
+        // 1. Xử lý Bấm nút Play/Pause
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.innerText = "▶"; // Hình tam giác
+                disk.style.animationPlayState = 'paused';
+            } else {
+                audio.play();
+                playBtn.innerText = "||"; // Hình 2 gạch
+                disk.style.animationPlayState = 'running';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // 2. Cập nhật thanh thời lượng khi nhạc chạy
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                // Tính phần trăm
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progress.value = percent;
+
+                // Cập nhật số phút:giây
+                currentEl.innerText = formatTime(audio.currentTime);
+                durationEl.innerText = formatTime(audio.duration);
+            }
+        });
+
+        // 3. Tua nhạc khi kéo thanh
+        progress.addEventListener('input', () => {
+            const time = (progress.value * audio.duration) / 100;
+            audio.currentTime = time;
+        });
+
+       
+        
+        // Báo lỗi nếu không thấy file nhạc
+        audio.addEventListener('error', () => {
+            alert("Lỗi: Không tìm thấy file NoiNayCoAnh.mp3!");
+        });
+    </script>
+</body>
+</html>
