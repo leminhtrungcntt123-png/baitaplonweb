@@ -8,10 +8,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/playingstyle.css" />
-    <link rel="stylesheet" href="css/playpause.css" />
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/progressbar.css" />
+    <link rel="stylesheet" href="../css/playingstyle.css" />
+    <link rel="stylesheet" href="../css/playpause.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/progressbar.css" />
   </head>
   <body>
     <header class="navbar">
@@ -40,7 +40,7 @@
         <div class="album-art"></div>
         <div class="song-title" id="current-song">Nơi Này Có Anh</div>
         <div>
-          <audio id="audio-player" src="mp3/nnca.mp3"></audio>
+          <audio id="audio-player" src="../mp3/nnca.mp3"></audio>
           <div class="visualizer-container" id="visualizer">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -92,13 +92,14 @@
       <div class="playlist-section">
         <h2>Playlist</h2>
         <div class="playlist-item" onclick="selectSong('Nơi Này Có Anh')">
-          <img src="img/noinaycoanh.jpg" alt="Icon" /> Nơi Này Có Anh
+          <img src="../img/noinaycoanh.jpg" alt="Icon" /> Nơi Này Có Anh
         </div>
         <div class="playlist-item" onclick="selectSong('Một Năm Mới Bình An')">
-          <img src="img/motnammoibinhan.jpg" alt="Icon" /> Một Năm Mới Bình An
+          <img src="../img/motnammoibinhan.jpg" alt="Icon" /> Một Năm Mới Bình
+          An
         </div>
         <div class="playlist-item" onclick="selectSong('Có Chắc Yêu Là Đây')">
-          <img src="img/cochacyeuladay.jpg" alt="Icon" /> Có Chắc Yêu Là Đây
+          <img src="../img/cochacyeuladay.jpg" alt="Icon" /> Có Chắc Yêu Là Đây
         </div>
       </div>
     </div>
@@ -106,10 +107,13 @@
     <div class="info-section">
       <div class="song-info">
         <p>
-          <strong >Tên bài hát:</strong>
+          <strong>Tên bài hát:</strong>
           <span id="song-name" class="song-name">Nơi Này Có Anh</span>
         </p>
-        <p><strong>Tác giả:</strong> <span id="artist" class="artist">Sơn Tùng M-TP</span></p>
+        <p>
+          <strong>Tác giả:</strong>
+          <span id="artist" class="artist">Sơn Tùng M-TP</span>
+        </p>
         <div class="rating">
           <span class="star" onclick="rate(1)">★</span>
           <span class="star" onclick="rate(2)">★</span>
@@ -162,6 +166,6 @@
       </nav>
     </div>
 
-    <script src="js/playingfunc.js"></script>
+    <script src="../js/playingfunc.js"></script>
   </body>
 </html>

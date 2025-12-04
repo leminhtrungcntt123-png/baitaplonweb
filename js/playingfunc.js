@@ -170,7 +170,7 @@ window.rate = function (stars) {
 async function loadPlaylistData() {
   try {
     // Tải file JSON. Giả định file nằm ở thư mục 'data/' so với file HTML gốc.
-    const response = await fetch("data/playlist.json");
+    const response = await fetch("../data/playlist.json");
 
     if (!response.ok) {
       throw new Error(
