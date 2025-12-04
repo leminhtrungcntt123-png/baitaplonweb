@@ -215,6 +215,60 @@ button:hover {
   transform: ease-in-out;
   font-style: italic;
 }
+/* --- CODE RAINBOW MỚI (Áp dụng cho tất cả kích thước) --- */
+
+.artist,
+.song-name {
+  /* Quan trọng: Cần display: inline-block để background-clip hoạt động */
+  display: inline-block;
+
+  /* Font Size Mặc định (Desktop/Tablet) */
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+
+  /* HIỆU ỨNG RAINBOW */
+  background: linear-gradient(
+    90deg,
+    #d50e0ef1,
+    #e99612,
+    #f8f81cdb,
+    #26e84a,
+    #1cc7f7,
+    #f01ddb,
+    #cb1ee6,
+    #17fa23
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* RẤT QUAN TRỌNG: ÉP màu trong suốt để gradient hiển thị */
+  color: transparent !important;
+  text-shadow: none !important; /* Xóa text-shadow cũ */
+
+  animation: rainbow 3s linear infinite;
+}
+
+/* KEYFRAMES RAINBOW (Animation chuyển màu mượt mà) */
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* --- TÙY CHỈNH FONT CHO MOBILE (Ghi đè style chung) --- */
+@media (max-width: 767px) {
+  .artist,
+  .song-name {
+    font-size: 3.5rem; /* Kích thước lớn hơn cho Mobile */
+    width: 100%;
+    display: block;
+  }
+}
 .song-info {
   flex: 1;
 }
