@@ -90,31 +90,105 @@ button:hover {
   text-shadow: 0 0 5px #99d8a2;
   font-weight: bold;
 }
-.playlist-item {
-  display: flex;
-  align-items: center;
-  padding: 18px; /* TĂNG PADDING */
-  border-bottom: 1px solid #d8e374;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* Container chứa các card */
+.playlist-grid {
+  display: grid;
+  /* Hiển thị 2 cột trên Desktop/Tablet */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px; /* Khoảng cách giữa các card */
+  padding-bottom: 10px;
+}
+
+/* 2. PLAYLIST CARD */
+
+.playlist-card {
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
-.playlist-item:hover {
+
+.playlist-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   background-color: #67abe6;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-  text-decoration: #055f73 underline;
-  text-shadow: #ffc107 2px 2px 5px;
 }
-.playlist-item img {
-  width: 55px; /* TĂNG WIDTH */
-  height: 55px; /* TĂNG HEIGHT */
-  margin-right: 20px; /* TĂNG KHOẢNG CÁCH */
-  border-radius: 8px; /* Làm bo góc ảnh đẹp hơn */
+
+/* Ảnh bìa và Overlay */
+.card-image {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.playlist-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+/* Lớp phủ (Overlay) */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.playlist-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-overlay i {
+  font-size: 50px;
+  color: #fff;
+  transform: scale(0.8);
+  transition: transform 0.3s;
+}
+
+.playlist-card:hover .play-overlay i {
+  transform: scale(1);
+}
+
+/* Nội dung Card (Tên bài hát, Nghệ sĩ) */
+.card-content {
+  padding: 10px 15px;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-content p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #b0e0e6;
 }
 .info-section {
   padding: 20px;
@@ -169,35 +243,30 @@ button:hover {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
-/* Cập nhật Responsive cho Mobile (quan trọng) */
+/* Mobile - Nhỏ hơn 768px */
 @media (max-width: 767px) {
-  .info-section {
-    flex-direction: column !important;
-    gap: 20px;
-  }
-  .song-info,
-  .lyric-section,
-  nav {
+  /* ... (Các quy tắc khác giữ nguyên) ... */
+
+  .playlist-section {
     flex: none !important;
     width: 100%;
-    max-width: 100%;
-    padding: 0;
-    border-left: none;
-    border-right: none;
+    padding: 15px;
+    max-height: 350px; /* SỬA/THAY THẾ: Chiều cao mới */
+    border-radius: 10px;
   }
-  .lyric-section {
-    order: 2; /* Đặt Lyric nằm giữa Info và Tape trên mobile */
+
+  /* ⭐️ CHỖ THAY THẾ CHO MOBILE */
+  .playlist-grid {
+    grid-template-columns: 1fr; /* Chỉ 1 cột trên Mobile */
+    gap: 10px;
   }
-  .song-info {
-    order: 1;
+  .card-content h3 {
+    font-size: 14px;
   }
-  nav {
-    order: 3;
+  .card-content p {
+    font-size: 12px;
   }
-  #song-lyrics {
-    max-height: 150px;
-  }
+  /* ... (Các quy tắc khác giữ nguyên) ... */
 }
 .info-section strong {
   font-size: 20px;
