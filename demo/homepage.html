@@ -1,137 +1,161 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicWave - Homepage</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Homepage</title>
+    <link rel="stylesheet" href="css/homepage.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <img src="images/AlbumLoGo.png" class="logo-img" />
+        <span>MUSIC NPC</span>
+      </div>
 
-    <header>
-        <div class="logo">MusicWave</div>
-        
+      <div class="menu">
+        <div class="menu-item">Thư Viện</div>
+        <div class="menu-item active">Khám Phá</div>
+        <div class="menu-item">#zingchart</div>
+        <div class="menu-item">Radio</div>
+        <div class="menu-item">BXH Nhạc Mới</div>
+        <div class="menu-item">Chủ Đề & Thể Loại</div>
+        <div class="menu-item">Top 100</div>
+
+        <div class="menu-item">Thư Viện</div>
+        <div class="menu-item">Khám Phá</div>
+        <div class="menu-item">#zingchart</div>
+        <div class="menu-item">Radio</div>
+        <div class="menu-item">BXH Nhạc Mới</div>
+        <div class="menu-item">Chủ Đề & Thể Loại</div>
+        <div class="menu-item">Top 100</div>
+      </div>
+
+      <div class="login-box">
+        <div style="margin-bottom: 10px; font-size: 14px; color: #cbd6ff">
+          Đăng nhập để khám phá playlist dành riêng cho bạn
+        </div>
+        <button>Đăng Nhập</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="top-bar">
         <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Tìm kiếm bài hát, nghệ sĩ...">
+          <svg class="search-icon" viewBox="0 0 24 24">
+            <path
+              fill="#9db2ff"
+              d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5
+    6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 
+    4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 
+    9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+
+          <input class="search" placeholder="Tìm kiếm bài hát, nghệ sĩ..." />
         </div>
 
-        <nav>
-            <a href="#" class="active">Trang chủ</a> <a href="#">Playlist</a>
-            <a href="#">Album</a>
-            <a href="#">BXH</a>
-            <a href="history.html">History</a>
-        </nav>
-        <button class="login-btn">Đăng nhập</button>
-    </header>
+        <div class="top-buttons">
+          <button>Nâng cấp tài khoản</button>
+          <span class="account-icon">&#128100;</span>
+        </div>
+      </div>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Âm nhạc cho mọi <br> <span class="highlight">Cảm Xúc</span></h1>
-            <p>Khám phá hàng triệu bài hát và playlist độc quyền dành riêng cho bạn.</p>
-            <button class="cta">
-                <i class="fa-solid fa-play"></i> Nghe ngay
-            </button>
+      <div class="section-title">Nhạc Hot Thịnh Hành</div>
+
+      <div class="scroll-list">
+        <div class="album">
+          <img
+            src="https://image-cdn.nct.vn/playlist/2024/03/15/5/7/0/4/1710500566037_500.jpg"
+          />
+          <div class="name">Nơi này có anh</div>
+          <div class="desc">Sơn Tùng M-TP</div>
+        </div>
+        <div class="album">
+          <img
+            src="https://photo-resize-zmp3.zadn.vn/w600_r1x1_jpeg/cover/9/0/2/3/9023a6daa36a34ff7abbf2698386187d.jpg"
+          />
+          <div class="name">Chúng ta không thuộc về nhau</div>
+          <div class="desc">Sơn Tùng M-TP</div>
+        </div>
+        <div class="album">
+          <img
+            src="https://photo-resize-zmp3.zadn.vn/w600_r1x1_jpeg/covers/d/9/d9eb228bd57dc5e770f130fa8faa8ee0_1477036840.jpg"
+          />
+          <div class="name">Điều anh biết</div>
+          <div class="desc">Chi Dân</div>
+        </div>
+        <div class="album">
+          <img src="images/HongNhan.png" />
+          <div class="name">Hồng nhan</div>
+          <div class="desc">Jack-J97</div>
+        </div>
+        <div class="album">
+          <img src="images/dunglamtraitimanhdau.png" />
+          <div class="name">Đừng làm trái tim anh đau</div>
+          <div class="desc">Sơn Tùng M-TP</div>
+        </div>
+        <div class="album">
+          <img src="images/BacPhan.png" />
+          <div class="name">Bạc phận</div>
+          <div class="desc">Jack-J97</div>
+        </div>
+        <div class="album">
+          <img src="images/cothamkhongve.png" />
+          <div class="name">Cô thắm không về</div>
+          <div class="desc">Jack-J97</div>
+        </div>
+        <div class="album">
+          <img src="images/emgioi.png" />
+          <div class="name">Em gì ơi</div>
+          <div class="desc">Jack-J97</div>
+        </div>
+        <div class="album">
+          <img src="images/epduyen.png" />
+          <div class="name">Ép duyên</div>
+          <div class="desc">Nam Anh,Yuni Boo</div>
+        </div>
+        <div class="album">
+          <img src="images/vietnamoi.png" />
+          <div class="name">Việt Nam ơi</div>
+          <div class="desc">Minh Beta</div>
+        </div>
+      </div>
+
+      <div class="section-title">Gợi Ý Dành Riêng Cho Bạn</div>
+
+      <div class="song-list">
+        <div class="song-item">
+          <img src="images/songgio.png" />
+          <div class="song-info">
+            <div>Sóng gió</div>
+            <div class="artist">Jack-J97</div>
+          </div>
         </div>
 
-        <div class="hero-img">
-            <img src="https://static-cse.canva.com/blob/2250273/1600w-cV8ArcnU-oA.jpg" alt="Album Art">
-            <div class="img-glow"></div>
-        </div>
-    </section>
-
-    <section class="playlist-section">
-        <div class="section-header">
-            <h2>Playlist dành cho bạn</h2>
-            <a href="#" class="see-all">Xem tất cả</a>
-        </div>
-        
-        <div class="playlist-grid">
-
-            <div class="playlist-card">
-                <div class="card-image">
-                    <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/482746qQw/anh-mo-ta.png">
-                    <div class="play-overlay">
-                        <i class="fa-solid fa-circle-play"></i>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Chill Vibes</h3>
-                    <p>Thư giãn cực mạnh</p>
-                </div>
-            </div>
-
-            <div class="playlist-card">
-                <div class="card-image">
-                    <img src="data:image/jpeg;base64,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">
-                    <div class="play-overlay">
-                        <i class="fa-solid fa-circle-play"></i>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Top Hits 2025</h3>
-                    <p>Nhạc hot nhất năm</p>
-                </div>
-            </div>
-
-            <div class="playlist-card">
-                <div class="card-image">
-                    <img src="https://i.ytimg.com/vi/VfvZfUqA8C0/maxresdefault.jpg">
-                    <div class="play-overlay">
-                        <i class="fa-solid fa-circle-play"></i>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Focus & Study</h3>
-                    <p>Nhạc không lời</p>
-                </div>
-            </div>
-
-            <div class="playlist-card">
-                <div class="card-image">
-                    <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/04/anh-chill-buon-1.jpg">
-                    <div class="play-overlay">
-                        <i class="fa-solid fa-circle-play"></i>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Nhạc Buồn</h3>
-                    <p>Cho ngày mưa</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-     <section class="recommended">
-        <h2>Bài hát đề xuất</h2>
-
-        <div class="song">
-            <img src="https://i.ytimg.com/vi/fPCtIMuCa_U/maxresdefault.jpg">
-            <div>
-                <h4>Nightfall</h4>
-                <p>Electro Chill</p>
-            </div>
+        <div class="song-item">
+          <img src="images/thienlyoi.png" />
+          <div class="song-info">
+            <div>Thiên Lý ơi</div>
+            <div class="artist">Jack-J97</div>
+          </div>
         </div>
 
-        <div class="song">
-            <img src="https://photo-zmp3.zadn.vn/cover/6/b/4/9/6b4973f3e2aa4ebd582045e1e87290d6.jpg">
-            <div>
-                <h4>City Lights</h4>
-                <p>Synthwave</p>
-            </div>
+        <div class="song-item">
+          <img src="images/ngoisaocodon.png" />
+          <div class="song-info">
+            <div>Ngôi sao cô đơn</div>
+            <div class="artist">Jack-J97</div>
+          </div>
         </div>
-
-        <div class="song">
-            <img src="https://i.scdn.co/image/ab67616d00001e02c1fda32d73010571ddfc1f7e">
-            <div>
-                <h4>Memories</h4>
-                <p>Pop</p>
-            </div>
+        <div class="song-item">
+          <img src="images/annutnhothagiacmo.png" />
+          <div class="song-info">
+            <div>Ấn nút nhớ ...Thả giấc mơ</div>
+            <div class="artist">Sơn Tùng M-TP</div>
+          </div>
         </div>
-
-    </section>
-
-</body>
+      </div>
+    </div>
+  </body>
 </html>
