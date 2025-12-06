@@ -19,6 +19,9 @@ const btnPrev = document.getElementById("btn-prev");
 const btnNext = document.getElementById("btn-next");
 const visualizerBars = document.querySelectorAll("#visualizer .bar");
 const songLyricsDisplay = document.getElementById("song-lyrics");
+const mainPlaylistContainer = document.getElementById(
+  "main-playlist-container"
+); // Đã khai báo DOM này
 
 // --- CHỨC NĂNG HỖ TRỢ ---
 
@@ -28,6 +31,40 @@ function formatTime(seconds) {
   const remainingSeconds = Math.floor(seconds % 60);
   const formattedSeconds = String(remainingSeconds).padStart(2, "0");
   return `${minutes}:${formattedSeconds}`;
+}
+
+// HIỂN THỊ PLAYLIST ĐỘNG
+function displayPlaylist() {
+  // 1. Xóa nội dung cũ
+  mainPlaylistContainer.innerHTML = "";
+
+  // 2. Lặp qua từng bài hát trong mảng playlist
+  playlist.forEach((song, index) => {
+    // Tạo thẻ div chính (playlist-card)
+    const playlistCard = document.createElement("div");
+    playlistCard.classList.add("playlist-card"); // Sử dụng class 'playlist-card'
+
+    // Thêm sự kiện click để chọn bài hát
+    // Dùng index để load bài hát
+    playlistCard.onclick = () => selectSongByIndex(index);
+
+    // Tạo cấu trúc HTML hoàn chỉnh cho card bài hát, bao gồm card-image
+    playlistCard.innerHTML = `
+    <div class="card-image">
+      <img src="${song.img}" alt="Album Art ${song.name}">
+      <div class= "play-overlay">
+        <i class="fa-solid fa-circle-play"></i>
+    </div>
+      </div>
+    <div class="card-content">
+      <h3>${song.name}</h3>
+      <p>${song.artist}</p>
+    </div>
+`;
+
+    // Chèn card vào container chính
+    mainPlaylistContainer.appendChild(playlistCard);
+  });
 }
 
 // Cập nhật giao diện (tên bài, ảnh) và Tải bài hát
@@ -114,14 +151,11 @@ btnPrev.addEventListener("click", () => {
   playSong();
 });
 
-// Chức năng chọn bài hát từ playlist
-window.selectSong = function (songName) {
-  if (playlist.length === 0) return;
-  const index = playlist.findIndex((song) => song.name === songName);
-  if (index !== -1) {
-    loadSong(index);
-    playSong();
-  }
+// ⭐️ CHỨC NĂNG CHỌN BÀI HÁT TỪ PLAYLIST DÙNG INDEX
+window.selectSongByIndex = function (index) {
+  if (playlist.length === 0 || index < 0 || index >= playlist.length) return;
+  loadSong(index);
+  playSong();
 };
 
 // --- XỬ LÝ SỰ KIỆN AUDIO VÀ PROGRESS BAR ---
@@ -181,6 +215,9 @@ async function loadPlaylistData() {
     playlist = await response.json();
 
     if (playlist.length > 0) {
+      // ⭐️ GỌI HÀM DISPLAY PLAYLIST ĐỂ HIỂN THỊ CÁC CARD BÀI HÁT
+      displayPlaylist();
+
       // Sau khi tải xong, mới load bài hát đầu tiên
       loadSong(currentSongIndex);
       console.log(`Đã tải thành công ${playlist.length} bài hát.`);
