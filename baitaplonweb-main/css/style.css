@@ -1,0 +1,409 @@
+/* --- 1. CẤU HÌNH CHUNG (RESET & VARS) --- */
+:root {
+    --primary-color: #8f63ff; /* Tím chủ đạo */
+    --accent-color: #00d2ff;  /* Xanh điểm nhấn */
+    --bg-dark: #1b1036;
+    --text-light: #ffffff;
+    --text-gray: #a7a7a7;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #120c29, #1f1c5c, #131b36);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding-bottom: 80px; /* Chừa chỗ cho footer nếu có sau này */
+}
+
+/* Tùy chỉnh thanh cuộn (Scrollbar) cho đẹp */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: fixed;
+    top: 0;
+    /* Hiệu ứng kính mờ (Glassmorphism) */
+    backdrop-filter: blur(15px);
+    background: rgba(18, 12, 41, 0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, var(--primary-color));
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+/* Thanh tìm kiếm mới */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+    border-radius: 50px;
+    width: 300px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.search-box:focus-within {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.search-box i {
+    color: var(--text-gray);
+    margin-right: 10px;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 100%;
+}
+
+nav a {
+    margin: 0 15px;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav a:hover, nav a.active {
+    color: #fff;
+}
+
+/* Gạch chân dưới menu khi active */
+nav a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+}
+
+.login-btn {
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(90deg, var(--primary-color), #6a42d6);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(143, 99, 255, 0.4);
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    padding: 140px 60px 60px; /* Tăng padding-top để tránh bị header che */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text .highlight {
+    color: var(--accent-color);
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.cta {
+    padding: 14px 35px;
+    border-radius: 30px;
+    background: #fff;
+    color: var(--bg-dark);
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.hero-img {
+    position: relative;
+}
+
+.hero-img img {
+    width: 400px;
+    border-radius: 20px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Hiệu ứng Glow sau ảnh */
+.img-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: var(--primary-color);
+    filter: blur(80px);
+    opacity: 0.4;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* --- 4. PLAYLIST SECTION --- */
+.playlist-section {
+    padding: 40px 60px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 25px;
+}
+
+.section-header h2, .recommended h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.see-all {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.see-all:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.playlist-card {
+    background: #181818;
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.playlist-card:hover {
+    background: #282828;
+    transform: translateY(-5px);
+}
+
+/* Container chứa ảnh và overlay */
+.card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1; /* Giữ ảnh luôn vuông */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+/* Hiệu ứng Overlay + Nút Play */
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Ẩn mặc định */
+    transition: 0.3s;
+}
+
+.play-overlay i {
+    font-size: 50px;
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+    transform: scale(0.8);
+    transition: 0.3s;
+}
+
+/* Khi hover vào card */
+.playlist-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.playlist-card:hover .play-overlay i {
+    transform: scale(1);
+}
+
+.playlist-card:hover .card-image img {
+    transform: scale(1.1); /* Phóng to ảnh nhẹ */
+}
+
+.card-content h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-content p {
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+/* --- 5. RECOMMENDED SONGS (LIST VIEW) --- */
+.recommended {
+    padding: 20px 60px 80px;
+}
+
+.song-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.song-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.song-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.song-index {
+    color: var(--text-gray);
+    width: 30px;
+    font-size: 14px;
+}
+
+.song-info {
+    flex-grow: 1; /* Chiếm hết khoảng trống ở giữa */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.song-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.song-info h4 {
+    font-size: 15px;
+    color: #fff;
+}
+
+.song-info p {
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+.song-time {
+    width: 60px;
+    color: var(--text-gray);
+    font-size: 14px;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.song-actions {
+    display: flex;
+    gap: 20px;
+    color: var(--text-gray);
+}
+
+.song-actions i {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.song-actions i:hover {
+    color: #fff;
+}

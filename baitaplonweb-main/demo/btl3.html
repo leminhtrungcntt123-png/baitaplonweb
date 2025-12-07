@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập - Web Nghe Nhạc</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: white;
+      border-radius: 10px;
+      width: 800px;
+      max-width: 90%;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .left h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .left p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .right {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .show-pass {
+      position: relative;
+    }
+
+    .show-pass button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #666;
+    }
+
+    button.login-btn {
+      width: 100%;
+      padding: 10px;
+      background: #6a11cb;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .social {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .social button {
+      flex: 1;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .google { background: #fff; border: 1px solid #ccc; }
+    .apple { background: black; color: white; }
+
+    a {
+      text-align: center;
+      display: block;
+      margin-top: 15px;
+      color: #6a11cb;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    @media(max-width: 700px) {
+      .container { flex-direction: column; width: 95%; }
+      .left { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Bên trái -->
+    <div class="left">
+      <h1>🎵 NgheNhac</h1>
+      <p>Thế giới âm nhạc trong tầm tay bạn</p>
+    </div>
+
+    <!-- Bên phải -->
+    <div class="right">
+      <h2>Đăng nhập</h2>
+
+      <input type="text" id="email" placeholder="Email hoặc tên đăng nhập">
+
+      <div class="show-pass">
+        <input type="password" id="password" placeholder="Mật khẩu">
+        <button type="button" onclick="togglePass()">👁️</button>
+      </div>
+
+      <button class="login-btn" onclick="login()">Đăng nhập</button>
+
+      <div class="social">
+        <button class="google">Google</button>
+        <button class="apple">Apple</button>
+      </div>
+
+      <a href="#">Quên mật khẩu?</a>
+      <a href="#">Tạo tài khoản mới</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePass() {
+      const pass = document.getElementById("password");
+      pass.type = pass.type === "password" ? "text" : "password";
+    }
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email === "" || password === "") {
+        alert("Vui lòng nhập đầy đủ thông tin!");
+      } else {
+        alert("Đăng nhập thành công (demo)");
+        // window.location.href = "trang-nghe-nhac.html";
+      }
+    }
+  </script>
+</body>
+</html>
