@@ -73,22 +73,44 @@ button {
 button:hover {
   transform: scale(1.05);
 }
+/* --- SỬA ĐOẠN NÀY: TẠO THANH CUỘN --- */
 .playlist-section {
-  flex: 1;
-  padding: 25px;
-  background: linear-gradient(45deg, #10c29b7a, #cb20c8);
-  overflow-y: auto;
-  box-shadow: inset 0 0 10px rgba(173, 1, 2, 0.2);
-  border-radius: 20px;
-  border-left: 2px solid #021403;
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(45deg, #10c29b7a, #cb20c8);
+    
+    /* QUAN TRỌNG: Giới hạn chiều cao để hiện thanh cuộn */
+    height: 100%; 
+    max-height: 700px; /* Bạn có thể chỉnh số này (vd: 60vh) */
+    overflow-y: auto;  /* Bật cuộn dọc */
+    overflow-x: hidden; /* Tắt cuộn ngang */
+    
+    box-shadow: inset 0 0 10px rgba(173, 1, 2, 0.2);
+    border-radius: 20px;
+    border-left: 2px solid #021403;
+}
+
+/* Trang trí thanh cuộn cho đẹp */
+.playlist-section::-webkit-scrollbar {
+    width: 10px;
+}
+.playlist-section::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 40%;
+}
+.playlist-section::-webkit-scrollbar-thumb {
+    background: #67abe6;
+    border-radius: 10px;
 }
 .playlist-section h2 {
   margin-bottom: 20px;
+  text-align: center;
   color: #333;
   text-size-adjust: 100px;
   color: #2bf03e;
   text-shadow: 0 0 5px #99d8a2;
   font-weight: bold;
+  border-bottom: 2px solid #21cab6;
 }
 /* Container chứa các card */
 .playlist-grid {
@@ -112,6 +134,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   text-align: left;
+  margin: 20px;
 }
 
 .playlist-card:hover {
@@ -183,6 +206,7 @@ button:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  border-bottom: 1px solid #ccc;
 }
 
 .card-content p {
