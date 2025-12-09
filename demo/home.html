@@ -32,15 +32,33 @@
             <a href="history.html" class="nav-link-item"><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử</a>
         </div>
 
-        <div style="display: flex; gap: 20px; align-items: center;">
-            <a href="login.html" class="user-profile" onclick="logout()" style="display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;">
-                <div style="text-align: right; line-height: 1.2;">
-                    <div style="font-size: 11px; color: #aaa;">Xin chào</div>
-                    <div id="username-display" style="font-size: 14px; font-weight: bold; color: var(--cyan-400);">Guest</div>
-                </div>
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--purple-500);">
-            </a>
+<div class="profile-menu-container">
+    <a href="javascript:void(0)" class="user-profile" id="user-profile-btn" style="display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;">
+        <div style="text-align: right; line-height: 1.2;">
+            <div style="font-size: 11px; color: #aaa;">Xin chào</div>
+            <div id="username-display" style="font-size: 14px; font-weight: bold; color: var(--cyan-400);">Guest</div>
         </div>
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" id="profile-avatar" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--purple-500);">
+    </a>
+
+    <div class="profile-dropdown-menu" id="profile-dropdown" style="display: none;">
+        <div class="dropdown-header">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" id="dropdown-avatar" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--cyan-400);">
+            <div class="user-info">
+                <h4 id="dropdown-username">Guest</h4>
+                <p id="dropdown-email">guest@musicwave.com</p>
+            </div>
+        </div>
+        <div class="dropdown-details">
+            <div class="detail-item"><i class="fa-solid fa-venus-mars"></i> Giới tính: <span>Không rõ</span></div>
+            <div class="detail-item"><i class="fa-solid fa-calendar"></i> Tham gia: <span>2025</span></div>
+        </div>
+        <button onclick="logoutAndRedirect()" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </button>
+    </div>
+</div>
+</nav>
     </nav>
 
     <div class="content-container" style="padding-top: 100px;">
