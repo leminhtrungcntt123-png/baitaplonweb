@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản - MusicWave</title>
+    
+    <link rel="stylesheet" href="../css/logIn.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="notes">
+      <i class="fa-solid fa-music note n1"></i>
+      <i class="fa-solid fa-music note n2"></i>
+      <i class="fa-solid fa-music note n3"></i>
+    </div>
+
+    <main class="card">
+      
+      <section class="brand-side">
+        <div>
+          <div class="logo-text">MusicWave</div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">Tham gia cộng đồng âm nhạc</p>
+        </div>
+
+        <div class="vinyl-container">
+          <div class="vinyl">
+            <div class="vinyl-label" style="background-image: url('https://photo-zmp3.zadn.vn/cover/6/b/4/9/6b4973f3e2aa4ebd582045e1e87290d6.jpg');"></div>
+          </div>
+        </div>
+
+        <div class="brand-footer">
+          <p>"Tạo playlist riêng, chia sẻ cảm xúc và kết nối với hàng triệu người yêu nhạc."</p>
+        </div>
+      </section>
+
+      <section class="form-side">
+        <div class="form-header">
+          <h2>Tạo tài khoản</h2>
+          <p>Hoàn toàn miễn phí và chỉ mất 30 giây.</p>
+        </div>
+
+        <form id="registerForm">
+          
+          <div class="input-group">
+            <label>Tên hiển thị</label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-user"></i>
+              <input type="text" id="fullname" placeholder="Ví dụ: Tuấn Hưng" required>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Email</label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-envelope"></i>
+              <input type="email" id="email" placeholder="Ví dụ: name@gmail.com" required>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Mật khẩu</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="password" placeholder="Tối thiểu 6 ký tự" required minlength="6">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Nhập lại mật khẩu</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-check-double"></i>
+              <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu bên trên" required>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Đăng ký ngay</button>
+
+          <p style="text-align: center; margin-top: 20px; font-size: 13px; color: var(--text-gray);">
+            Đã có tài khoản? <a href="login.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Đăng nhập tại đây</a>
+          </p>
+
+        </form>
+      </section>
+
+    </main>
+
+    <script>
+      document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Chặn load lại trang
+
+        // 1. Lấy dữ liệu từ form
+        const fullname = document.getElementById('fullname').value;
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // 2. Kiểm tra mật khẩu có khớp không
+        if (password !== confirmPassword) {
+          alert('❌ Mật khẩu nhập lại không khớp!');
+          return;
+        }
+
+        // 3. Lấy danh sách user cũ từ LocalStorage (Nếu chưa có thì tạo mảng rỗng)
+        let users = JSON.parse(localStorage.getItem('musicWaveUsers')) || [];
+
+        // 4. Kiểm tra xem Email đã tồn tại chưa
+        const existUser = users.find(u => u.email === email);
+        if (existUser) {
+            alert('❌ Email này đã được đăng ký! Vui lòng chọn email khác.');
+            return;
+        }
+
+        // 5. Tạo user mới và lưu vào danh sách
+        const newUser = {
+            fullname: fullname,
+            email: email,
+            password: password
+        };
+        
+        users.push(newUser);
+
+        // 6. Lưu danh sách mới ngược lại vào LocalStorage
+        localStorage.setItem('musicWaveUsers', JSON.stringify(users));
+
+        // 7. Thông báo và chuyển trang
+        const btn = document.querySelector('.submit-btn');
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tạo tài khoản...';
+        
+        setTimeout(() => {
+            alert('✅ Đăng ký thành công! Hãy đăng nhập ngay.');
+            window.location.href = 'login.html';
+        }, 1500);
+      });
+    </script>
+</body>
+</html>
