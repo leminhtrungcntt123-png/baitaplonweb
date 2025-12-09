@@ -9,7 +9,7 @@ const songsData = [
         img: "../img/KhoVeNuCuoi.jpeg",
         src: "../mp3/khovenucuoi.mp3",
         time: "05:20",
-        lyrics: "Vẽ nụ cười lên môi anh đi..."
+        lyrics: "Anh sẽ chờ em\nDù biển xanh kia có cạn khô\nDù qua thêm bao kiếp\nAnh vẫn sẽ chờ\nNhân thế khổ đau\nTìm hoài sao không thấy nhau\nNgười thương chẳng thương mình\nCòn người không thương\nCứ theo ta cả một đời\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống\nPhía Tây nghẹn ngào\nUống chén tình say\nHọa người thương trong bức tranh\nHọa ánh mắt anh buồn\nHọa nụ cười thêm trên nét môi\nNhưng sao không được\nNhiều lần em muốn anh vui mà thôi\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống\nPhía Tây nghẹn ngào\nLỡ chén tình say\nHọa người thương trong bức tranh\nHọa ánh mắt anh buồn\nTìm nụ cười anh trên nét môi\nNhưng sao chẳng thấy\nNhiều lần em muốn anh vui mà thôi\nHọa vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\nKhóc thật nhiều\nNgồi khóc thật nhiều\nKhóc cho đời phong ba\nLắm đau mà chẳng nói ra\nĐến khi già\nBuồn hết một đời\nĐớn đau này của anh\nSẽ cao hơn trời\nNhiều lần em muốn anh vui mà thôi\nHọa vào nét môi em nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau ai thấu\nVẫn họa thêm chiếc môi cười lần nữa\nNhưng đau ai thấu?"
     },
     {
         id: "hit_2",
@@ -352,10 +352,10 @@ const songsData = [
     {
         id: "r5",
         title: "Khó Vẽ Nụ Cười",
-        artist: "Modric...",
+        artist: "ĐạtG, DuUyên",
         img: "../img/KhoVeNuCuoi.jpeg",
-        src: "../mp3/kvnc.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/khovenucuoi.mp3",
+        lyrics: "Anh sẽ chờ em\nDù biển xanh kia có cạn khô\nDù qua thêm bao kiếp\nAnh vẫn sẽ chờ\nNhân thế khổ đau\nTìm hoài sao không thấy nhau\nNgười thương chẳng thương mình\nCòn người không thương\nCứ theo ta cả một đời\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống\nPhía Tây nghẹn ngào\nUống chén tình say\nHọa người thương trong bức tranh\nHọa ánh mắt anh buồn\nHọa nụ cười thêm trên nét môi\nNhưng sao không được\nNhiều lần em muốn anh vui mà thôi\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống\nPhía Tây nghẹn ngào\nLỡ chén tình say\nHọa người thương trong bức tranh\nHọa ánh mắt anh buồn\nTìm nụ cười anh trên nét môi\nNhưng sao chẳng thấy\nNhiều lần em muốn anh vui mà thôi\nHọa vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\nKhóc thật nhiều\nNgồi khóc thật nhiều\nKhóc cho đời phong ba\nLắm đau mà chẳng nói ra\nĐến khi già\nBuồn hết một đời\nĐớn đau này của anh\nSẽ cao hơn trời\nNhiều lần em muốn anh vui mà thôi\nHọa vào nét môi em nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau ai thấu\nVẫn họa thêm chiếc môi cười lần nữa\nNhưng đau ai thấu?"
     },
     {
         id: "r6",
