@@ -32,15 +32,33 @@
             <a href="history.html" class="nav-link-item"><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử</a>
         </div>
 
-        <div style="display: flex; gap: 20px; align-items: center;">
-            <a href="login.html" class="user-profile" onclick="logout()" style="display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;">
-                <div style="text-align: right; line-height: 1.2;">
-                    <div style="font-size: 11px; color: #aaa;">Xin chào</div>
-                    <div id="username-display" style="font-size: 14px; font-weight: bold; color: var(--cyan-400);">Guest</div>
-                </div>
-                <img src="../img/avata.png" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--purple-500);">
-            </a>
+<div class="profile-menu-container">
+    <a href="javascript:void(0)" class="user-profile" id="user-profile-btn" style="display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;">
+        <div style="text-align: right; line-height: 1.2;">
+            <div style="font-size: 11px; color: #aaa;">Xin chào</div>
+            <div id="username-display" style="font-size: 14px; font-weight: bold; color: var(--cyan-400);">Guest</div>
         </div>
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" id="profile-avatar" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--purple-500);">
+    </a>
+
+    <div class="profile-dropdown-menu" id="profile-dropdown" style="display: none;">
+        <div class="dropdown-header">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" id="dropdown-avatar" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--cyan-400);">
+            <div class="user-info">
+                <h4 id="dropdown-username">Guest</h4>
+                <p id="dropdown-email">guest@musicwave.com</p>
+            </div>
+        </div>
+        <div class="dropdown-details">
+            <div class="detail-item"><i class="fa-solid fa-venus-mars"></i> Giới tính: <span>Không rõ</span></div>
+            <div class="detail-item"><i class="fa-solid fa-calendar"></i> Tham gia: <span>2025</span></div>
+        </div>
+        <button onclick="logoutAndRedirect()" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </button>
+    </div>
+</div>
+</nav>
     </nav>
 
     <div class="content-container" style="padding-top: 100px;">
@@ -57,7 +75,7 @@
                 </button>
             </div>
             <div class="hero-img">
-                <img src="../img/picture1.jpg">
+                <img src="https://media.istockphoto.com/id/2166412804/vi/anh/tai-nghe-c%C3%B3-c%C3%A1c-h%E1%BA%A1t-tr%C3%AAn-n%E1%BB%81n-m%C3%A0u-t%C3%ADm-chi%E1%BA%BFu-s%C3%A1ng-neon-kh%C3%A1i-ni%E1%BB%87m-%C3%A2m-nh%E1%BA%A1c-t%E1%BB%91i-gi%E1%BA%A3n.jpg?s=612x612&w=0&k=20&c=M2-bROGjVjl02L9g9orGlIF9Di-DmYXB6QkPDPNPAiw=">
             </div>
         </div>
     </div>
@@ -223,5 +241,23 @@
             }
         }
     </script>
+    <div class="mobile-nav-bar">
+    <a href="home.html" class="mobile-nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Trang chủ</span>
+    </a>
+    <a href="#" onclick="openKaraokeOption()" class="mobile-nav-item karaoke-link">
+        <i class="fa-solid fa-microphone-lines"></i>
+        <span>Karaoke</span>
+    </a>
+    <a href="#" class="mobile-nav-item active">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Thư viện</span>
+    </a>
+    <a href="history.html" class="mobile-nav-item">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>Lịch sử</span>
+    </a>
+</div>s
 </body>
 </html>

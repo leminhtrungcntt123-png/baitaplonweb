@@ -18,9 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 2. RENDER NGHỆ SĨ (ARTISTS) ---
-    // --- TRONG FILE js/home.js ---
-
-    // --- 2. RENDER NGHỆ SĨ (ARTISTS) ---
     const artistContainer = document.getElementById('artist-list');
     if (artistContainer && typeof artistsData !== 'undefined') {
         artistsData.forEach(artist => {
@@ -222,3 +219,49 @@ if(menuToggle){
         }
     });
 }
+        // --- LOGIC XỬ LÝ PROFILE DROP DOWN MỚI ---
+        const profileBtn = document.getElementById('user-profile-btn');
+        const dropdownMenu = document.getElementById('profile-dropdown');
+        const usernameDisplay = document.getElementById('username-display');
+        const dropdownUsername = document.getElementById('dropdown-username');
+        const dropdownEmail = document.getElementById('dropdown-email');
+        
+        // Cập nhật thông tin trong dropdown
+        function updateDropdownInfo() {
+            const email = localStorage.getItem('userEmail') || 'guest@musicwave.com';
+            const username = usernameDisplay ? usernameDisplay.textContent : 'Guest';
+            
+            if(dropdownUsername) dropdownUsername.textContent = username;
+            if(dropdownEmail) dropdownEmail.textContent = email;
+            // Bạn cũng có thể cập nhật avatar và các chi tiết khác ở đây
+        }
+
+        // Toggle (chuyển đổi) trạng thái ẩn/hiện của dropdown khi click
+        if (profileBtn) {
+             profileBtn.addEventListener('click', (event) => {
+                event.preventDefault(); // Ngăn chuyển hướng
+                updateDropdownInfo(); // Cập nhật data trước khi hiện
+                
+                // Toggle 'display: block'
+                if (dropdownMenu.style.display === 'block') {
+                    dropdownMenu.style.display = 'none';
+                } else {
+                    dropdownMenu.style.display = 'block';
+                }
+            });
+        }
+        
+        // Ẩn dropdown khi click ra ngoài
+        document.addEventListener('click', (event) => {
+            if (dropdownMenu && dropdownMenu.style.display === 'block' && profileBtn && !profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+        // Hàm Đăng xuất và chuyển hướng (phải dùng tên này để trùng với onclick trong HTML)
+        function logoutAndRedirect() {
+            localStorage.removeItem('userEmail'); // Xóa email đã lưu
+            alert("Đã đăng xuất thành công!");
+            window.location.href = 'login.html'; // Chuyển sang trang đăng nhập
+        }
+        

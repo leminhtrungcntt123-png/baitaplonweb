@@ -70,3 +70,87 @@ body {
     background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 2000;
     align-items: center; justify-content: center;
 }
+/* Thêm đoạn này vào cuối file ../css/playlist.css */
+
+/* --- RESPONSIVE CHO TRANG PLAYLIST (Max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* 1. Thay đổi Padding chung */
+    .playlist-header-container {
+        padding: 80px 20px 30px 20px; /* Giảm padding ngang */
+        flex-direction: column; /* Xếp ảnh và meta xuống hàng dọc */
+        align-items: center;
+        text-align: center;
+    }
+
+    .songs-container {
+        padding: 20px 10px; /* Giảm padding ngang */
+    }
+    
+    /* 2. Giảm kích thước ảnh Cover */
+    .playlist-cover-big {
+        width: 150px; 
+        height: 150px;
+        margin-bottom: 20px;
+    }
+    .playlist-cover-big i { 
+        font-size: 50px; 
+    }
+
+    /* 3. Giảm kích thước Tiêu đề Playlist */
+    .playlist-meta h1 { 
+        font-size: 40px; /* Giảm cỡ tiêu đề chính */
+    }
+    .playlist-meta h2 { 
+        font-size: 12px; 
+    }
+    .playlist-meta p { 
+        font-size: 13px; /* Giảm cỡ chữ mô tả */
+    }
+
+    /* 4. Điều chỉnh thanh điều khiển (Controls Row) */
+    .controls-row {
+        justify-content: center; /* Đặt các nút ở giữa */
+        gap: 20px;
+    }
+    .btn-play-big {
+        width: 50px; 
+        height: 50px; 
+        font-size: 20px;
+    }
+    .controls-row i {
+        font-size: 20px !important;
+    }
+
+    /* 5. Tinh chỉnh Bảng Bài Hát (Song Table) */
+    /* Ẩn các cột không cần thiết để tiết kiệm không gian */
+    .song-table th:nth-child(3), /* Ẩn cột Album */
+    .song-table td:nth-child(3),
+    .song-table th:nth-child(4), /* Ẩn cột Ngày thêm */
+    .song-table td:nth-child(4) {
+        display: none;
+    }
+
+    .song-table th,
+    .song-table td {
+        padding: 10px 5px; /* Giảm padding của ô */
+    }
+    
+    .song-index {
+        width: 30px; 
+        font-size: 18px; /* Giảm cỡ số thứ tự */
+    }
+
+    .song-title-row {
+        gap: 10px; /* Giảm khoảng cách */
+    }
+    .small-cover {
+        width: 35px; 
+        height: 35px;
+    }
+    .song-name-text { 
+        font-size: 14px; /* Giảm cỡ tên bài hát */
+    }
+    .song-artist-text { /* Cần thêm class này vào JS */
+        font-size: 11px; /* Giảm cỡ tên nghệ sĩ */
+    }
+}
