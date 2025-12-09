@@ -1,0 +1,255 @@
+body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0b0f2d;
+        color: #fff;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      .sidebar {
+        width: 240px;
+        background: #0d123a;
+        height: 100vh;
+        padding-top: 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        position: fixed;
+        left: 0;
+        top: 0;
+
+
+        display: flex;
+  flex-direction: column;
+      }
+      .sidebar .logo {
+        background-color: #0b0f2d;
+        margin: 0;
+        font-size: 26px;
+        font-weight: bold;
+        padding: 25px 25px 20px;
+        color: #71a4ff;
+        display: flex;
+  align-items: center;
+  gap: 10px;
+
+  display: flex;
+  flex-direction: column;
+      }
+.logo-img {
+  width: 60px;
+  height: 60px;
+    /* nếu muốn hình tròn */
+    border-radius: 30%;
+  object-fit: cover;    /* icon không méo */
+  background: white;
+  border: 2px solid white;
+}
+
+      
+      .menu {
+        margin-top: 10px;
+
+        flex: 1;                 /* ✅ chiếm khoảng giữa */
+  overflow-y: auto;        /* ✅ bật scroll */
+  overflow-x: hidden;
+        scroll-behavior: smooth;
+        
+      }
+      .menu-item {
+        padding: 12px 25px;
+        font-size: 15px;
+        color: #c8d4ff;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+
+
+
+      
+      .menu-item:hover,
+      .menu-item.active {
+        background: #1a255e;
+        color: #fff;
+      }
+
+      .sidebar .login-box {
+        margin: 20px 20px 30px;
+        background: #1a1f4d;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+
+        margin-top: auto;
+  margin-bottom: 30px;
+      }
+      .login-box button {
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        background: #7b5bff;
+        color: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      /* MAIN CONTENT */
+      .main {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+        padding: 25px 40px;
+      }
+
+      /* SEARCH BAR + TOOLS */
+      .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .search-box {
+        position: relative;
+        width: 55%;
+      }
+
+      .search-box .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        opacity: 0.7;
+      }
+
+      .search-box .search {
+        padding-left: 45px !important;
+        background: #121737;
+        width: 55%;
+        padding: 12px 20px;
+        border-radius: 30px;
+        font-size: 15px;
+        border: none;
+        outline: none;
+        color: #dce3ff;
+      }
+
+.top-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* khoảng cách giữa nút và icon */
+}
+
+.account-icon {
+    font-size: 30px;
+    background: white;
+    overflow: hidden;
+    color: #333;
+    width: 32px;
+    height: 32px;
+    border: 2px solid rgb(168, 80, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+      .top-buttons button {
+        margin-left: 12px;
+        background: #6c3bff;
+        padding: 10px 18px;
+        border-radius: 20px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      /* SECTION TITLE */
+      .section-title {
+        font-size: 22px;
+        margin-top: 35px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      /* HORIZONTAL SCROLLER */
+      .scroll-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 album mỗi hàng */
+        gap: 22px;
+        padding-bottom: 10px;
+      }
+
+      .album {
+        width: 180px;
+        flex: 0 0 auto;
+        cursor: pointer;
+      }
+      .album img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 14px;
+      }
+      .album .name {
+        margin-top: 10px;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .album .desc {
+        font-size: 13px;
+        color: #9db2ff;
+      }
+
+      /* SONG LIST */
+      .song-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 20px;
+      }
+      .song-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #11163c;
+        padding: 10px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+      .song-item:hover {
+        background: #182057;
+      }
+      .song-item img {
+        width: 55px;
+        height: 55px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      .song-info {
+        font-size: 14px;
+      }
+      .song-info .artist {
+        color: #98acff;
+      }
+    .menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+.menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background: rgba(140, 150, 255, 0.35);
+  border-radius: 10px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 150, 255, 0.65);
+}
+
+/* Firefox */
+.menu {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(140,150,255,.5) transparent;
+}

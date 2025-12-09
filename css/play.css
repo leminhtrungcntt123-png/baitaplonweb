@@ -1,0 +1,245 @@
+/* --- FILE: css/play.css --- */
+
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 5px var(--cyan-400), 0 0 10px #06b6d4; }
+    50% { text-shadow: 0 0 20px var(--purple-500), 0 0 30px #9333ea; }
+    100% { text-shadow: 0 0 5px var(--cyan-400), 0 0 10px #06b6d4; }
+}
+
+/* --- CSS BỔ SUNG ĐỂ ĐỒNG BỘ GIAO DIỆN --- */
+:root {
+    --cyan-400: #22d3ee;
+    --purple-500: #a855f7;
+}
+
+body {
+    /* Background Neon Nights giống Home */
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    font-family: 'Poppins', sans-serif !important;
+    overflow-x: hidden;
+}
+
+/* Lớp phủ tối */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 15, 25, 0.85);
+    z-index: -1;
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #fff 0%, var(--cyan-400) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* THÊM DÒNG NÀY ĐỂ LOGO NHẤP NHÁY */
+    animation: neonPulse 3s infinite alternate; 
+    
+    font-style: normal !important;
+}
+
+/* Navbar trong suốt */
+.navbar {
+    background: rgba(0,0,0,0.3) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 40px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Search box mới */
+.search-box-new {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 8px 20px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.search-box-new input {
+    background: transparent; border: none; color: white; outline: none; width: 100%; margin-left: 10px;
+}
+
+/* Container chỉnh lại chút cho đẹp */
+.main-container {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+}
+
+/* --- 1. BIẾN ALBUM ART THÀNH ĐĨA THAN XOAY --- */
+.album-art {
+    width: 220px !important;  /* Kích thước đĩa */
+    height: 220px !important;
+    border-radius: 50% !important; /* Bo tròn thành hình tròn */
+    border: 4px solid #111 !important;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); /* Bóng Neon */
+    background-size: cover !important;
+    background-position: center !important;
+    margin: 0 auto 20px auto;
+    
+    /* Tạo lỗ tròn ở giữa cho giống đĩa than */
+    position: relative;
+    
+    /* Cấu hình xoay */
+    animation: spinDisk 10s linear infinite;
+    animation-play-state: paused; /* Mặc định đứng yên */
+}
+
+/* Lỗ tròn giữa đĩa */
+.album-art::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px; height: 40px;
+    background: #111;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+/* Định nghĩa animation xoay */
+@keyframes spinDisk {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Khi có class 'playing' thì đĩa sẽ xoay */
+.album-art.playing {
+    animation-play-state: running;
+}
+
+/* --- 2. LỜI BÀI HÁT NEON (KARAOKE STYLE) --- */
+.lyric-section {
+    margin-top: 20px;
+    text-align: center;
+    height: 300px; /* Chiều cao cố định để cuộn */
+    overflow-y: auto; /* Cho phép cuộn dọc */
+    scroll-behavior: smooth;
+    padding: 20px;
+    
+    /* Hiệu ứng nền kính tối */
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.playlist-section {
+    flex: 1; /* Chiếm 1 phần bên phải */
+   
+    padding: 20px;
+    border-radius: 15px;
+    
+    /* --- QUAN TRỌNG: TẠO THANH CUỘN --- */
+    max-height: 520px; /* Giới hạn chiều cao (Khoảng 5-6 bài) */
+    overflow-y: auto;  /* Tự động hiện thanh cuộn nếu danh sách dài */
+    scroll-behavior: smooth; /* Cuộn mượt */
+    
+    /* Đường viền mờ cho đẹp */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- TÙY CHỈNH THANH CUỘN (SCROLLBAR) CHO ĐẸP --- */
+.playlist-section::-webkit-scrollbar {
+    width: 6px; /* Độ rộng thanh cuộn nhỏ gọn */
+}
+
+.playlist-section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02); /* Màu nền rãnh cuộn */
+    border-radius: 10px;
+}
+
+.playlist-section::-webkit-scrollbar-thumb {
+    background: var(--purple-500); /* Màu thanh cuộn (Tím Neon) */
+    border-radius: 10px;
+}
+
+.playlist-section::-webkit-scrollbar-thumb:hover {
+    background: var(--cyan-400); /* Đổi màu Xanh khi di chuột vào */
+}
+
+/* Tùy chỉnh thanh cuộn cho đẹp */
+.lyric-section::-webkit-scrollbar { width: 5px; }
+.lyric-section::-webkit-scrollbar-thumb { background: var(--purple-500); border-radius: 10px; }
+
+#song-lyrics {
+    font-size: 18px; /* Chữ to rõ */
+    line-height: 2;  /* Khoảng cách dòng thoáng */
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6); /* Màu mặc định hơi mờ */
+    text-align: center;
+    white-space: pre-wrap; /* Giữ nguyên xuống dòng */
+    
+    /* Hiệu ứng chuyển màu nhẹ */
+    transition: color 0.3s;
+}
+
+/* Hiệu ứng chữ nổi (Neon) */
+#song-lyrics:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--cyan-400), 0 0 20px var(--purple-500);
+}
+
+/* --- MODAL KARAOKE STYLE --- */
+#karaoke-modal {
+    display: none; /* Mặc định ẩn */
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+    z-index: 2000; align-items: center; justify-content: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 2px solid #ff49db; border-radius: 30px; padding: 40px;
+    width: 90%; max-width: 400px; text-align: center;
+    box-shadow: 0 0 50px rgba(255, 73, 219, 0.3); position: relative;
+}
+
+.close-btn {
+    position: absolute; top: 15px; right: 20px;
+    background: none; border: none; color: #aaa; font-size: 24px; cursor: pointer;
+}
+
+.btn-create {
+    width: 100%; padding: 15px; border-radius: 50px; border: none;
+    background: linear-gradient(90deg, #ff49db, #a855f7);
+    color: white; font-weight: bold; font-size: 16px; cursor: pointer;
+    margin-bottom: 20px; box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+    transition: 0.3s;
+}
+.btn-create:hover { transform: scale(1.05); }
+
+.divider {
+    display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;
+}
+.divider .line { height: 1px; background: rgba(255,255,255,0.1); flex: 1; }
+.divider span { color: #666; font-size: 12px; }
+
+.input-room {
+    flex: 1; padding: 12px 20px; border-radius: 50px;
+    border: 1px solid #444; background: rgba(0,0,0,0.3);
+    color: white; outline: none;
+}
+
+.btn-join {
+    padding: 12px 20px; border-radius: 50px;
+    border: 1px solid #22d3ee; background: rgba(34, 211, 238, 0.1);
+    color: #22d3ee; cursor: pointer; font-weight: bold;
+}
+.btn-join:hover { background: #22d3ee; color: black; }

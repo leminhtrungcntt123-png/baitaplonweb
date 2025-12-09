@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicWave - Karaoke VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/karaoke.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-microphone-lines"></i> KARAOKE VIP</div>
+        
+        <div class="room-info-box">
+            <i class="fa-solid fa-users" style="font-size: 12px; color: #aaa;"></i>
+            <span style="font-size: 14px; font-weight: bold;">ID: 8839</span>
+            <button class="btn-share" onclick="copyRoomID()">Copy</button>
+        </div>
+
+        <button onclick="window.location.href='home.html'" style="background:none; border:none; color:white; cursor:pointer;" title="Rời phòng">
+            <i class="fa-solid fa-right-from-bracket" style="font-size: 20px;"></i>
+        </button>
+    </nav>
+
+    <div class="request-toast" id="request-toast">
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Guest99" class="req-avatar">
+        <div class="req-info">
+            <div>Nguyễn Văn A</div>
+            <span>yêu cầu tham gia...</span>
+        </div>
+        <div class="req-actions">
+            <button class="btn-accept" onclick="acceptGuest()"><i class="fa-solid fa-check"></i></button>
+            <button class="btn-deny" onclick="hideToast()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+    <div class="stage-container">
+        
+        <canvas id="visualizer-canvas"></canvas>
+
+        <div class="singer-wrapper" id="singer-wrapper">
+            <div class="aura-ring"></div><div class="aura-ring"></div>
+            <div class="singer-avatar"></div>
+            <div style="text-align: center; margin-top: 10px; font-weight: bold; color: var(--cyan); text-shadow: 0 0 5px black;">Bạn (Chủ phòng)</div>
+        </div>
+
+        <div class="lyrics-screen" id="lyrics-display">
+            <div class="lyric-line active" style="font-size: 24px;">CHÀO MỪNG ĐẾN VỚI PHÒNG HÁT</div>
+            <div class="lyric-line" style="font-size: 18px; color: var(--pink);">Vui lòng chọn bài hát để bắt đầu...</div>
+        </div>
+
+        <div class="controls-bar">
+            <button class="btn-control btn-select" onclick="openSongList()">
+                <i class="fa-solid fa-music"></i> CHỌN BÀI
+            </button>
+            <button class="btn-control btn-mic" onclick="toggleSinging()">
+                <i class="fa-solid fa-microphone"></i> <span id="mic-btn-text">HÁT NGAY</span>
+            </button>
+            <button class="btn-control btn-stop" onclick="endSong()">
+                <i class="fa-solid fa-stop"></i> KẾT THÚC
+            </button>
+        </div>
+
+        <div class="audience-area" id="audience-list">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Luna" class="bot-avt">
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="song-modal">
+        <div class="song-list-box">
+            <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                <h3 style="margin:0; color:var(--pink);">CHỌN BÀI HÁT</h3>
+                <button onclick="closeSongList()" style="background:none; border:none; color:white; font-size:20px; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div style="position: relative; margin-bottom: 20px;">
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #aaa;"></i>
+                <input type="text" id="song-search" onkeyup="filterSongs()" placeholder="Tìm tên bài hát hoặc ca sĩ..." 
+                       style="width: 100%; padding: 12px 12px 12px 40px; border-radius: 30px; border: 1px solid rgba(255, 73, 219, 0.3); background: rgba(0,0,0,0.3); color: white; outline: none; box-sizing: border-box;">
+            </div>
+            
+            <div id="song-list-container"></div>
+        </div>
+    </div>
+
+    <div class="score-modal" id="score-modal">
+        <h2 style="color:white; font-size: 30px; margin-bottom: 10px;">KẾT QUẢ</h2>
+        <div style="position: relative;">
+            <p class="score-number" id="final-score">100</p>
+            <div style="position: absolute; top:0; left:0; width:100%; height:100%; animation: pulseWave 1s infinite;"></div>
+        </div>
+        <p style="color:var(--pink); font-size: 28px; font-weight:bold; margin-top: 10px;" id="final-title">Đỉnh của chóp!</p>
+        <button class="btn-control btn-select" onclick="closeScoreModal()" style="margin-top:30px;">Hát tiếp</button>
+    </div>
+
+    <audio id="karaoke-audio"></audio>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/karaoke.js"></script>
+</body>
+</html>

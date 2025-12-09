@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicWave - Neon Nights</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/home.css"> </head>
+<body>
+
+    <nav class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 0 40px; height: 70px; background: rgba(10, 10, 20, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 1000;">
+        
+        <div style="display: flex; align-items: center; gap: 40px;">
+            <div class="logo">
+                <i class="fa-solid fa-bolt" style="color: var(--cyan-400);"></i> MUSIC
+            </div>
+            
+            <div class="search-box-new" style="background: rgba(255,255,255,0.1); border-radius: 30px; padding: 8px 20px; width: 300px; display: flex; align-items: center; border: 1px solid rgba(255,255,255,0.1);">
+                <i class="fa-solid fa-magnifying-glass" style="color: #aaa; margin-right: 10px;"></i>
+                <input type="text" placeholder="Tìm kiếm..." style="background:transparent; border:none; color:white; outline:none; width: 100%;">
+            </div>
+        </div>
+
+        <div class="nav-center-links">
+            <a href="#" class="nav-link-item active"><i class="fa-solid fa-house"></i> Trang chủ</a>
+            <a href="#" onclick="openKaraokeOption()" class="nav-link-item karaoke-link"><i class="fa-solid fa-microphone-lines"></i> Karaoke</a>
+            <a href="playlist.html" class="nav-link-item"><i class="fa-solid fa-book-open"></i> Thư viện</a>
+            <a href="history.html" class="nav-link-item"><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử</a>
+        </div>
+
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="login.html" class="user-profile" onclick="logout()" style="display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;">
+                <div style="text-align: right; line-height: 1.2;">
+                    <div style="font-size: 11px; color: #aaa;">Xin chào</div>
+                    <div id="username-display" style="font-size: 14px; font-weight: bold; color: var(--cyan-400);">Guest</div>
+                </div>
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--purple-500);">
+            </a>
+        </div>
+    </nav>
+
+    <div class="content-container" style="padding-top: 100px;">
+        <div class="hero">
+            <div class="hero-text">
+                <h1 style="font-size: 4rem; margin: 0; line-height: 1.1; background: linear-gradient(to right, #fff, var(--cyan-400)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    Âm nhạc <br> <span style="color: var(--purple-500); -webkit-text-fill-color: var(--purple-500);">Không giới hạn</span>
+                </h1>
+                <p style="color: #ccc; margin: 20px 0 40px; font-size: 1.1rem; max-width: 500px;">
+                    Khám phá kho tàng âm nhạc chất lượng cao với công nghệ âm thanh vòm 8D.
+                </p>
+                <button onclick="window.location.href='play.html'" style="padding: 15px 40px; border-radius: 50px; background: linear-gradient(90deg, var(--cyan-500), var(--purple-600)); color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4); transition: 0.3s;">
+                    <i class="fa-solid fa-play" style="margin-right: 8px;"></i> NGHE NGAY
+                </button>
+            </div>
+            <div class="hero-img">
+                <img src="https://media.istockphoto.com/id/2166412804/vi/anh/tai-nghe-c%C3%B3-c%C3%A1c-h%E1%BA%A1t-tr%C3%AAn-n%E1%BB%81n-m%C3%A0u-t%C3%ADm-chi%E1%BA%BFu-s%C3%A1ng-neon-kh%C3%A1i-ni%E1%BB%87m-%C3%A2m-nh%E1%BA%A1c-t%E1%BB%91i-gi%E1%BA%A3n.jpg?s=612x612&w=0&k=20&c=M2-bROGjVjl02L9g9orGlIF9Di-DmYXB6QkPDPNPAiw=">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="genre-container" id="genre-list">
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="section-header">
+            <h2>Nghệ sĩ yêu thích</h2>
+        </div>
+        <div class="artist-list" id="artist-list">
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="section-header">
+            <h2>Thư viện của <span id="library-username" style="color: var(--cyan-400);">Bạn</span></h2>
+        </div>
+        
+        <div class="library-grid">
+            <div class="liked-songs-card" onclick="window.location.href='playlist.html'">
+                <div class="liked-content">
+                    <p>Playlist</p>
+                    <h3>Bài hát đã thích</h3>
+                    <span>12 bài hát đã lưu</span>
+                </div>
+                <div class="liked-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+
+            <div class="create-playlist-card">
+                <div class="create-icon"><i class="fa-solid fa-plus"></i></div>
+                <h3>Tạo Playlist mới</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="main-content">
+    </div>
+
+    <div class="content-container">
+        <div class="section-header">
+            <h2>Bảng Xếp Hạng Tuần</h2>
+            <a href="#" class="see-all">Xem tất cả</a>
+        </div>
+        <div class="chart-container" id="chart-list">
+            </div>
+    </div>
+
+    <footer class="footer">
+        <div class="content-container">
+            
+            <div class="footer-top">
+                
+                <div class="footer-links-container">
+                    <div class="footer-col">
+                        <h4>CÔNG TY</h4>
+                        <ul>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Việc làm</a></li>
+                            <li><a href="#">For the Record</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>CỘNG ĐỒNG</h4>
+                        <ul>
+                            <li><a href="#">Dành cho Nghệ sĩ</a></li>
+                            <li><a href="#">Nhà phát triển</a></li>
+                            <li><a href="#">Quảng cáo</a></li>
+                            <li><a href="#">Nhà đầu tư</a></li>
+                            <li><a href="#">Nhà cung cấp</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>LIÊN KẾT HỮU ÍCH</h4>
+                        <ul>
+                            <li><a href="#">Hỗ trợ</a></li>
+                            <li><a href="#">Ứng dụng Di động</a></li>
+                            <li><a href="#">Gói Premium</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="#">Pháp lý</a>
+                    <a href="#">Trung tâm Bảo mật</a>
+                    <a href="#">Chính sách Quyền riêng tư</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Giới thiệu Quảng cáo</a>
+                </div>
+                <div class="copyright">
+                    © 2025 MusicWave AB
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/data.js"></script>
+    <script src="../js/home.js"></script>
+    <div id="karaoke-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center;">
+        
+        <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); border: 2px solid #ff49db; border-radius: 30px; padding: 40px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 0 50px rgba(255, 73, 219, 0.3); position: relative;">
+            
+            <button onclick="closeKaraokeOption()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: #aaa; font-size: 24px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+
+            <h2 style="color: #ff49db; margin-top: 0; font-size: 28px; text-transform: uppercase; text-shadow: 0 0 15px #ff49db;">Karaoke Room</h2>
+            <p style="color: #ccc; margin-bottom: 30px;">Chọn chế độ để bắt đầu hát cùng bạn bè!</p>
+
+            <button onclick="goToKaraoke('create')" style="width: 100%; padding: 15px; border-radius: 50px; border: none; background: linear-gradient(90deg, #ff49db, #a855f7); color: white; font-weight: bold; font-size: 16px; cursor: pointer; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4); transition: 0.3s;">
+                <i class="fa-solid fa-plus-circle"></i> TẠO PHÒNG MỚI
+            </button>
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                <div style="height: 1px; background: rgba(255,255,255,0.1); flex: 1;"></div>
+                <span style="color: #666; font-size: 12px;">HOẶC</span>
+                <div style="height: 1px; background: rgba(255,255,255,0.1); flex: 1;"></div>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="room-id-input" placeholder="Nhập ID phòng (VD: 8839)..." style="flex: 1; padding: 12px 20px; border-radius: 50px; border: 1px solid #444; background: rgba(0,0,0,0.3); color: white; outline: none;">
+                <button onclick="goToKaraoke('join')" style="padding: 12px 20px; border-radius: 50px; border: 1px solid #22d3ee; background: rgba(34, 211, 238, 0.1); color: #22d3ee; cursor: pointer; font-weight: bold;">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function openKaraokeOption() {
+            document.getElementById('karaoke-modal').style.display = 'flex';
+        }
+
+        function closeKaraokeOption() {
+            document.getElementById('karaoke-modal').style.display = 'none';
+        }
+
+        function goToKaraoke(mode) {
+            if (mode === 'create') {
+                // Tạo phòng -> Vào thẳng với vai trò chủ phòng
+                alert("Đang tạo phòng mới... ID: 8839");
+                window.location.href = 'karaoke.html';
+            } else {
+                // Vào phòng -> Kiểm tra ID
+                const id = document.getElementById('room-id-input').value;
+                if (id.trim() === "") {
+                    alert("Vui lòng nhập ID phòng!");
+                    return;
+                }
+                // Giả lập vào phòng thành công
+                window.location.href = 'karaoke.html';
+            }
+        }
+    </script>
+</body>
+</html>

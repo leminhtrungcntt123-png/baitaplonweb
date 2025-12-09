@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử Nghe Nhạc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/history.css">
+    
+    <style>
+        /* CSS Navbar chuẩn */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 40px; height: 70px;
+            background: rgba(10, 10, 20, 0.8); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-size: 24px; font-weight: 800; color: white; display: flex; align-items: center; gap: 10px; }
+        
+        .nav-center-links { display: flex; gap: 30px; }
+        .nav-link-item {
+            color: #aaa; text-decoration: none; font-size: 15px; font-weight: 500;
+            display: flex; align-items: center; gap: 8px; transition: 0.3s;
+        }
+        .nav-link-item:hover, .nav-link-item.active { color: #fff; }
+        .nav-link-item.active { color: var(--cyan-400); text-shadow: 0 0 10px var(--cyan-400); }
+        .nav-link-item.karaoke-link:hover { color: #ff49db; text-shadow: 0 0 10px #ff49db; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div style="display: flex; align-items: center; gap: 40px;">
+            <div class="logo">
+                <i class="fa-solid fa-bolt" style="color: var(--cyan-400);"></i> MUSIC
+            </div>
+            
+            <div class="search-box-new" style="background: rgba(255,255,255,0.1); border-radius: 30px; padding: 8px 20px; width: 300px; display: flex; align-items: center; border: 1px solid rgba(255,255,255,0.1);">
+                <i class="fa-solid fa-magnifying-glass" style="color: #aaa; margin-right: 10px;"></i>
+                <input type="text" placeholder="Tìm kiếm..." style="background:transparent; border:none; color:white; outline:none; width: 100%;">
+            </div>
+        </div>
+
+        <div class="nav-center-links">
+            <a href="home.html" class="nav-link-item"><i class="fa-solid fa-house"></i> Trang chủ</a>
+            <a href="#" onclick="openKaraokeOption()" class="nav-link-item karaoke-link"><i class="fa-solid fa-microphone-lines"></i> Karaoke</a>
+            <a href="playlist.html" class="nav-link-item"><i class="fa-solid fa-book-open"></i> Thư viện</a>
+            <a href="history.html" class="nav-link-item active"><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử</a>
+        </div>
+
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="login.html" class="user-profile" onclick="logout()" style="display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;">
+                <div style="text-align: right; line-height: 1.2;">
+                    <div style="font-size: 11px; color: #aaa;">Xin chào</div>
+                    <div id="username-display" style="font-size: 14px; font-weight: bold; color: var(--cyan-400);">Guest</div>
+                </div>
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--purple-500);">
+            </a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        
+        <div class="page-header">
+            <h1>Lịch Sử Nghe Nhạc</h1>
+            <p id="historyCount">0 bài hát</p>
+        </div>
+
+        <div class="filter-bar">
+            <div class="search-row">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #888;"></i>
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm bài hát, nghệ sĩ..." oninput="filterHistory()">
+                </div>
+                <select id="dateFilter" class="filter-select" onchange="filterHistory()">
+                    <option value="all">Tất cả thời gian</option>
+                    <option value="today">Hôm nay</option>
+                    <option value="week">7 ngày qua</option>
+                </select>
+            </div>
+
+            <div class="action-row">
+                <div class="btn-group">
+                    <button class="btn btn-gray" onclick="selectAll()"><i class="fa-regular fa-square-check"></i> Chọn tất cả</button>
+                    <button class="btn btn-gray" onclick="deselectAll()"><i class="fa-regular fa-square"></i> Bỏ chọn</button>
+                    <button class="btn btn-red" onclick="deleteSelected()"><i class="fa-solid fa-trash"></i> Xóa đã chọn</button>
+                </div>
+                <button class="btn btn-purple" onclick="exportHistory()"><i class="fa-solid fa-download"></i> Xuất dữ liệu</button>
+            </div>
+        </div>
+
+        <div id="historyList" class="history-list">
+            </div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fa-solid fa-music"></i>
+            <h3>Chưa có lịch sử nghe nhạc</h3>
+            <p>Hãy nghe một vài bài hát để lưu lại kỷ niệm nhé!</p>
+        </div>
+
+    </div>
+
+    <div id="karaoke-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center;">
+        <div class="modal-content" style="background: linear-gradient(135deg, #1a1a2e, #16213e); border: 2px solid #ff49db; border-radius: 30px; padding: 40px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 0 50px rgba(255, 73, 219, 0.3); position: relative;">
+            
+            <button onclick="closeKaraokeOption()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: #aaa; font-size: 24px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            
+            <h2 style="color: #ff49db; margin-top: 0;">Karaoke Room</h2>
+            <p style="color: #ccc; margin-bottom: 20px;">Chọn chế độ để bắt đầu hát cùng bạn bè!</p>
+            
+            <button onclick="goToKaraoke('create')" style="width: 100%; padding: 15px; border-radius: 50px; border: none; background: linear-gradient(90deg, #ff49db, #a855f7); color: white; font-weight: bold; font-size: 16px; cursor: pointer; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);">
+                <i class="fa-solid fa-plus-circle"></i> TẠO PHÒNG MỚI
+            </button>
+            
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                <div style="height: 1px; background: rgba(255,255,255,0.1); flex: 1;"></div>
+                <span style="color: #666; font-size: 12px;">HOẶC</span>
+                <div style="height: 1px; background: rgba(255,255,255,0.1); flex: 1;"></div>
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="room-id-input" placeholder="Nhập ID phòng..." style="flex: 1; padding: 12px 20px; border-radius: 50px; border: 1px solid #444; background: rgba(0,0,0,0.3); color: white; outline: none;">
+                <button onclick="goToKaraoke('join')" style="padding: 12px 20px; border-radius: 50px; border: 1px solid #22d3ee; background: rgba(34, 211, 238, 0.1); color: #22d3ee; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/history.js"></script>
+
+</body>
+</html>

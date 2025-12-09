@@ -1,0 +1,72 @@
+/* --- CSS RIÊNG CHO TRANG PLAYLIST --- */
+
+/* Reset padding body để không bị ảnh hưởng bởi home.css */
+body {
+    padding: 0 !important;
+}
+
+/* 1. HEADER PLAYLIST (GRADIENT TÍM) */
+.playlist-header-container {
+    padding: 40px 60px;
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    background: linear-gradient(180deg, #4c1d95 0%, #101015 100%);
+    margin-top: -70px; /* Kéo lên để nằm dưới Navbar trong suốt */
+    padding-top: 120px; /* Bù lại khoảng trống bị kéo */
+}
+
+.playlist-cover-big {
+    width: 230px; height: 230px;
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 10px;
+}
+.playlist-cover-big i { font-size: 80px; color: white; }
+
+.playlist-meta h2 { font-size: 14px; text-transform: uppercase; margin: 0 0 10px 0; font-weight: 700; }
+.playlist-meta h1 { 
+    font-size: 80px; margin: 0; font-weight: 900; line-height: 1; 
+    background: linear-gradient(to right, #fff, #fbcfe8);
+    -webkit-background-clip: text;background-clip: text; -webkit-text-fill-color: transparent;
+}
+.playlist-meta p { color: #ccc; margin-top: 20px; font-size: 14px; }
+
+/* 2. DANH SÁCH BÀI HÁT (LIST) */
+.songs-container {
+    padding: 30px 60px;
+    background: #101015;
+    min-height: 50vh;
+}
+
+.controls-row {
+    margin-bottom: 30px;
+    display: flex; align-items: center; gap: 30px;
+}
+
+.btn-play-big {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--cyan-500); color: black;
+    font-size: 24px; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: 0.2s;
+    box-shadow: 0 0 20px var(--cyan-500);
+}
+.btn-play-big:hover { transform: scale(1.1); background: white; }
+
+.song-table { width: 100%; border-collapse: collapse; color: #bbb; }
+.song-table th { text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px; font-size: 12px; text-transform: uppercase; }
+.song-table td { padding: 15px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; }
+.song-table tr:hover { background: rgba(255,255,255,0.1); color: white; }
+
+.song-index { width: 40px; text-align: center; }
+.song-title-row { display: flex; align-items: center; gap: 15px; }
+.small-cover { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; }
+.song-name-text { font-size: 16px; font-weight: 600; color: white; display: block; }
+
+/* 3. MODAL KARAOKE (Style dùng chung) */
+#karaoke-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 2000;
+    align-items: center; justify-content: center;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    
+    <link rel="stylesheet" href="../css/playingstyle.css" />
+    <link rel="stylesheet" href="../css/playpause.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/progressbar.css" />
+    
+    <link rel="stylesheet" href="../css/play.css" />
+  </head>
+  <body>
+    
+    <nav class="navbar">
+        <div class="logo" style="font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 800; background: linear-gradient(135deg, #fff 0%, #22d3ee 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 10px; text-transform: uppercase; filter: drop-shadow(0px 0px 8px rgba(0, 210, 255, 0.6));">
+            <i class="fa-solid fa-bolt" style="-webkit-text-fill-color: #22d3ee;"></i> MUSIC
+        </div>
+        
+        <div class="search-box-new">
+            <i class="fa-solid fa-magnifying-glass" style="color: #aaa;"></i>
+            <input type="text" placeholder="Tìm kiếm bài hát...">
+        </div>
+
+        <div class="nav-links" id="nav-links" style="display: flex; align-items: center; gap: 20px;">
+            <a href="home.html" class="nav-item" style="color: #aaa; text-decoration: none; font-size: 15px;"><i class="fa-solid fa-house"></i></a>
+            <a href="#" onclick="openKaraokeOption()" class="nav-item" style="color: #ff49db;"><i class="fa-solid fa-microphone-lines"></i></a>
+            <a href="#" class="nav-item active" style="color: #fff; text-decoration: none; font-size: 15px;"><i class="fa-solid fa-compact-disc"></i></a>
+            <a href="history.html" class="nav-item" style="color: #aaa; text-decoration: none; font-size: 15px;"><i class="fa-solid fa-clock-rotate-left"></i></a>
+            
+            <a href="login.html" class="user-profile" onclick="logout()" style="display: flex; align-items: center; gap: 10px; text-decoration: none; padding-left: 20px; border-left: 1px solid rgba(255,255,255,0.1);">
+                <div style="text-align: right; line-height: 1.2;">
+                    <div style="font-size: 11px; color: #aaa;">Xin chào</div>
+                    <div id="username-display" style="font-size: 14px; font-weight: bold; color: #22d3ee;">
+                      Guest
+                    </div>
+                </div>
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #a855f7;">
+            </a>
+        </div>
+        
+        <button class="menu-toggle" id="menu-toggle" style="display: none; background: none; border: none; color: white; font-size: 24px;"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+    <div class="main-container">
+      <div class="player-section">
+        <div class="album-art" id="album-art">
+            </div>
+        <div class="song-title">
+          <div id="song-name" style="font-size: 22px; font-weight: bold; margin-bottom: 5px;">
+            Đang tải tên...
+          </div>
+          <div id="artist" style="font-size: 14px; color: #ccc; font-weight: normal;">
+            ...
+          </div>
+        </div>
+        <div>
+          <audio id="audio-player"></audio>
+          <div class="visualizer-container" id="visualizer">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          </div>
+        </div>
+
+        <div class="progress-container">
+          <span id="current-time">0:00</span>
+          <input type="range" id="progress-bar" value="0" max="100" />
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+          <button id="btn-prev">&#8592; Trước</button>
+          <button type="button" class="btn1" id="btn1-control">
+            <strong id="play-pause-text">PLAY</strong>
+            <div id="container-stars"><div id="stars"></div></div>
+            <div id="glow"><div class="circle"></div><div class="circle"></div></div>
+          </button>
+          <button id="btn-next">Tiếp &#8594;</button>
+        </div>
+      </div>
+
+      <div class="playlist-section">
+        
+        <div id="playlist-container"></div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="song-info" style="display:none;"> 
+        <p><strong>Tên bài hát:</strong> <span class="song-name">...</span></p>
+        <p><strong>Tác giả:</strong> <span id="info-artist" class="artist">...</span></p>
+      </div>
+
+      <div class="lyric-section">
+        <h3>🎼 Lời Bài Hát</h3>
+        <div id="song-lyrics">Đang tải lời bài hát...</div>
+      </div>
+
+      <nav>
+        <div class="main">
+          <div class="card">
+            <div class="ups"><div class="screw1">+</div><div class="screw2">+</div></div>
+            <div class="card1">
+              <div class="line1"></div><div class="line2"></div>
+              <div class="yl">
+                <div class="roll"><div class="s_wheel"></div><div class="tape"></div><div class="e_wheel"></div></div>
+                <p class="num">90</p>
+              </div>
+              <div class="or"><p class="time">2×30min</p></div>
+            </div>
+            <div class="card2_main">
+              <div class="card2"><div class="c1"></div><div class="t1"></div><div class="screw5">+</div><div class="t2"></div><div class="c2"></div></div>
+            </div>
+            <div class="downs"><div class="screw3">+-+</div><div class="screw4">+-+</div></div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div id="karaoke-modal">
+        <div class="modal-content">
+            <button onclick="closeKaraokeOption()" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            <h2 style="color: #ff49db; margin-top: 0;">Karaoke Room</h2>
+            <p style="color: #ccc; margin-bottom: 20px;">Chọn chế độ để bắt đầu hát cùng bạn bè!</p>
+            
+            <button onclick="goToKaraoke('create')" class="btn-create">
+                <i class="fa-solid fa-plus-circle"></i> TẠO PHÒNG MỚI
+            </button>
+            
+            <div class="divider">
+                <div class="line"></div><span>HOẶC</span><div class="line"></div>
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="room-id-input" placeholder="Nhập ID phòng..." class="input-room">
+                <button onclick="goToKaraoke('join')" class="btn-join"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/playingfunc.js"></script>
+
+  </body>
+</html>
