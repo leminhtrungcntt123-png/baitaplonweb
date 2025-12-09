@@ -18,9 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 2. RENDER NGHỆ SĨ (ARTISTS) ---
-    // --- TRONG FILE js/home.js ---
-
-    // --- 2. RENDER NGHỆ SĨ (ARTISTS) ---
     const artistContainer = document.getElementById('artist-list');
     if (artistContainer && typeof artistsData !== 'undefined') {
         artistsData.forEach(artist => {
@@ -267,3 +264,4 @@ if(menuToggle){
             alert("Đã đăng xuất thành công!");
             window.location.href = 'login.html'; // Chuyển sang trang đăng nhập
         }
+        
