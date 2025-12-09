@@ -30,20 +30,20 @@ const NAV_LINKS = [
 
 const FEATURES = [
     { icon: <Rocket className="w-8 h-8 text-cyan-400" />, title: "Hiệu Suất Vượt Trội", desc: "Tối ưu hóa tốc độ tải trang và xử lý dữ liệu với công nghệ core mới nhất." },
-    { icon: <Shield className="w-8 h-8 text-violet-400" />, title: "Bảo Mật Cấp Cao", desc: "Mã hóa đầu cuối chuẩn quân đội, bảo vệ dữ liệu của bạn 24/7." },
-    { icon: <Zap className="w-8 h-8 text-amber-400" />, title: "Đa nhiệm", desc: "Tạo và đề xuất các playlist dành riêng cho bạn chỉ trong vài phút." }
+    { icon: <Shield className="w-8 h-8 text-violet-400" />, title: "Bảo Mật Cấp Cao", desc: "Mã hóa đầu cuối, bảo vệ dữ liệu của bạn 24/7." },
+    { icon: <Zap className="w-8 h-8 text-amber-400" />, title: "Đa nhiệm", desc: "Tạo ra không gian mới nơi âm nhạc đồng hành cùng bạn." }
 ];
 
 const STATS = [
-    { icon: <Users className="w-5 h-5 text-cyan-400" />, value: "50k+", label: "Người dùng Active" },
-    { icon: <Server className="w-5 h-5 text-violet-400" />, value: "99.99%", label: "Uptime Cam kết" },
-    { icon: <Globe className="w-5 h-5 text-pink-400" />, value: "120+", label: "Quốc gia hỗ trợ" },
+    { icon: <Users className="w-5 h-5 text-cyan-400" />, value: "3+", label: "Người dùng " },
+    { icon: <Server className="w-5 h-5 text-violet-400" />, value: "99.99%", label: "Độ tin cậy" },
+    { icon: <Globe className="w-5 h-5 text-pink-400" />, value: "1+", label: "Quốc gia hỗ trợ" },
 ];
 
 const TESTIMONIALS = [
-    { name: "Nguyễn Văn A", role: "CTO, TechCorp", content: "Giao diện quá đẹp và trực quan. Tôi cảm thấy rất hài lòng sau khi sử dụng.", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" },
-    { name: "Trần Thị B", role: "Product Manager, StartupX", content: "Giải pháp công nghệ tuyệt vời nhất mà tôi từng trải nghiệm trong 5 năm qua.", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" },
-    { name: "Le Hoang C", role: "Developer, Freelance", content: "Ôi chúa ơi không thể tin được trang web hay như này.", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=John" }
+    { name: "Nguyễn Văn A", role: "User", content: "Giao diện quá đẹp và trực quan. Tôi cảm thấy rất hài lòng sau khi sử dụng.", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" },
+    { name: "Trần Thị B", role: "User", content: "Giải pháp công nghệ tuyệt vời nhất mà tôi từng trải nghiệm trong 5 năm qua.", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" },
+    { name: "Le Hoang C", role: "User", content: "Ôi chúa ơi không thể tin được trang web hay như này.", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=John" }
 ];
 
 const PRICING_PLANS = [
@@ -122,7 +122,9 @@ const Hero = () => {
                     <div className="pt-8 flex items-center gap-6 text-slate-500 text-sm">
                         <span>Được tin dùng bởi:</span>
                         <div className="flex gap-4 opacity-50 grayscale hover:grayscale-0 transition-all">
-                            <div className="font-bold text-xl">Jack36</div><div className="font-bold text-xl">Sơn Tùng M-TP</div><div className="font-bold text-xl">Neymar</div>
+                            <div className="font-bold text-xl">Jack36</div>
+                            <div className="font-bold text-xl">Sơn Tùng M-TP</div>
+                            <div className="font-bold text-xl">Neymor</div>
                         </div>
                     </div>
                 </div>
@@ -262,7 +264,7 @@ const Footer = () => {
                         <a href="#" className="hover:text-white transition-colors">Trung tâm Bảo mật</a>
                         <a href="#" className="hover:text-white transition-colors">Chính sách Quyền riêng tư</a>
                     </div>
-                    <div>© 2025 MusicWave AB</div>
+                    <div>© 2025 MusicNPC</div>
                 </div>
             </div>
         </footer>

@@ -124,7 +124,7 @@ function setupVisualizer() {
         source.connect(analyser);
         analyser.connect(audioContext.destination);
         
-        analyser.fftSize = 256; // Độ chi tiết (càng cao càng mịn nhưng nặng)
+        analyser.fftSize = 64; // Độ chi tiết (càng cao càng mịn nhưng nặng)
         dataArray = new Uint8Array(analyser.frequencyBinCount);
     }
 }
