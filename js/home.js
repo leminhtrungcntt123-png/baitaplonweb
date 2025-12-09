@@ -18,12 +18,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 2. RENDER NGHỆ SĨ (ARTISTS) ---
+    // --- TRONG FILE js/home.js ---
+
+    // --- 2. RENDER NGHỆ SĨ (ARTISTS) ---
     const artistContainer = document.getElementById('artist-list');
     if (artistContainer && typeof artistsData !== 'undefined') {
         artistsData.forEach(artist => {
             const div = document.createElement('div');
             div.className = 'artist-card';
-            div.onclick = () => alert(`Đã chọn nghệ sĩ: ${artist.name}`); // Demo click
+            
+            // --- SỬA ĐỔI LOGIC ONCLICK TẠI ĐÂY ---
+            div.onclick = () => {
+                // 1. Lọc tất cả bài hát của nghệ sĩ này từ kho dữ liệu (songsData)
+                // So sánh tên nghệ sĩ (artist.name) với thuộc tính artist của bài hát
+                const artistSongs = songsData.filter(song => song.artist === artist.name);
+
+                if (artistSongs.length > 0) {
+                    // 2. Nếu tìm thấy bài hát, lưu thông tin vào localStorage
+                    
+                    // Lưu bài hát đầu tiên để phát ngay lập tức
+                    localStorage.setItem('currentSong', JSON.stringify(artistSongs[0]));
+                    
+                    // Lưu toàn bộ danh sách bài hát của nghệ sĩ làm playlist hiện tại
+                    localStorage.setItem('playlistData', JSON.stringify(artistSongs));
+                    
+                    // 3. Chuyển hướng sang trang phát nhạc
+                    window.location.href = 'play.html';
+                } else {
+                    // Xử lý trường hợp nghệ sĩ chưa có bài hát nào trong hệ thống
+                    alert(`Chưa có bài hát nào của ${artist.name} trong hệ thống!`);
+                }
+            };
+            // --- KẾT THÚC SỬA ĐỔI ---
+
             div.innerHTML = `
                 <div class="artist-img-wrapper">
                     <img src="${artist.img}" alt="${artist.name}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3844/3844724.png'">
