@@ -86,10 +86,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 .map(id => songsData.find(s => s.id === id))
                 .filter(song => song); 
 
-            sectionPlaylist.forEach((song, itemIndex) => {
-                const card = createMusicCard(song, sectionPlaylist);
-                card.style.animationDelay = `${itemIndex * 0.1}s`; 
-                list.appendChild(card);
+            section.items.forEach((songID, itemIndex) => {
+            // TÌM BÀI HÁT TRONG KHO TỔNG
+                const song = songsData.find(s => s.id === songID);
+
+                if (song) {
+                    const card = document.createElement('div');
+                    card.className = 'music-card';
+                    card.style.animationDelay = `${itemIndex * 0.1}s`; 
+
+                    // --- 1. LOGIC NÚT TIM (MỚI) ---
+                    // Kiểm tra xem bài hát đã like chưa (Có kiểm tra lỗi để không bị trắng trang)
+                    let isLikedSong = false;
+                    if (typeof isLiked === 'function') {
+                        isLikedSong = isLiked(song.id);
+                    } else {
+                        console.warn("⚠️ Chưa nhúng file favorites.js vào home.html");
+                    }
+
+                    const heartClass = isLikedSong ? 'fa-solid' : 'fa-regular';
+                    const heartColor = isLikedSong ? '#ff49db' : '#fff'; // Màu hồng nếu đã like, trắng nếu chưa
+
+                    // --- 2. CLICK ĐỂ PHÁT NHẠC (Code cũ + Chặn click tim) ---
+                    card.onclick = (event) => {
+                        // Quan trọng: Nếu click trúng nút tim thì KHÔNG chuyển trang
+                        if (event.target.closest('.like-btn-card')) return;
+
+                        // Lưu bài hiện tại
+                        localStorage.setItem('currentSong', JSON.stringify(song));
+        
+                        // Tạo playlist từ section này
+                        const currentPlaylist = section.items
+                        .map(id => songsData.find(s => s.id === id))
+                        .filter(Boolean);
+                        localStorage.setItem('playlistData', JSON.stringify(currentPlaylist));
+        
+                        // Chuyển trang
+                        window.location.href = 'play.html';
+                    };
+
+                    // --- 3. GIAO DIỆN THẺ (Thêm nút tim vào HTML) ---
+                    card.innerHTML = `
+                        <div class="card-img-wrapper">
+                            <img src="${song.img}" alt="${song.title}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3844/3844724.png'">
+            
+                            <div class="play-btn-overlay">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </div>
+
+                            <button class="like-btn-card" onclick="toggleLike('${song.id}', this)">
+                                <i class="${heartClass} fa-heart" style="color: ${heartColor}"></i>
+                            </button>
+                        </div>
+                        <div class="card-title">${song.title}</div>
+                        <div class="card-desc">${song.artist}</div>
+                    `;
+                    list.appendChild(card);
+                }
             });
 
             // Gắn vào DOM
