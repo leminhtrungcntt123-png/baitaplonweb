@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.className = 'music-card';
                     card.style.animationDelay = `${itemIndex * 0.1}s`; 
 
-                    // --- 1. LOGIC NÚT TIM (MỚI) ---
+                    // --- 1. LOGIC NÚT TIM ---
                     // Kiểm tra xem bài hát đã like chưa (Có kiểm tra lỗi để không bị trắng trang)
                     let isLikedSong = false;
                     if (typeof isLiked === 'function') {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const heartClass = isLikedSong ? 'fa-solid' : 'fa-regular';
                     const heartColor = isLikedSong ? '#ff49db' : '#fff'; // Màu hồng nếu đã like, trắng nếu chưa
 
-                    // --- 2. CLICK ĐỂ PHÁT NHẠC (Code cũ + Chặn click tim) ---
+                    // --- 2. CLICK ĐỂ PHÁT NHẠC ---
                     card.onclick = (event) => {
                         // Quan trọng: Nếu click trúng nút tim thì KHÔNG chuyển trang
                         if (event.target.closest('.like-btn-card')) return;
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         window.location.href = 'play.html';
                     };
 
-                    // --- 3. GIAO DIỆN THẺ (Thêm nút tim vào HTML) ---
+                    // --- 3. GIAO DIỆN THẺ ---
                     card.innerHTML = `
                         <div class="card-img-wrapper">
                             <img src="${song.img}" alt="${song.title}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3844/3844724.png'">
