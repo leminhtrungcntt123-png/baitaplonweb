@@ -127,16 +127,10 @@ button:hover {
   border-radius: 20px;
 }
 
-.song-info {
-  flex: 1; /* Chiếm 1 phần */
-  max-width: 250px;
-  padding-right: 20px;
-}
+
 
 .lyric-section {
-  flex: 2; /* Chiếm 2 phần (rộng hơn) */
-  max-width: 400px;
-  padding: 0 20px;
+  max-width: 350px;
   border-left: 1px solid rgba(255, 255, 255, 0.3); /* Đường phân cách */
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
@@ -157,7 +151,7 @@ button:hover {
   max-height: 200px; /* Giới hạn chiều cao Lyric */
   overflow-y: auto; /* Thêm thanh cuộn nếu Lyric quá dài */
   font-style: italic;
-  text-shadow: linear-gradient(45deg, #fbfbfb, #f1f1f4) 0 0 5px;
+  text-shadow: linear-gradient(45deg, #822c2c, #f1f1f4) 0 0 5px;
 }
 
 /* Ẩn thanh cuộn Lyric trên Webkit */
@@ -168,6 +162,7 @@ button:hover {
 .lyric-section {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  
 }
 
 /* Cập nhật Responsive cho Mobile (quan trọng) */
@@ -369,7 +364,7 @@ button:hover {
   }
 
   .playlist-item {
-    padding: 10px;
+    padding: 5px;
     font-size: 13px;
   }
 
@@ -381,8 +376,8 @@ button:hover {
 
   .info-section {
     flex-direction: column !important;
-    gap: 20px;
-    padding: 15px;
+    gap: 10px;
+    padding: 25px;
   }
 
   .song-info {
