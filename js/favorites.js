@@ -1,5 +1,3 @@
-/* --- js/favorites.js --- */
-
 // 1. LẤY DANH SÁCH ID YÊU THÍCH
 function getLikedSongIDs() {
     const stored = localStorage.getItem('likedSongs');
@@ -16,7 +14,7 @@ function isLiked(songId) {
 function toggleLike(songId, btnElement) {
     // Ngăn chặn sự kiện click lan ra ngoài (để không bị kích hoạt play nhạc khi bấm tim)
     if (event) event.stopPropagation();
-
+    
     let likes = getLikedSongIDs();
     const index = likes.indexOf(songId);
 

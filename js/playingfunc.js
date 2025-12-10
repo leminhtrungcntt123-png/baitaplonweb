@@ -1,4 +1,4 @@
-/* --- playingfunc.js (Đã fix tên User) --- */
+/* --- playingfunc.js (Đã tích hợp Logic AutoPlay từ Playlist chuẩn) --- */
 
 // 1. BIẾN TOÀN CỤC
 let playlist = []; 
@@ -20,7 +20,7 @@ const cassetteWheels = document.querySelectorAll(".s_wheel, .e_wheel");
 // 2. KHỞI TẠO (CHẠY KHI VÀO TRANG)
 window.addEventListener('DOMContentLoaded', () => {
     
-    // --- A. HIỂN THỊ TÊN USER (MỚI THÊM VÀO) ---
+    // --- A. HIỂN THỊ TÊN USER ---
     const email = localStorage.getItem('userEmail') || 'Guest';
     let username = email;
     if (email.includes('@')) {
@@ -28,35 +28,66 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     const userDisplay = document.getElementById('username-display');
     if (userDisplay) userDisplay.innerText = username;
-    // ---------------------------------------------
 
-    // B. Lấy dữ liệu nhạc từ trang Home
-    const storedSong = localStorage.getItem('currentSong');
-    const storedPlaylist = localStorage.getItem('playlistData');
+    // --- B. LẤY TÍN HIỆU TỪ CÁC TRANG KHÁC ---
+    const autoPlayId = localStorage.getItem('autoPlaySongId'); // Tín hiệu từ Playlist
+    const storedSong = localStorage.getItem('currentSong');    // Tín hiệu từ Home
+    const storedPlaylist = localStorage.getItem('playlistData'); // Danh sách nhạc cũ
 
-    // C. Xử lý Playlist
-    if (storedPlaylist) {
+    // --- C. XÁC ĐỊNH DANH SÁCH PHÁT (LOGIC MỚI CỦA BẠN) ---
+    
+    if (autoPlayId) {
+        // TRƯỜNG HỢP 1: Nếu bấm từ trang Playlist/Favorites sang
+        // -> Buộc phải dùng danh sách gốc (songsData) để chắc chắn bài đó có tồn tại
+        console.log("Phát hiện yêu cầu từ Playlist ID:", autoPlayId);
+        playlist = (typeof songsData !== 'undefined') ? songsData : [];
+    } 
+    else if (storedPlaylist) {
+        // TRƯỜNG HỢP 2: Nếu đang nghe dở danh sách cũ (Album/Search)
         playlist = JSON.parse(storedPlaylist);
-    } else {
-        // Nếu không có playlist gửi sang, dùng kho mặc định từ data.js
+    } 
+    else {
+        // TRƯỜNG HỢP 3: Mặc định
         playlist = (typeof songsData !== 'undefined') ? songsData : []; 
     }
 
-    renderPlaylist(); // Vẽ danh sách bên phải
+    // Vẽ danh sách bên phải
+    renderPlaylist(); 
 
-    // D. Xử lý Bài hát đang chọn
-    if (storedSong) {
+    // --- D. CHỌN BÀI HÁT ĐỂ PHÁT ---
+
+    // Ưu tiên 1: Tự động phát bài được chọn từ Playlist
+    if (autoPlayId) {
+        // Tìm vị trí bài hát (So sánh String để tránh lỗi số vs chữ)
+        const index = playlist.findIndex(s => String(s.id) === String(autoPlayId));
+        
+        if (index !== -1) {
+            console.log("Đã tìm thấy bài hát tại index:", index);
+            loadSong(index);
+            // Dùng timeout nhỏ để đảm bảo trình duyệt load xong DOM rồi mới play
+            setTimeout(() => playSong(), 100); 
+        } else {
+            console.warn("Không tìm thấy bài hát có ID:", autoPlayId);
+            loadSong(0); // Fallback
+        }
+        // Xóa tín hiệu ngay
+        localStorage.removeItem('autoPlaySongId');
+    } 
+    // Ưu tiên 2: Tín hiệu từ Home (storedSong)
+    else if (storedSong) {
         const songData = JSON.parse(storedSong);
-        const index = playlist.findIndex(s => s.id === songData.id);
+        const index = playlist.findIndex(s => String(s.id) === String(songData.id));
         
         if (index !== -1) {
             loadSong(index);
-            playSong(); // Tự động phát
+            playSong();
         } else {
             loadSong(0);
         }
         localStorage.removeItem('currentSong');
-    } else {
+    } 
+    // Ưu tiên 3: Không có tín hiệu gì -> Load bài đầu tiên
+    else {
         if(playlist.length > 0) loadSong(0);
     }
 });
@@ -129,7 +160,11 @@ function playSong() {
     visualizerBars.forEach(bar => bar.style.animationPlayState = "running");
     cassetteWheels.forEach(wheel => wheel.style.animationPlayState = "running");
 
-    audioPlayer.play();
+    // Xử lý Promise play() để tránh lỗi trình duyệt chặn
+    var playPromise = audioPlayer.play();
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {}).catch(error => console.log("Lỗi Play:", error));
+    }
 
     // GỌI HÀM LƯU LỊCH SỬ TẠI ĐÂY
     addToHistory(playlist[currentSongIndex]);
@@ -194,6 +229,7 @@ function closeKaraokeOption() {
 }
 
 function addToHistory(song) {
+    if(!song) return; // Kiểm tra an toàn
     const historyItem = {
         title: song.title,
         artist: song.artist,
@@ -202,6 +238,10 @@ function addToHistory(song) {
     };
 
     let history = JSON.parse(localStorage.getItem('musicHistory') || '[]');
+    
+    // Tránh trùng lặp bài vừa nghe
+    if(history.length > 0 && history[0].title === song.title) return;
+
     // Thêm vào đầu danh sách
     history.unshift(historyItem);
     // Giới hạn 50 bài
@@ -236,6 +276,7 @@ audioPlayer.addEventListener("ended", () => {
 
 // Format thời gian
 function formatTime(s) {
+    if(isNaN(s)) return "0:00";
     return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + Math.floor(s);
 }
 
