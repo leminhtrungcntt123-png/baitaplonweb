@@ -122,8 +122,6 @@
             setTimeout(() => {
                 // Lưu phiên đăng nhập hiện tại (để trang chủ biết tên ai)
                 localStorage.setItem('currentUser', JSON.stringify(validUser));
-                
-                alert('🎉 Xin chào ' + validUser.fullname + '! Đăng nhập thành công.');
                 window.location.href = 'home.html'; // Chuyển về trang chủ
             }, 1000);
 
