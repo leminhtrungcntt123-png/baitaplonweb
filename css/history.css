@@ -202,8 +202,22 @@ body {
     }
 }
 /* THAY THẾ TOÀN BỘ ĐOẠN MEDIA QUERY NÀY TRONG history.css */
+/* --- THAY THẾ TOÀN BỘ ĐOẠN MEDIA QUERY NÀY TRONG history.css --- */
+/* --- BỔ SUNG: ẨN MẶC ĐỊNH MOBILE NAV TRÊN DESKTOP --- */
+/* Quy tắc này phải nằm ngoài media query */
+.mobile-nav-bar {
+    display: none; /* Ẩn theo mặc định trên Desktop */
+}
+
+/* --- RESPONSIVE CHO MOBILE (<= 768px) --- */
 @media (max-width: 768px) {
     /* --- 1. Navbar Trên (Top) --- */
+    /* Ẩn hoàn toàn các liên kết điều hướng giữa trên Desktop Header */
+    .nav-center-links { 
+        display: none !important; 
+    }
+
+    /* Giữ nguyên các phần còn lại của Navbar để đảm bảo Logo và User Profile gọn gàng */
     .navbar {
         padding: 0 15px !important; 
         justify-content: space-between;
@@ -241,39 +255,44 @@ body {
     }
     
     .filter-select, .search-box {
-        flex: auto; /* Cho phép chúng chiếm toàn bộ chiều ngang */
-        height: 40px; /* Điều chỉnh chiều cao cho vừa vặn hơn */
+        flex: auto;
+        height: 40px;
         padding: 8px 15px;
     }
     
     .action-row {
-        flex-direction: column; /* Xếp các nhóm nút dọc */
+        flex-direction: column;
         align-items: stretch;
         gap: 10px;
     }
     
     .btn-group {
         width: 100%;
-        justify-content: space-between; /* Đảm bảo các nút trong nhóm căng đều */
+        display: flex; 
+        justify-content: space-between; 
+        gap: 5px; 
     }
 
-    /* Quan trọng: Giảm kích thước nút để vừa hơn */
     .btn { 
-        padding: 10px 10px; 
+        padding: 10px 5px;
         font-size: 12px;
-        flex: 1; /* Chia đều không gian cho 3 nút (Chọn/Bỏ/Xóa) */
+        flex: 1;
         text-align: center;
         justify-content: center;
     }
-    
-    /* Nút Xuất dữ liệu */
+
+    .btn-red {
+        min-width: fit-content;
+    }
+
     .btn-purple {
         width: 100%;
     }
 
     /* --- 3. Mobile Navigation Bar (Bottom Fixed) --- */
+    /* QUAN TRỌNG: Hiển thị thanh mobile nav khi ở chế độ này */
     .mobile-nav-bar {
-        display: flex; 
+        display: flex; /* Ghi đè lên display: none; -> Thanh footer sẽ hiển thị */
         position: fixed;
         bottom: 0;
         left: 0;
@@ -282,7 +301,7 @@ body {
         background: rgba(10, 10, 20, 0.9);
         backdrop-filter: blur(10px);
         border-top: 1px solid rgba(255, 255, 255, 0.05);
-        justify-content: space-around; /* **Đã sửa:** Dùng space-around để phân bố đều */
+        justify-content: space-around; 
         align-items: center;
         z-index: 1000;
         padding-bottom: constant(safe-area-inset-bottom);
@@ -300,7 +319,6 @@ body {
         transition: 0.2s;
         min-width: 20%;
         text-align: center;
-        /* THÊM: Tăng padding để tăng khu vực chạm và khoảng cách */
         padding: 5px 0; 
     }
 

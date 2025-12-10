@@ -151,3 +151,109 @@ body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; heigh
 
 .score-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 300; }
 .score-number { font-size: 100px; font-weight: 900; color: var(--cyan); text-shadow: 0 0 50px var(--cyan); margin: 0; }
+/* --- RESPONSIVE CHO MOBILE (<= 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Thay đổi cấu trúc cơ bản */
+    body {
+        /* Đảm bảo chiều cao là 100vh trên mobile */
+        height: 100dvh; 
+        overflow: auto; /* Cho phép cuộn nếu cần */
+    }
+
+    /* 2. Navbar (Header) */
+    .navbar {
+        padding: 10px 15px; /* Giảm padding ngang */
+    }
+    .logo {
+        font-size: 20px; /* Giảm kích thước logo */
+    }
+    .room-info-box {
+        padding: 6px 10px; /* Thu nhỏ hộp ID phòng */
+    }
+    .btn-share {
+        padding: 3px 10px;
+    }
+
+    /* 3. Sân khấu và Ca sĩ */
+    .stage-container {
+        height: 75vh; /* Giảm chiều cao sân khấu để dành chỗ cho nút bấm */
+        padding-top: 20px;
+    }
+
+    .singer-avatar {
+        width: 120px; /* Giảm kích thước avatar ca sĩ */
+        height: 120px;
+        border-width: 3px;
+    }
+    
+    /* Điều chỉnh animation cho vòng sáng */
+    @keyframes pulseWave {
+        0% { width: 100%; height: 100%; opacity: 0.8; border-width: 3px; }
+        100% { width: 200%; height: 200%; opacity: 0; border-width: 0px; }
+    }
+    
+    /* 4. Màn hình Lời bài hát */
+    .lyrics-screen {
+        width: 95%; /* Chiếm gần hết chiều ngang */
+        max-width: none;
+        height: 120px; /* Giảm chiều cao */
+    }
+    .lyric-line {
+        font-size: 20px; /* Giảm kích thước chữ lời bài hát */
+        margin: 5px 0;
+    }
+    .lyric-line.active {
+        font-size: 24px; /* Giảm kích thước dòng đang hát */
+        transform: scale(1.1);
+    }
+    
+    /* 5. Nút Điều khiển (Controls) */
+    .controls-bar {
+        position: static; /* Đưa các nút ra khỏi vị trí tuyệt đối (absolute) */
+        margin-top: 30px; /* Đặt dưới màn hình lời bài hát */
+        width: 90%;
+        gap: 10px; /* Giảm khoảng cách giữa các nút */
+        justify-content: space-between;
+    }
+    
+    .btn-control {
+        flex: 1; /* Chia đều không gian cho 3 nút */
+        padding: 10px 10px; 
+        font-size: 13px; /* Giảm kích thước chữ */
+        gap: 5px;
+    }
+
+    /* 6. Modal (Chọn bài) */
+    .song-list-box {
+        width: 95%;
+        padding: 15px;
+    }
+    .song-img {
+        width: 40px; 
+        height: 40px; 
+        margin-right: 10px;
+    }
+    .song-info h4 { 
+        font-size: 14px; 
+    }
+    .song-info p { 
+        font-size: 11px; 
+    }
+    
+    /* 7. Toast Yêu cầu tham gia */
+    .request-toast {
+        top: 60px; 
+        right: 10px;
+        max-width: 80%;
+        padding: 10px 15px;
+    }
+    
+    /* 8. Kết quả (Score Modal) */
+    .score-number {
+        font-size: 80px;
+    }
+    .score-modal h2 {
+        font-size: 24px;
+    }
+}
