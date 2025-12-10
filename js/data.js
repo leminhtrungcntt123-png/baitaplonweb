@@ -1,24 +1,25 @@
-/* --- DATABASE TẬP TRUNG --- */
+/* --- DATABASE TẬP TRUNG (Đã sửa đường dẫn & tích hợp Lyrics) --- */
 
-// 1. KHO BÀI HÁT TỔNG (Tất cả bài hát phải nằm ở đây)
+// 1. KHO BÀI HÁT TỔNG
 const songsData = [
+    // --- TOP HITS ---
     {
         id: "hit_1",
         title: "Khó Vẽ Nụ Cười",
         artist: "Đạt G, Du Uyên",
         img: "../img/KhoVeNuCuoi.jpeg",
-        src: "../mp3/khovenucuoi.mp3",
+        src: "../mp3/KhoVeNuCuoi.mp3", 
         time: "05:20",
-        lyrics: "Anh sẽ chờ em\nDù biển xanh kia có cạn khô\nDù qua thêm bao kiếp\nAnh vẫn sẽ chờ\nNhân thế khổ đau\nTìm hoài sao không thấy nhau\nNgười thương chẳng thương mình\nCòn người không thương\nCứ theo ta cả một đời\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống\nPhía Tây nghẹn ngào\nUống chén tình say\nHọa người thương trong bức tranh\nHọa ánh mắt anh buồn\nHọa nụ cười thêm trên nét môi\nNhưng sao không được\nNhiều lần em muốn anh vui mà thôi\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống\nPhía Tây nghẹn ngào\nLỡ chén tình say\nHọa người thương trong bức tranh\nHọa ánh mắt anh buồn\nTìm nụ cười anh trên nét môi\nNhưng sao chẳng thấy\nNhiều lần em muốn anh vui mà thôi\nHọa vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\nKhóc thật nhiều\nNgồi khóc thật nhiều\nKhóc cho đời phong ba\nLắm đau mà chẳng nói ra\nĐến khi già\nBuồn hết một đời\nĐớn đau này của anh\nSẽ cao hơn trời\nNhiều lần em muốn anh vui mà thôi\nHọa vào nét môi em nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau ai thấu\nVẫn họa thêm chiếc môi cười lần nữa\nNhưng đau ai thấu?"
+        lyrics: "Anh sẽ chờ em\nDù biển xanh kia có cạn khô\nDù qua thêm bao kiếp\nAnh vẫn sẽ chờ\n\nNhân thế khổ đau\nTìm hoài sao không thấy nhau\nNgười thương chẳng thương mình\nCòn người không thương cứ theo ta cả một đời\n\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống phía tây nghẹn ngào\n\nUống chén tình say\nHoạ người thương trong bức tranh\nHoạ ánh mắt anh buồn\nHoạ nụ cười thêm trên nét môi\nNhưng sao không được..\n\nNhiều lần em muốn anh vui mà thôi\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\n\nLòng thì đau đớn trông anh khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn hoạ thêm chiếc môi cười tiếp theo,\nSao đau thấu trời\n\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống phía tây nghẹn ngào\n\nLỡ chén tình say\nHoạ người thương trong bức tranh\nHoạ ánh mắt anh buồn\nTìm nụ cười anh trên nét môi\nNhưng sao chẳng thấy\n\nNhiều lần em muốn anh vui mà thô\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\n\nLòng thì đau đớn trông anh khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn hoạ thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\n\nKhóc thật nhiều,ngồi khóc thật nhiều\nKhóc cho đời phong ba lắm đau mà chẳng nói ra\nĐến khi già,buồn hết một đời\nĐớn đau này của em sẽ cao hơn trời...\n\nNhiều lần em muốn anh vui mà thôi\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy,\n\nLòng thì đau đớn trông anh khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn hoạ thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời."
     },
     {
         id: "hit_2",
         title: "Gạt Đi Nước Mắt",
         artist: "Noo Phước Thịnh",
         img: "../img/GatDiNuocMat.jpeg",
-        src: "../mp3/gatdinuopcmat.mp3",
+        src: "../mp3/GatDiNuocMat.mp3",
         time: "04:43",
-        lyrics: "Anh ngóng trông mãi\nMôi hôn vụng dại\nAnh khát khao mãi\nđôi tay ngày nào\nLà dĩ vãng\nQuá khứ mà thôi\nNay anh phải quên\nYêu dấu nay đã\nTrôi xa thật rồi\nTheo gió mây đến\nNơi phương trời nào\nChỉ còn anh và em với bao\nYêu thương nhạt nhoà\nNay giấc mơ ấy\nChia đôi ngả đường\nNay tiếng yêu ấy\nCất riêng mình ta\nLà dĩ vãng quá khứ mà thôi\nNay anh phải quên\nVì ai đã bước\nđi mãi không về\nVì ai lỡ quên\nBao câu ước thề\nNíu kéo chi người\nMuốn ra đi chẳng tiếc thương\nNgày trôi qua sẽ\nVùi lấp hy vọng\nChẳng còn dấu yêu\nCho anh mơ mộng\nXoá hết nỗi buồn\nGạt đi giọt nước mắt\nBaby Baby, I wanna go oh oh\nBaby Baby, I don't need to know oh oh\nNo trust, to cry\nNo love against\nBaby Baby, I wanna go oh oh\nBaby Baby, I don't need to know oh oh\nNo trust, to cry\nNo love against\nAnh sẽ làm quen với những niềm đau\nDần quên môi hôn sâu đành gạt nước mắt đi\nDẫu không biết bao nhiêu lâu\nđể mãi chôn sâu\nÁnh mắt đã nhạt khi\nEm vội đi rồi sớm mai\nChẳng có anh đây\nUh ho ah ha ah\nTrả lại em bao nhiêu yêu thương bấy lâu\nKhi chẳng còn nhau nơi đây ta phân ly\nLý do buông tay vì đâu you wanna go\nCó lẽ em hay biết nhưng anh siết\nTừng nỗi đau hằn sâu\nLẽ nào yêu thương là\nChỉ đợi chờ một ngày về hai lối\nLẽ nào cũng chỉ là đoạn đường gian dối\nXé ngang kỷ niệm tìm lại nơi đâu\nLẽ nào cũng chỉ là lời hẹn ước\nKhuất xa theo đợi chờ\nĐành vậy thôi gạt đi nước mắt còn vương\nVì ai đã bước\nđi mãi không về\nVì ai lỡ quên\nBao câu ước thề\nNíu kéo chi người\nMuốn ra đi chẳng tiếc thương\nNgày trôi qua sẽ\nVùi lấp hy vọng\nChẳng còn dấu yêu\nCho anh mơ mộng\nXoá hết nỗi buồn\nGạt đi giọt nước mắt\nVì ai đã bước\nđi mãi không về\nVì ai lỡ quên\nBao câu ước thề\nNíu kéo chi người\nMuốn ra đi chẳng tiếc thương\nNgày trôi qua sẽ\nVùi lấp hy vọng\nChẳng còn dấu yêu\nCho anh mơ mộng\nXoá hết nỗi buồn\nGạt đi giọt nước mắt"
+        lyrics: "Anh đếm bao nỗi cô đơn từng ngày\nAnh đếm giây phút nhớ em từng giờ\nLàm sao xoá đi bao vết thương sâu trong lòng anh\nAnh ngóng trông mãi môi hôn vụng dại\nAnh khát khao mãi đôi tay ngày nào\nLà dĩ vãng quá khứ mà thôi nay anh phải quên\nYêu dấu nay đã trôi xa thật rồi\nTheo gió mây đến nơi phương trời nào\nChỉ còn anh và em với bao yêu thương nhạt nhoà\nNay giấc mơ ấy chia đôi ngả đường\nNay tiếng yêu ấy cất riêng mình ta\nLà dĩ vãng quá khứ mà thôi để anh phải quên\nVì ai đã bước đi mãi không về\nVì ai lỡ quên bao câu ước thề\nNíu kéo chi người muốn ra đi trong tiếc thương\nNgày trôi qua sẽ vùi lấp hy vọng\nChẳng còn dấu yêu cho anh mơ mộng\nXoá hết nỗi buồn, gạt đi giọt nước mắt\nAnh đếm bao nỗi cô đơn từng ngày\nAnh đếm giây phút nhớ em từng giờ\nLàm sao xoá đi bao vết thương sâu trong lòng anh\nAnh ngóng trông mãi môi hôn vụng dại\nAnh khát khao mãi đôi tay ngày nào\nLà dĩ vãng quá khứ mà thôi nay anh phải quên\nYêu dấu nay đã trôi xa thật rồi\nTheo gió mây đến nơi phương trời nào\nChỉ còn anh và em với bao yêu thương nhạt nhoà\nNay giấc mơ ấy chia đôi ngả đường\nNay tiếng yêu ấy cất riêng mình ta\nLà dĩ vãng quá khứ đã qua nay anh phải quên\nVì ai đã bước đi mãi không về\nVì ai lỡ quên bao câu ước thề\nNíu kéo chi người muốn ra đi trong tiếc thương\nNgày trôi qua sẽ vùi lấp hy vọng\nChẳng còn dấu yêu cho anh mơ mộng\nXoá hết nỗi buồn, gạt đi giọt nước mắt\nVì ai đã bước đi mãi không về\nVì ai lỡ quên bao câu ước thề\nNíu kéo chi người muốn ra đi trong tiếc thương\nNgày trôi qua sẽ vùi lấp hy vọng\nChẳng còn dấu yêu cho anh mơ mộng\nXoá hết nỗi buồn, gạt đi giọt nước mắt"
     },
 
     // --- SƠN TÙNG M-TP ---
@@ -28,7 +29,7 @@ const songsData = [
         artist: "Sơn Tùng M-TP",
         img: "../img/NoiNayCoAnh.jpeg",
         src: "../mp3/nnca.mp3",
-        lyrics: "Em là ai từ đâu bước đến nơi đây\nDịu dàng chân phương\nEm là ai tựa như ánh nắng ban mai\nNgọt ngào trong sương\nNgắm em thật lâu\nCon tim anh yếu mềm\nĐắm say từ phút đó\nTừng giây trôi yêu thêm\nBao ngày qua bình minh đánh thức\nXua tan bộn bề nơi anh\nBao ngày qua niềm thương nỗi nhớ\nBay theo bầu trời trong xanh\nLướt đôi hàng mi\nMong manh anh thẫn thờ\nMuốn hôn nhẹ mái tóc\nBờ môi em anh mơ\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nGió mang câu tình ca\nNgàn ánh sao vụt qua\nNhẹ ôm lấy em\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nKhép đôi mi thật lâu\nNguyện mãi bên cạnh nhau\nYêu say đắm như ngày đầu\nMùa xuân đến bình yên\nCho anh những giấc mơ\nHạ lưu giữ ngày mưa\nNgọt ngào nên thơ\nMùa thu lá vàng rơi\nĐông sang anh nhớ em\nTình yêu bé nhỏ xin\nDành tặng riêng em\nCòn đó tiếng nói ấy\nBên tai vấn vương bao ngày qua\nÁnh mắt bối rối\nNhớ thương bao ngày qua\nYêu em anh thẫn thờ\nCon tim bâng khuâng đâu có ngờ\nChẳng bao giờ phải mong chờ\nĐợi ai trong chiều hoàng hôn mờ\nĐắm chìm hoà vào vần thơ\nNgắm nhìn khờ dại mộng mơ\nĐừng bước vội vàng rồi làm ngơ\nLạnh lùng đó làm bộ dạng thờ ơ\nNhìn anh đi em nha\nHướng nụ cười cho riêng anh nha\nĐơn giản là yêu\nCon tim anh lên tiếng thôi\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nGió mang câu tình ca\nNgàn ánh sao vụt qua\nNhẹ ôm lấy em\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nKhép đôi mi thật lâu\nNguyện mãi bên cạnh nhau\nYêu say đắm như ngày đầu\nMùa xuân đến bình yên\nCho anh những giấc mơ\nHạ lưu giữ ngày mưa\nNgọt ngào nên thơ\nMùa thu lá vàng rơi\nĐông sang anh nhớ em\nTình yêu bé nhỏ xin\nDành tặng riêng em\nNhớ thương em\nNhớ thương em lắm\nPhía sau chân trời\nCó ai băng qua lối về\nCùng em đi trên đoạn đường dài\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nGió mang câu tình ca\nNgàn ánh sao vụt qua\nNhẹ ôm lấy em\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nKhép đôi mi thật lâu\nNguyện mãi bên cạnh nhau\nYêu say đắm như ngày đầu\nMùa xuân đến bình yên\nCho anh những giấc mơ\nHạ lưu giữ ngày mưa\nNgọt ngào nên thơ\nMùa thu lá vàng rơi\nĐông sang anh nhớ em\nTình yêu bé nhỏ xin\nDành tặng riêng em"
+        lyrics: "Em là ai từ đâu bước đến nơi đây dịu dàng chân phương\nEm là ai tựa như ánh nắng ban mai ngọt ngào trong sương\nNgắm em thật lâu\nCon tim anh yếu mềm\nĐắm say từ phút đó\nTừng giây trôi yêu thêm\nBao ngày qua bình minh đánh thức xua tan bộn bề nơi anh (bộn về nơi anh)\nBao ngày qua niềm thương nỗi nhớ bay theo bầu trời trong xanh (bầu trời trong xanh)\nLiếc đôi hàng mi (hàng mi)\nMong manh anh thẫn thờ (thẫn thờ)\nMuốn hôn nhẹ mái tóc\nBờ môi em anh mơ\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nGió mang câu tình ca\nNgàn ánh sao vụt qua nhẹ ôm lấy em (yêu em thương em con tim anh chân thành)\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nKhép đôi mi thật lâu\nNguyện mãi bên cạnh nhau yêu say đắm như ngày đầu\nMùa xuân đến bình yên\nCho anh những giấc mơ\nHạ lưu giữ ngày mưa\nNgọt ngào nên thơ\nMùa thu lá vàng rơi\nĐông sang anh nhớ em\nTình yêu bé nhỏ xin\nDành tặng riêng em\nCòn đó tiếng nói ấy bên tai vấn vương bao ngày qua\nÁnh mắt bối rối nhớ thương bao ngày qua\nYêu em anh thẫn thờ\nCon tim bâng khuâng đâu có ngờ\nChẳng bao giờ phải mong chờ\nĐợi ai trong chiều hoàng hôn mờ\nĐắm chìm hòa vào vần thơ\nNgắm nhìn khờ dại mộng mơ\nĐừng bước vội vàng rồi làm ngơ\nLạnh lùng đó làm bộ dạng thờ ơ\nNhìn anh đi em nha\nHướng nụ cười cho riêng anh nha\nĐơn giản là yêu\nCon tim anh lên tiếng thôi\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nGió mang câu tình ca\nNgàn ánh sao vụt qua nhẹ ôm lấy em (yêu em thương em con tim anh chân thành)\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nKhép đôi mi thật lâu\nNguyện mãi bên cạnh nhau yêu say đắm như ngày đầu\nMùa xuân đến bình yên\nCho anh những giấc mơ\nHạ lưu giữ ngày mưa\nNgọt ngào nên thơ\nMùa thu lá vàng rơi\nĐông sang anh nhớ em\nTình yêu bé nhỏ xin\nDành tặng riêng em\nOh-oh-oh-oh nhớ thương em\nOh-oh-oh-oh nhớ thương em lắm\nAh phía sau chân trời\nCó ai băng qua lối về\nCùng em đi trên đoạn đường dài\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nGió mang câu tình ca\nNgàn ánh sao vụt qua nhẹ ôm lấy em (yêu em thương em con tim anh chân thành)\nCầm tay anh dựa vai anh\nKề bên anh nơi này có anh\nKhép đôi mi thật lâu\nNguyện mãi bên cạnh nhau yêu say đắm như ngày đầu\nMùa xuân đến bình yên\nCho anh những giấc mơ\nHạ lưu giữ ngày mưa\nNgọt ngào nên thơ\nMùa thu lá vàng rơi\nĐông sang anh nhớ em\nTình yêu bé nhỏ xin\nDành tặng riêng em"
     },
     {
         id: "st_2",
@@ -36,7 +37,7 @@ const songsData = [
         artist: "Sơn Tùng M-TP",
         img: "../img/motnammoibinhan.jpg",
         src: "../mp3/mnmba.mp3",
-        lyrics: "Xuân mang tình yêu muôn nhà..."
+        lyrics: "Hoh hoh\nAh ah (hey hoh)\nAh ah (hey)\nXuân mang tình yêu muôn nhà\nMang lời ca chan hoà\nYêu thương hạnh phúc sum vầy\nTết năm nay nồng ấm đong đầy\nMưa rơi dịu êm gió mang hương về\nDập dìu trông cánh chim xa vời\nTừng nhịp giây qua con tim sao bồi hồi (sao bồi hồi)\nXuân sang cành lá đâm chồi\nBao buồn vui qua rồi\nĐưa con về với yên bình với gia đình nặng nghĩa ân tình\nCây mai đào khoe sắc tô thêm màu\nNhẹ nhàng trong nắng xuân tươi hồng\nVề nhà nhanh thôi ba mẹ đang ngóng trông\nBạn bè tôi khoe áo mới xuân tới phơi phới\nNhững bao lì xì ngay ngắn may mắn tươi tắn\nBánh chưng thơm lừng ngất ngây xuân về ngập tràn lộc muôn nơi\nNắng ban mai hé môi cười dịu dàng xuân đến\nEh oh có chú chim non mừng vui hót sau nhà\nEh oh có tiếng em thơ mừng vui bóc bao quà\nEh oh có gió mang xuân mừng vui chúc ông bà (chúc ông bà)\nCười mãi thôi (cười mãi thôi\nMột năm mới bình an\nNăm mới bình an\nOk về nhà với mẹ với ba\nQuanh bếp hồng ấm áp vui hát ca\nNắng mai rộn ràng e ấp thướt tha\nPháo hoa báo hiệu một năm cũ đã qua\nNăm mới sang chứa đựng bao hy vọng bình yên về muôn nhà\nTết đoàn viên sum vầy sẻ chia từng món quà\nRộn ràng mừng ngày xuân\nHoà nhịp cùng ngày xuân\nRồi cả cuộc đời ngập tràn nụ cười lộc ngày xuân ngày xuân\nXuân sang cành lá đâm chồi\nBao buồn vui qua rồi\nĐưa con về với yên bình\nVới gia đình nặng nghĩa ân tình\nCây mai đào khoe sắc tô thêm màu\nNhẹ nhàng trong nắng xuân tươi hồng\nVề nhà nhanh thôi ba mẹ đang ngóng trông\nĐàn em thơ khoe áo mới xuân tới phơi phới\nNhững bao lì xì ngay ngắn may mắn tươi tắn\nBánh chưng thơm lừng ngất ngây xuân về ngập tràn lộc muôn nơi\nNắng ban mai hé môi cười dịu dàng xuân đến\nEh oh có chú chim non mừng vui hót sau nhà\nEh oh có tiếng em thơ mừng vui bóc bao quà\nEh oh có gió mang xuân mừng vui chúc ông bà (chúc ông bà)\nCười mãi thôi một năm mới bình an (cười mãi thôi)\nMột năm mới bình an\nNăm mới bình an (oh oh)\nNào cùng dang tay hoà vào mây mừng Tết này mùa xuân sang\nNhẹ nhàng khoe khắp chốn mừng Tết sum vầy nụ cười mãi đong đầy\nMừng Tết năm nay rộn ràng pháo giao thừa (thời gian cứ trôi)\nMừng Tết sum vầy nụ cười mãi đong đầy ah nah\nEh oh có chú chim non mừng vui hót sau nhà\nEh oh có tiếng em thơ mừng vui bóc bao quà\nEh oh có gió mang xuân mừng vui chúc ông bà (chúc ông bà)\nCười mãi thôi (cười mãi thôi)\nMột năm mới bình an"
     },
     {
         id: "st_3",
@@ -44,39 +45,39 @@ const songsData = [
         artist: "Sơn Tùng M-TP",
         img: "../img/cochacyeuladay.jpg",
         src: "../mp3/ccyld.mp3",
-        lyrics: "..."
+        lyrics: "Thấp thoáng ánh mắt đôi môi mang theo hương mê say\nEm cho anh tan trong miên man quên luôn đi đêm ngày\nChạm nhẹ vội vàng hai ba giây nhưng con tim đâu hay\nBối rối khẽ lên ngôi yêu thương đong đầy thật đầy\nAnh ngẩn ngơ cứ ngỡ\n(Đó chỉ là giấc mơ)\nAnh ngẩn ngơ cứ ngỡ\n(Như đang ngất ngây trong giấc mơ)\nThật ngọt ngào êm dịu đắm chìm\nPhút chốc viết tương tư gieo nên thơ (yeah, hey)\nCó câu ca trong gió hát ngân nga, ru trời mây\nNhẹ nhàng đón ban mai ngang qua trao nụ cười (trao nụ cười)\nNắng đua chen, khoe sắc, vui đùa giữa muôn ngàn hoa\nDịu dàng đến nhân gian âu yếm tâm hồn người\nHình như chính em\n(Cho anh mong chờ)\nHình như chính là em\n(Cho anh vấn vương)\nĐừng thờ ơ, xin hãy lắng nghe\nVà giúp anh trả lời đôi điều còn băn khoăn\nCó chắc yêu là đây, đây, đây\nCó chắc yêu là đây, đây\nCó chắc yêu là đây, đây, đây\nCó chắc yêu là đây, đây\nEm lang thang cả ngày trong tâm trí\nĐi không ngừng cả ngày trong tâm trí\nSi mê thêm cuồng quay\nOo-ooh, oo-oo-oo-ooh\nChắc gì nữa mà chắc\nSáng thì nhớ đêm trắng tương tư còn không phải yêu là gì\n(Có chắc yêu là đây)\nRồi thắc gì nữa mà mắc\nĐến bên nắm tay nói ra ngay ngồi mơ mộng thêm làm gì\nNhanh chân chạy mua một bó hoa (hey)\nThêm luôn một món quà (hooh)\nKhuôn mặt tươi cười lên vô tư gạt đi lo âu mạnh mẽ nha\nVà rồi bước ra, bước ra, bước ra (hey)\nCó câu ca trong gió hát ngân nga, ru trời mây\nNhẹ nhàng đón ban mai ngang qua trao nụ cười (trao nụ cười)\nNắng đua chen, khoe sắc, vui đùa giữa muôn ngàn hoa\nDịu dàng đến nhân gian âu yếm tâm hồn người\nHình như chính em\n(Cho anh mong chờ)\nHình như chính là em\n(Cho anh vấn vương)\nĐừng thờ ơ, xin hãy lắng nghe\nVà giúp anh trả lời đôi điều còn băn khoăn\nCó chắc yêu là đây, đây, đây\nCó chắc yêu là đây, đây\nCó chắc yêu là đây, đây, đây\nCó chắc yêu là đây, đây\nEm lang thang cả ngày trong tâm trí\nĐi không ngừng cả ngày trong tâm trí\nSi mê thêm cuồng quay\nOo-ooh, oo-oo-oo-ooh\nCó chắc yêu là đây (a-ah, a-ah)\nCó chắc yêu là đây (ooh-ooh, oo-ooh)\nCó chắc yêu là đây (a-ah)\nPlease come to me! (Please come to me!)\nPlease come to me!\nCó chắc yêu là đây, đây, đây\nCó chắc yêu là đây, đây\nCó chắc yêu là đây, đây, đây\nCó chắc yêu là đây, đây\nEm lang thang cả ngày trong tâm trí\nĐi không ngừng cả ngày trong tâm trí\nSi mê thêm cuồng quay\nOo-ooh, oo-oo-oo-ooh\nM-TP\n(Có chắc yêu là đây, đây) Một bài hát\nDành đến cho tất cả những ai đang yêu (có chắc yêu là đây, đây, đây)\nChưa yêu, và sẽ được yêu (có chắc yêu là đây, đây)\nHạnh phúc nhá!"
     },
     {
         id: "st_4",
         title: "Chắc Ai Đó Sẽ Về",
         artist: "Sơn Tùng M-TP",
         img: "../img/ChacAiDoSeVe.jpeg",
-        src: "../mp3/cadsv.mp3", // Nhớ tải nhạc về nhé
-        lyrics: "..."
+        src: "../mp3/chacaidoseve.mp3",
+        lyrics: "Anh tìm nỗi nhớ\nAnh tìm quá khứ\nNhớ lắm kí ức anh và em\nTrả lại anh yêu thương ấy\nXin người hãy về nơi đây\nBàn tay yếu ớt cố níu em ở lại\nNhững giọt nước mắt\nLăn dài trên mi\nCứ thế anh biết phải làm sao\nTình yêu trong em đã mất\nPhai dần đi theo gió bay\nCòn lại chi nơi đây cô đơn riêng anh\nEm đi xa quá\nEm đi xa anh quá\nCó biết không nơi đây anh vẫn đứng đợi một giấc mơ\nAnh chờ đợi một cơn mưa\nSẽ xóa sạch giọt nước mắt\nNgồi trong đêm bơ vơ anh thấy đau em có biết không\nEm ơi anh nhớ\nEm ơi anh rất nhớ\nTừng câu nói ánh mắt của em giờ này ở nơi đâu\nChắc ai đó sẽ sớm quay lại thôi\nChắc ai đó sẽ sớm quay về thôi\nCầm bông hoa trên tay nước mắt rơi\nAnh nhớ em\nNhững giọt nước mắt\nLăn dài trên mi\nCứ thế anh biết phải làm sao\nTình yêu trong em đã mất\nPhai dần đi theo gió bay\nCòn lại chi nơi đây cô đơn riêng anh\nEm đi xa quá\nEm đi xa anh quá\nCó biết không nơi đây anh vẫn đứng đợi một giấc mơ\nAnh chờ đợi một cơn mưa\nSẽ xóa sạch giọt nước mắt\nNgồi trong đêm bơ vơ anh thấy đau em có biết không?\nEm ơi anh nhớ\nEm ơi anh rất nhớ\nTừng câu nói ánh mắt của em giờ này ở nơi đâu\nChắc ai đó sẽ sớm quay lại thôi\nChắc ai đó sẽ sớm quay về thôi\nCầm bông hoa trên tay nước mắt rơi\nAnh nhớ em\nAnh sẽ mãi nhớ thật nhiều những thứ thuộc về em\nTrong tim này vẫn mãi yêu người riêng em\nOhh-h-h\nEm đi xa quá\nEm đi xa anh quá\nCó biết không nơi đây anh vẫn đứng đợi một giấc mơ\nAnh chờ đợi một cơn mưa\nSẽ xóa sạch giọt nước mắt\nNgồi trong đêm bơ vơ anh thấy đau em có biết không?\nEm ơi anh nhớ\nEm ơi anh rất nhớ\nTừng câu nói ánh mắt của em giờ này ở nơi đâu?\nChắc ai đó sẽ sớm quay lại thôi\nChắc ai đó sẽ sớm quay về thôi\nCầm bông hoa trên tay nước mắt rơi\nAnh nhớ em"
     },
     {
         id: "st_5",
         title: "Âm Thầm Bên Em",
         artist: "Sơn Tùng M-TP",
         img: "../img/AmThamBenEm.jpeg",
-        src: "../mp3/atbe.mp3", // Nhớ tải nhạc về nhé
-        lyrics: "..."
+        src: "../mp3/amthambenem.mp3",
+        lyrics: "Khi bên anh em thấy điều chi\nKhi bên anh em thấy điều gì\nNước mắt rơi gần kề làn mi\nChẳng còn những giây phút\nChẳng còn những ân tình\nGió mang em rời xa nơi đây\nUhm\nKhi xa anh em nhớ về ai (về ai)\nKhi xa anh em nhớ một người\nChắc không phải một người như anh (hoh)\nNgười từng làm em khóc\nNgười từng khiến em buồn\nBuông bàn tay rời xa lặng thinh bước đi\nHạt mưa rơi bủa vây trái tim hiu quạnh\nNgàn yêu thương vụt tan bỗng xa\nNgười từng nói ở bên cạnh anh mỗi khi anh buồn\nCớ sao giờ lời nói kia như gió bay\nĐừng bỏ rơi bàn tay ấy bơ vơ mà\nMột mình anh lặng im chốn đây\nYêu em âm thầm bên em\nYêu thương không còn nơi đây\nAnh mang tình buồn theo mây\nCơn mơ về mong manh câu thề\nTa cho qua mau quên đi phút giây\nMưa rơi trên đôi mi qua lối vắng\nÁnh sáng mờ buông lơi làn khói trắng\nBóng dáng em nụ cười ngày hôm qua\nKí ức có ngủ quên chìm trong màn sương đắng\nNgười từng làm em khóc (anh nhớ giọt nước mắt sâu lắng)\nNgười từng khiến em buồn (anh nhớ nỗi buồn của em ngày không nắng)\nBuông bàn tay rời xa lặng thinh bước đi\nHạt mưa rơi bủa vây trái tim hiu quạnh (anh nhớ giọt nước mắt sâu lắng)\nNgàn yêu thương vụt tan bỗng xa (anh nhớ nỗi buồn của em ngày không nắng)\nNgười từng nói ở bên cạnh anh mỗi khi anh buồn\nCớ sao giờ lời nói kia như gió bay\nBàn tay bơ vơ mà\nCầm bông hoa chờ mong nhớ thương\nLàm sao quên người ơi tình anh mãi như hôm nào\nVẫn yêu người và vẫn mong em về đây (oh)\nGiọt nước mắt tại sao cứ lăn rơi hoài\nỞ bên anh chỉ có đớn đau (đớn đau oh)\nThì anh xin nhận hết ngàn đau đớn để thấy em cười\nDẫu biết rằng người đến không như giấc mơ\nYêu em âm thầm bên em (oh)\nYêu em âm thầm bên em (oh huh)\nThì anh xin nhận hết ngàn đau đớn để thấy em cười\nDẫu biết rằng người đến không như giấc mơ\nYêu em âm thầm bên em\nHmm"
     },
     {
         id: "st_6",
         title: "Hãy Trao Cho Anh",
         artist: "Sơn Tùng M-TP",
         img: "../img/HayTraoChoAnh.jpeg",
-        src: "../mp3/htca.mp3", // Nhớ tải nhạc về nhé
-        lyrics: "..."
+        src: "../mp3/HayTraoChoAnh.mp3",
+        lyrics: "Lala lala lala\nHình bóng ai đó nhẹ nhàng vụt qua nơi đây\nQuyến rũ ngây ngất loạn nhịp làm tim mê say\nCuốn lấy áng mây theo cơn sóng xô dập dìu\nNụ cười ngọt ngào cho ta tan vào phút giây miên man quên hết con đường về eh\nLet me know your name\nChẳng thể tìm thấy lối về eh\nLet me know your name\nĐiệu nhạc hòa quyện trong ánh mắt đôi môi\nDẫn lối những bối rối rung động khẽ lên ngôi\nVà rồi khẽ và rồi khẽ khẽ\nChạm nhau mang vô vàn đắm đuối vấn vương dâng tràn\nLấp kín chốn nhân gian làn gió hoá sắc hương mơ màng\nMột giây ngang qua đời cất tiếng nói không nên lời\nẤm áp đến trao tay ngàn sao trời thêm chơi vơi\nDịu êm không gian bừng sáng đánh thức muôn hoa mừng\nQuấn quít hát ngân nga từng chút níu bước chân em dừng\nBao ý thơ tương tư ngẩn ngơ (la la la)\nLưu dấu nơi mê cung đẹp thẫn thờ\nOh oh oh oh uh\nHãy trao cho anh hãy trao cho anh\nHãy trao cho anh thứ anh đang mong chờ (oh oh oh oh)\nHãy trao cho anh hãy trao cho anh\nHãy mau làm điều ta muốn vào khoảnh khắc này đê (oh oh oh oh)\nHãy trao cho anh đê hãy trao cho anh đê\nHãy trao anh trao cho anh đi những yêu thương nồng cháy (chỉ mình anh thôi)\nTrao anh ái ân nguyên vẹn đong đầy\nLala lala\nLala lala\nLala lala\nLala lala\nLooking at my Gucci is about that time\nWe can smoke a blunt and pop a bottle of wine\nNow get yourself together and be ready by nine\nCuz we gon' do some things that will shatter your spine\nCome one undone Snoop Dogg Son Tung\nLong Beach is the city that I come from\nSo if you want some get some\nBetter enough take some take some\nChạm nhau mang vô vàn đắm đuối vấn vương dâng tràn\nLấp kín chốn nhân gian làn gió hóa sắc hương mơ màng\nMột giây ngang qua đời cất tiếng nói không nên lời\nẤm áp đến trao tay ngàn sao trời lòng càng thêm chơi vơi\nDịu êm không gian bừng sáng đánh thức muôn hoa mừng\nQuấn quít hát ngân nga từng chút níu bước chân em dừng\nBao ý thơ tương tư ngẩn ngơ (la la la)\nLưu dấu nơi mê cung đẹp thẫn thờ\nOh oh oh oh uh\nHãy trao cho anh hãy trao cho anh\nHãy trao cho anh thứ anh đang mong chờ (oh oh oh oh)\nHãy trao cho anh hãy trao cho anh\nHãy mau làm điều ta muốn vào khoảnh khắc này đê (oh oh oh oh)\nHãy trao cho anh đê hãy trao cho anh đê\nHãy trao anh trao cho anh đi những yêu thương nồng cháy (chỉ mình anh thôi)\nTrao anh ái ân nguyên vẹn đong đầy\nLala lala\nLala lala\nLala lala\nLala lala\nLàm cho ta ngắm thêm nàng vội vàng qua chốc lát\nNhư thanh âm chứa bao lời gọi mời trong khúc hát\nLiêu xiêu ta xuyến xao rạo rực khát khao trông mong\nDịu dàng lại gần nhau hơn dang tay ôm em vào lòng\nThôi trao đi trao hết đi đừng ngập ngừng che dấu nữa\nQuên đi quên hết đi ngại ngùng lại gần thêm chút nữa\nChìm đắm giữa khung trời riêng hai ta như dần hòa quyện\nMắt nhắm mắt tay đan tay hồn lạc về miền trăng sao\nBuông lơi cho ta ngắm thêm nàng vội vàng qua chốc lát\nNhư thanh âm chứa bao lời gọi mời trong khúc hát\nLiêu xiêu ta xuyến xao rạo rực khát khao trông mong\nDịu dàng lại gần nhau hơn dang tay ôm em vào lòng\nTrao đi trao hết đi đừng ngập ngừng che dấu nữa\nQuên đi quên hết đi ngại ngùng lại gần thêm chút nữa\nChìm đắm giữa khung trời riêng hai ta như dần hòa quyện\nMắt nhắm mắt tay đan tay hồn lạc về miền trăng sao\nHãy trao cho anh hãy trao cho anh (let's go)\nHãy trao cho anh cho anh cho anh (lala)\nHãy trao cho anh hãy trao cho anh\nHãy trao cho anh cho anh cho anh (lala)\nHãy trao cho anh hãy trao cho anh\nHãy trao cho anh cho anh cho anh (lala)\nHãy trao cho anh hãy trao cho anh\nHãy trao cho anh thứ anh đang mong chờ"
     },
     {
         id: "st_7",
         title: "Anh Sai Rồi",
         artist: "Sơn Tùng M-TP",
         img: "../img/AnhSaiRoi.jpeg",
-        src: "../mp3/asr.mp3", // Nhớ tải nhạc về nhé
-        lyrics: "..."
+        src: "../mp3/AnhSaiRoi.mp3",
+        lyrics: "Nếu ngày mai em rời xa anh\nAnh không biết sống thế nào đây\nCon tim anh nhói đau từng cơn\nAnh biết hạt mưa không ngừng rơi khi thấy em buồn\nXin thời gian hãy trở lại đi\nAnh không muốn mất em người ơi\nCon tim anh nhói đau từng cơn\nAnh khóc vì anh biết mình sai\nTất cả là vì tại anh\nAnh sai rồi\nAnh sai rồi\nXin em một lần hãy nói, \"Em yêu anh\"\nAnh xin nhận, nhận hết nỗi buồn\nĐừng rời xa kỉ niệm\nAnh vẫn ở đây ngóng chờ em\nGiờ em ở đâu?\nTìm em ở đâu?\nSao em nỡ bước đi rời xa?\nHãy quay trở về bên anh\nMột lần thôi em, anh đã sai rồi\nAnh như gục ngã, chìm đắm trong ly rượu say\nXin em một lần tha thứ, quay về bên anh\nAnh sai rồi (sai, sai, sai)\nAnh sai rồi (sai, sai, sai)\nXin em một lần hãy nói, \"Em yêu anh\"\nAnh xin nhận, nhận hết nỗi buồn\nĐừng rời xa kỉ niệm\nAnh vẫn ở đây ngóng chờ em\nGiờ em ở đâu?\nTìm em ở đâu?\nSao em nỡ bước đi rời xa?\nHãy quay trở về bên anh\nMột lần thôi em, anh đã sai rồi\nAnh như gục ngã, chìm đắm trong ly rượu say\nXin em một lần tha thứ, quay về bên anh\nAnh như gục ngã, chìm đắm trong ly rượu say\nXin em một lần tha thứ, quay về bên anh"
     },
 
     // --- JACK 97 ---
@@ -85,298 +86,349 @@ const songsData = [
         title: "Đom Đóm",
         artist: "Jack97",
         img: "../img/DomDom.jpeg",
-        src: "../mp3/dd.mp3",
-        lyrics: "..."
+        src: "../mp3/domdom.mp3",
+        lyrics: "Em đi mất rồi, còn anh ở lại …\nNgười giờ còn đây không? Thuyền này còn liệu sang sông?\nBuổi chiều dài mênh mông, lòng người giờ hòa hay đông\nHồng mắt em cả bầu trời đỏ hoen\nTa như đứa trẻ ngây thơ, quên đi tháng ngày ngu ngơ\nNgười là ngàn mây bay, mình là giọt sầu chia tay\nNgười cạn bầu không say, còn mình giãi bày trong đây\nNày gió ơi, đừng vội vàng, lắng nghe được không?\nGió ơi xin đừng lấy em đi\nHãy mang em về chốn xuân thì\nNgày nào còn bồi hồi tóc xanh\nNgày nào còn trò chuyện vớ anh\nEm nói em thương anh mà\nNói em yêu em mà\nCớ sao ta lại hóa chia xa\nĐóa phong lan lặng lẽ mơ màng\nNàng dịu dàng tựa đèn phố Vinh\nĐẹp rạng ngời chẳng cần cố Xinh\nHạt ngọc rơi rớt trên mái nhà, sau luống cà, và thế là …\nXa nhau, xa nhau, thôi thì nỗi nhớ hà cớ gì người mang? Woo..\nBên nhau không lâu, như là người thấy tờ giấy này nghìn trang …\nVậy hãy để màu nắng phiêu du, phiêu du trên đỉnh đầu\nVà sẽ nói em nghe, em nghe, câu chuyện này là…\nCả bầu trời vàng, đỏ, tím, xanh xanh\nThuở thiếu niên thời tay nắm tay, cành lá me vàng ôm đắm say\nNhẹ nhàng lá rơi, đọng lại vấn vương ven đường\nGió ơi xin đừng lấy em đi\nHãy mang em về chốn xuân thì\nNgày nào còn bồi hồi tóc xanh\nNgày nào còn trò chuyện vớ anh\nEm nói em thương anh mà\nNói em yêu em mà\nCớ sao ta lại hóa chia xa\nĐóa phong lan lặng lẽ mơ màng\nNàng dịu dàng tựa đèn phố Vinh\nĐẹp rạng ngời chẳng cần cố Xinh\nYêu em nhiều\nLòng này nhói đau, thương em nhiều, cạn tình biển sâu\nBiển sâu anh hát\nNếu có ước muốn ngược thời gian\nNhắm mắt cố xóa dòng đời này ái phong trần vỡ tan\nĐành lòng sao em xé nát tan tâm can.. họa kì thư theo bóng trăng vàng\nGiá như bây giờ, giá như em ở đây\nGió ơi xin đừng lấy em đi\nHãy mang em về … về chốn xuân thì\nNgày nào còn bồi hồi tóc xanh\nNgày nào còn trò chuyện với anh\nEm nói em thương anh mà\nNói em yêu em mà\nCớ sao ta lại hóa chia xa\nĐóa phong lan lặng lẽ mơ màng\nNàng dịu dàng tựa đèn phố Vinh\nĐẹp rạng ngời chẳng cần cố Xinh"
     },
     {
         id: "jack_2",
         title: "Sóng Gió",
         artist: "Jack x K-ICM",
         img: "../img/SongGio.jpeg",
-        src: "../mp3/sg.mp3",
-        lyrics: "..."
+        src: "../mp3/songgio.mp3",
+        lyrics: "Hồng trần trên đôi cánh tay họa đời em trong phút giây\nTừ ngày thơ ấy còn ngủ mơ đến khi em thờ ơ (hờ hờ)\nLòng người anh đâu có hay một ngày khi vỗ cánh bay\nTừ người yêu hóa thành người dưng đến khi ta tự xưng à (hà hà)\nThương em bờ vai nhỏ nhoi đôi mắt hóa mây đêm\nThương sao mùi dạ lý hương vương vấn mãi bên thềm\nĐời phiêu du cố tìm một người thật lòng\nDẫu trời mênh mông anh nhớ em (anh nhớ em)\nHah hah hah-ah\nChim kia về vẫn có đôi sao chẳng số phu thê (chẳng số phu thê)\nEm ơi đừng xa cách tôi trăng cố níu em về\nBình yên trên mái nhà nhìn đời ngược dòng\nEm còn bên anh có phải không (có phải không)\nTrời ban ánh sáng năm tháng tư bề dáng ai về chung lối\nNgười mang tia nắng nhưng cớ sao còn tăm tối\nMột mai em lỡ vấp ngã trên đời thay đổi\nNhìn về anh người chẳng khiến em lẻ loi\nHỡi ah hỡi ah hỡi ah a-ah (ah ah)\nCùng chạy lòng chẳng nói ra nói ra nhưng mà (suýt nữa biệt ly)\nHỡi ah hỡi ah hỡi ah a-ah (yah yah)\nCùng chạy lời lại xót xa xót xa a-ah\nAh nếu em có về anh sẽ mang hết những suy tư\nMang hết hành trang những ngày sống khổ để cho gió biển di cư\nAnh thà lênh đênh không có ngày về hoá kiếp thân trai như Thủy Hử\nChẳng đành để em từ một cô bé sóng gió vây quanh thành quỷ dữ\nTa tự đẩy mình hay tự ta trói bây giờ có khác gì đâu\nTa chả bận lòng hay chẳng thể nói tụi mình có khác gì nhau\nYêu sao cánh điệp phủ mờ nét bút dẫu người chẳng hẹn đến về sau\nPhố thị đèn màu ta chỉ cần chung lối để rồi sống chết cũng vì nhau\nNhặt một nhành hoa rơi đoạn đường về nhà thật buồn em ơi\nDòng người vội vàng giờ này tình ơi tình ơi tình ơi em ở đâu rồi (em ở đâu rồi)\nLặng nhìn bờ vai xưa tựa đầu mình hỏi rằng khổ chưa\nĐành lòng chặn đường giờ đừng đi đừng đi đừng đi vì câu hứa (đừng đi đừng đi đừng đi vì câu hứa)\nTrời ban ánh sáng năm tháng tư bề dáng ai về chung lối\nNgười mang tia nắng nhưng cớ sao còn tăm tối\nMột mai em lỡ vấp ngã trên đời thay đổi\nNhìn về anh người chẳng khiến em lẻ loi\nNgày buồn giờ áo ai khâu vá quàng rồi\nLặng nhìn dòng nước con sông phút bồi hồi\nMột lần này hỡi em ơi ở lại đi\nVạn trùng cơn đau ngoài kia chỉ là bão tố\nTrời ban ánh sáng năm tháng tư bề dáng ai về chung lối (chung lối)\nNgười mang tia nắng nhưng cớ sao còn tăm tối\nMột mai em lỡ vấp ngã trên đời thay đổi\nNhìn về anh người chẳng khiến em lẻ loi\nNgười thì vẫn ở đây người thì cách vạn dậm ngàn mây không say không về\nRượu nào mà chả đắng đoạn đường dài giờ này quạnh vắng ai buông câu thề\nChỉ còn lại nỗi nhớ ngày nào chuyện tình mình vụn vỡ tơ duyên lỡ làng\nLùi lại về đằng xa cuộc đời mình chẳng bằng người ta tiếng lòng thở than"
     },
     {
         id: "jack_3",
         title: "Hoa Hải Đường",
         artist: "Jack x K-ICM",
         img: "../img/HoaHaiDuong.jpeg",
-        src: "../mp3/hhd.mp3",
-        lyrics: "..."
+        src: "../mp3/hoahaiduong.mp3",
+        lyrics: "Thiên hà trong vũ trụ này hoài xa xôi\nRiêng mình ôm góc trời hạt ngọc đêm rơi\nAi cũng muốn hóa giọt lệ nghèo phân giai\nSao cần ngay lúc đầu tình bạc như vôi\nTiếc là mình không có nhau\nTiếc là đời quá đớn đau\nHay là duyên mọng mơ không như lúc đầu\nKiếp này ai đưa đón em\nKiếp này đôi tay lấm lem\nSao mà mơ trèo cao như hoa hải đường\nVì lòng anh quá thương em, quá yêu em, nhớ thương em anh đợi em về\nThề rằng nếu lỡ mai này có sum vầy về ngôi nhà\nBóng hình em trong đây\nVậy mà em nỡ ra đi phút chia ly mãi phân ly khi nào em về\nLặng nhìn nơi đống tro tàn đóa hoa vàng giữa mây ngàn chuyện tình ta\nKhi em đi anh mang theo hành trang màu da trời\nCon tim đau thương vươn trên mi cầu mong đừng xa rời\nMới có thấy nhau đôi tay ta giang ngón tay\nVậy mà giờ không thành là lòng người không đành\nTrong nhung nhớ anh đâu chớ thương kia vỡ trái ngang duyên ta lỡ\n(Một phút chốc sống ngu ngơ)\nAnh lang thang đi trong giấc mơ\nChuyện tình mình đâu ngờ một hành trình một đời tôn thờ\nTiếc là mình không có nhau\nTiếc là đời quá đớn đau\nHay là duyên mọng mơ không như lúc đầu\nKiếp này ai đưa đón em\nKiếp này đôi tay lắm lem\nSao mà mơ trèo cao như hoa hải đường\nVì lòng anh quá thương em, quá yêu em, nhớ thương em anh đợi em về\nThề rằng nếu lỡ mai này có sum vầy về ngôi nhà\nBóng hình em trong đây\nVậy mà em nỡ ra đi phút chia ly mãi phân ly khi nào em về\nLặng nhìn nơi đống tro tàn đóa hoa vàng giữa mây ngàn chuyện tình ta\nVì lòng anh quá thương em, quá yêu em, nhớ thương em anh đợi em về\nThề rằng nếu lỡ mai này có sum vầy về ngôi nhà\nBóng hình em trong đây\nVậy mà em nỡ ra đi phút chia ly mãi phân ly khi nào em về\nLặng nhìn đống tro tàn đóa hoa vàng giữa mây ngàn chuyện tình ta\nNgười anh sương gió mấy đời em ơi"
     },
     {
         id: "jack_4",
         title: "Bạc Phận",
         artist: "Jack x K-ICM",
         img: "../img/BacPhan.jpeg",
-        src: "../mp3/bp.mp3",
-        lyrics: "..."
+        src: "../mp3/bacphan.mp3",
+        lyrics: "J-A-C-K\nK-I-C-M, hallow\nTake it, one, two, let's get it!\nAi gieo tình này, ai mang tình này để lệ trên khóe mi cay\nAi đưa về nhà, ai cho ngọc ngà giờ người xa cách ta\nTừng là một thời thiếu nữ trong vùng quê nghèo\nHồn nhiên cài hoa mái đầu\nDòng người vội vàng em hóa thân đời bẽ bàng\nRời xa tình anh năm tháng\nÔi phút giây tương phùng anh nhớ và mong\nDòng lưu bút năm xưa in dấu mãi đậm sâu\nTrong nỗi đau anh mệt nhoài, trong phút giây anh tìm hoài\nMuốn giữ em ở lại một lần này vì anh mãi thương\nXa cách nhau thật rồi, sương trắng chiều thu\nNgày em bước ra đi, nước mắt ấy biệt ly\nHoa vẫn rơi bên thềm nhà, lá xác xơ đi nhiều và\nAnh chúc em yên bình, mối tình mình, hẹn em kiếp sau\nThoáng thoáng, ngày miên man\nGiờ con nước dài thênh thang\nKhông trách người không thương\nMà hương tóc còn vương vương\nGửi tặng em màu son cỏ dại, chút bình yên trên môi bỏ lại\nNước mắt nào thấm đẫm cả hai vai\nMắt phượng mày ngài, mình phải tìm đến thiên thai\nÀ ơi câu hát, em không cần những lời khuyên\nEm buông thả mình và chẳng màng đến tình duyên\nĐời em phiêu bạc, đau đớn lắm lúc cũng vì tiền\nThương thân em khổ để một lần cùng chí tuyến\nGiờ em ở nơi khuê phòng, ngày mai nữa em theo chồng\nVà tô má em thêm hồng, ôi đớn đau lòng, ôi đớn đau lòng\nBình minh dẫn em đi rồi, vòng xoay bánh xe luân hồi\nHoàng hôn khuất sau lưng đồi, ôi vỡ tan rồi, ôi vỡ tan rồi\nMột ngày buồn mây tím, em về thôn làng\nMẹ cha của em vỡ òa\nGiọt lệ chạnh lòng em khóc, thương người sang đò\nHồng nhan bạc phận sóng gió!\nÔi phút giây tương phùng anh nhớ và mong\nDòng lưu bút năm xưa in dấu mãi đậm sâu\nTrong nỗi đau anh mệt nhoài, trong phút giây anh tìm hoài\nMuốn giữ em ở lại một lần này vì anh mãi thương\nXa cách nhau thật rồi, sương trắng chiều thu\nNgày em bước ra đi, nước mắt ấy biệt ly\nHoa vẫn rơi bên thềm nhà, lá xác xơ đi nhiều và\nAnh chúc em yên bình, mối tình mình, hẹn em kiếp sau\nEm ở nơi khuê phòng, mai nữa em theo chồng\nTô má em thêm hồng, ôi đớn đau lòng, ôi đớn đau lòng\nBình minh dẫn em đi rồi, vòng xoay bánh xe luân hồi\nHoàng hôn khuất sau lưng đồi, ôi vỡ tan rồi, ôi vỡ tan rồi\nXa cách nhau thật rồi, sương trắng chiều thu\nNgày em bước ra đi, nước mắt ấy biệt ly\nHoa vẫn rơi bên thềm nhà, lá xác xơ đi nhiều và\nAnh chúc em yên bình, mối tình mình, hẹn em kiếp sau"
     },
     {
         id: "jack_5",
         title: "Em Gì Ơi",
         artist: "Jack x K-ICM",
         img: "../img/EmGiOi.jpeg",
-        src: "../mp3/ego.mp3",
-        lyrics: "..."
+        src: "../mp3/emgioi.mp3",
+        lyrics: "Đừng khóc như thế xin đừng khóc như thế\nBao nhiêu niềm đau chôn giấu mong ngày sẽ trôi mau\nĐời phong ba, độc thân bước chân sơn hà\nBuổi sáng hôm ấy khi còn trắng sương mây\nTa như là gió phiêu lãng mang hành lý thương nhớ\nChẳng sao đâu, sầu mi có khi còn lâu\nLạc mình trong cánh buồm phiêu du\nChiếc thuyền đong đưa\nNhững ngày xa xưa\nBé nhỏ hay thưa mẹ thưa cha, rằng con đi học mới về\nGiờ tung bay khúc nhạc mê say\nNỗi lòng tha hương\nVướng đường tương lai\nƯớc rằng ngày mai nắng lên, ngày mai nắng lên ta sẽ quên\nNày, này này là em gì ơi, em gì ơi, em gì ơi!\nỞ lại và yêu được không,\nYêu được không, yêu được không?\nThật lòng này ta chỉ mong, ta chỉ mong\nBên dòng sông người có nhớ có trông ai?\nViệc gì phải ôm buồn đau,\nRiêng mình ta, riêng mình ta\nNụ cười nở muôn ngàn hoa,\nMuôn ngàn hoa, muôn ngàn hoa\nCuộc đời này thật là vui biết bao,\nTrời cao núi xanh mây ngàn sao\nKhi bánh xe còn lăn bánh, khi bánh xe còn lăn bánh\nTa sẽ vòng về cuộc sống hối hả\nQuên đi mộng ước thanh xuân đã trôi qua\nTa ngại va chạm khi nhiều lần dối trá\nNhững lần áp lực bởi công việc muốn đi xa\nVứt hết một lần trước khi nhìn đời thoái hoá\nTự do tự tại như chân trời và thi ca\nĐời nhiều lúc ta thấy rất nhiều trò\nThôi ta dang tay ôm lấy cả bầu trời\nHỡi bạn thân ơi, lá mù u rơi\nKhát vọng ra khơi chúng mình đi chơi\nBước thật hiên ngang, lối về thênh thang\nChẳng cần cao sang, lối lòng sang trang (Và từ nay)\nLạc mình trong cánh buồm phiêu du\nChiếc thuyền đong đưa\nNhững ngày xa xưa\nBé nhỏ hay thưa mẹ thưa cha, rằng con đi học mới về\nGiờ tung bay khúc nhạc mê say\nNỗi lòng tha hương\nVướng đường tương lai\nƯớc rằng ngày mai nắng lên, ngày mai nắng lên ta sẽ quên\nNày, này này là em gì ơi, em gì ơi, em gì ơi!\nỞ lại và yêu được không,\nYêu được không, yêu được không?\nThật lòng này ta chỉ mong, ta chỉ mong\nBên dòng sông người có nhớ có trông ai?\nViệc gì phải ôm buồn đau,\nRiêng mình ta, riêng mình ta\nNụ cười nở muôn ngàn hoa,\nMuôn ngàn hoa, muôn ngàn hoa\nCuộc đời này thật là vui biết bao,\nTrời cao núi xanh mây ngàn sao\n(Này, này này là em gì ơi, em gì ơi, em gì ơi!\nỞ lại và yêu được không,\nYêu được không, yêu được không?\nThật lòng này ta chỉ mong, ta chỉ mong\nBên dòng sông người có nhớ có trông ai?)\nViệc gì phải ôm buồn đau,\nRiêng mình ta, riêng mình ta\nNụ cười nở muôn ngàn hoa,\nMuôn ngàn hoa, muôn ngàn hoa\nCuộc đời này thật là vui biết bao,\nTrời cao núi xanh mây ngàn sao..."
     },
     {
         id: "jack_6",
         title: "Về Bên Anh",
         artist: "Jack x K-ICM",
         img: "../img/VeBenAnh.jpeg",
-        src: "../mp3/vba.mp3",
-        lyrics: "..."
+        src: "../mp3/vebenanh.mp3",
+        lyrics: "Đã có lúc ấm áp đôi tay, cùng nhau nhìn lên trời cao\nĐến phút cuối em bước ra đi, làm sao để giữ được em?\nTìm hoài hình bóng lúc ấy, tìm hoài cảm giác bối rối\nLòng này anh đã cố nói \"đừng đi\"\nBuổi chiều hôm ấy khuất lối, chìm vào bóng tối nhức nhói\nLệ nhòe hoen mắt, chẳng thể ngừng rơi\nỞ nơi đó em có vui không?\nNgười bên em có giống anh không?\nHọ có biết những lúc em đau\nCần chia sớt với những u sầu\nVề bên anh gió lộng đồi hoang\nỞ bên anh yên giấc mơ màng\nNgồi đây nghe tiếng lòng thở than\nChờ mong ai hơi ấm nhẹ nhàng\nDù rằng một giây nữa thôi, ghị chặt bờ môi xiết ôm\nĐừng vội vàng quên rời xa anh mãi\nXin đừng đi, anh cần em, nhớ em\nLá vàng rơi, xuân hạ tới, đông và thu nhớ em\nAnh có thể vẽ em thật kiêu sa, nét ngọc ngà trên áo còn thêu hoa\nPhút chạnh lòng anh cứ tưởng là khi xa, sẽ không buồn với những thứ mình đi qua\nEm ơi (em ơi), thanh xuân này ngắn ngủi, đôi giấy nhỏ làm sao viết thành văn\nTơ vò còn vương lại khe núi, ôm cả bầu trời niên thiếu có đành chăng?\nEm biết không mùa xuân chẳng trọn vẹn, tim lạc đường khi ta chẳng thấy nhau\nNhìn trăng kia vàng còn treo trước đầu ngỏ, giờ em đi rồi, mùa hạ hôm ấy đâu?\nAnh chẳng ước mình như là cánh chim bay giữa muôn trùng đất mẹ này bao la\nAnh muốn được nghe giọng em nói, muốn thấy em cười bình yên chẳng sao cả (nghe anh)\nVề bên anh nhé em, cầm tay anh nhé em\nCùng bên nhau và sưởi ấm đêm đông buốt giá\nLòng anh thương nhớ em, chìm vào trong giấc mơ\nĐể con tim một lần nữa kêu tên\nVì đôi lúc anh thấy em giận anh quá nên thôi\nHình bóng ấy có thể phai nhòa nhưng chẳng xa xôi\nCành phượng vĩ kia đã đâm chồi, thay lá, đơm bông\nThì thôi nhé em cứ ở lại giây phút ta mong\nĐưa đôi tay nhìn lên trời, hương thơm kia tựa mây ngàn\nAnh muốn ôm bờ vai này sao chẳng thấy\nChợt bồi hồi vì lòng chưa quên\nĐoạn đường buồn vội vàng không tên em hỡi\nTiếc nuối ấy cứ thế vẫn mãi khắc sâu trên hàng mi\nVà rồi nhận ra yêu thương bên nhau dần vỡ nát\nGiọt lệ anh đã cố dấu bước tiếp để nhìn em bước đi\nNơi đó anh nhớ em nhiều\nVề bên anh gió lộng đồi hoang\nỞ bên anh yên giấc mơ màng\nNgồi đây nghe tiếng lòng thở than\nChờ mong ai hơi ấm nhẹ nhàng"
     },
     {
         id: "jack_7",
         title: "Sao Em Vô Tình",
         artist: "Jack x K-ICM",
         img: "../img/SaoEmVoTinh.jpeg",
-        src: "../mp3/sevt.mp3",
-        lyrics: "..."
-    },
-    {
-        id: "jack_9",
-        title: "Hồng Nhan",
-        artist: "Jack x K-ICM",
-        img: "../img/HongNhan.png",
-        src: "../mp3/hn.mp3",
-        lyrics: "..."
-    },
-    {
-        id: "jack_10",
-        title: "Việt Nam Tôi",
-        artist: "Jack x K-ICM",
-        img: "../img/VietNamToi.jpeg",
-        src: "../mp3/vnt.mp3",
-        lyrics: "..."
+        src: "../mp3/saoEmVoTinh.mp3",
+        lyrics: "Em về chưa? Đang ở đâu?\nNgoài trời thì đổ mưa\nBước chân người đi, xa dần xa\nLệ nhòe trên khóe mi\nEm nói thương anh, yêu anh, vì anh\nNắng hay mưa vẫn ở cạnh nhau\nSao giờ đành khuất lối\nChìm bóng tối, lệ chia phôi\nHoa bàng rơi, mây mù giăng\nTạm biệt hương tóc thơm\nChúc em bình yên, mong tình duyên\nNgọt ngào đôi cánh tay\nCô bé năm xưa yêu anh giờ đây\nHóa lung linh cơn gió nhẹ lay\nEm dịu dàng biết mấy\nTà áo trắng, chiều tung bay\nSao em vô tình anh quá em ơi!\nCon tim đau lòng thương lắm em ơi\nTìm về lại một chút hương thơm\nTìm về lại một chút ngây ngô\nĐợi chờ ai? Đợi chờ ai?\nBên kia sông buồn mây trắng êm trôi\nBao năm hẹn thề em có thương tôi?\nMình hãy ngồi lại với nhau đi\nChuyện trò một chút mai khi\nDòng thời gian vô tình người mang\nNơi đó anh chờ em!\n\nChúng ta sẽ yêu\nNhưng đáng tiếc là ai khác\nKhông phải nhìn nhau nữa đâu\nDuyên tình ta giờ phai nhạt\nNơi cánh chim ùa về\nNơi nỗi đau gần kề\nChẳng đi cùng lề\nVì thế như thằng hề\nKệ cuộc đời này trôi cứ như áng mây\nNgày bay đến nơi đó đây\nXây giấc mơ với nhau\nMà đau lắm em có hay!\nThương thân ai bờ vai ngày xưa yêu thương\nMà giờ đành xa xăm\nMuôn phương cuối con đường!\nNgày hôm ấy người đã nói\nLời chia tay, lệ hoen cay\nLòng đau nhói, chẳng thể khóc\nVì còn thương, vì còn yêu\nGiá như em đừng đi\nGiá như em ở đây\nLắng nghe anh vài câu\nTrái tim anh đậm sâu\nNhưng sao bây giờ khuất lối\nChìm bóng tối, lệ chia phôi\nSao em vô tình anh quá em ơi!\nCon tim đau lòng thương lắm em ơi\nTìm về lại một chút hương thơm\nTìm về lại một chút ngây ngô\nĐợi chờ ai? Đợi chờ ai?\nBên kia sông buồn mây trắng êm trôi\nBao năm hẹn thề em có thương tôi?\nMình hãy ngồi lại với nhau đi\nChuyện trò này một chút mai khi\nDòng thời gian vô tình người mang\nNơi đó anh chờ em!\n\nDù Thiên ý bắt ta phải xa nhau\nMạnh mẽ bước nói anh chẳng sao đâu\nLặng lẽ vớt ánh sáng phía trăng soi\nĐi về lẻ loi, cô đơn\nMột lần nữa để anh viết cho em\nMột lần nữa để anh nhớ tên em\nMột lần nữa thôi, một lần nữa thôi\nSao em vô tình anh quá em ơi!\nCon tim đau lòng thương lắm em ơi\nTìm về lại một chút hương thơm\nTìm về lại một chút ngây ngô\nĐợi chờ ai? Đợi chờ ai?\nBên kia sông buồn mây trắng êm trôi\nBao năm hẹn thề em có thương tôi?\nMình hãy ngồi lại với nhau đi\nChuyện trò này một chút mai khi\nDòng thời gian vô tình người mang\nNơi đó anh chờ em!"
     },
     {
         id: "jack_8",
-        title: "Mẹ Ơi 2",
+        title: "Hồng Nhan",
         artist: "Jack x K-ICM",
-        img: "../img/MeOi2.jpeg",
-        src: "../mp3/mo2.mp3",
-        lyrics: "..."
+        img: "../img/HongNhan.png",
+        src: "../mp3/hongnhan.mp3",
+        lyrics: "Hồng trần trên đôi cánh tay họa đời em trong phút giây\nTừ ngày thơ ấy còn ngủ mơ đến khi em thờ ơ (hờ hờ)\nLòng người anh đâu có hay một ngày khi vỗ cánh bay\nTừ người yêu hóa thành người dưng đến khi ta tự xưng à (hà hà)\nThương em bờ vai nhỏ nhoi đôi mắt hóa mây đêm\nThương sao mùi dạ lý hương vương vấn mãi bên thềm\nĐời phiêu du cố tìm một người thật lòng\nDẫu trời mênh mông anh nhớ em (anh nhớ em)\nHah hah hah-ah\nChim kia về vẫn có đôi sao chẳng số phu thê (chẳng số phu thê)\nEm ơi đừng xa cách tôi trăng cố níu em về\nBình yên trên mái nhà nhìn đời ngược dòng\nEm còn bên anh có phải không (có phải không)\nTrời ban ánh sáng năm tháng tư bề dáng ai về chung lối\nNgười mang tia nắng nhưng cớ sao còn tăm tối\nMột mai em lỡ vấp ngã trên đời thay đổi\nNhìn về anh người chẳng khiến em lẻ loi\nHỡi ah hỡi ah hỡi ah a-ah (ah ah)\nCùng chạy lòng chẳng nói ra nói ra nhưng mà (suýt nữa biệt ly)\nHỡi ah hỡi ah hỡi ah a-ah (yah yah)\nCùng chạy lời lại xót xa xót xa a-ah\nAh nếu em có về anh sẽ mang hết những suy tư\nMang hết hành trang những ngày sống khổ để cho gió biển di cư\nAnh thà lênh đênh không có ngày về hoá kiếp thân trai như Thủy Hử\nChẳng đành để em từ một cô bé sóng gió vây quanh thành quỷ dữ\nTa tự đẩy mình hay tự ta trói bây giờ có khác gì đâu\nTa chả bận lòng hay chẳng thể nói tụi mình có khác gì nhau\nYêu sao cánh điệp phủ mờ nét bút dẫu người chẳng hẹn đến về sau\nPhố thị đèn màu ta chỉ cần chung lối để rồi sống chết cũng vì nhau\nNhặt một nhành hoa rơi đoạn đường về nhà thật buồn em ơi\nDòng người vội vàng giờ này tình ơi tình ơi tình ơi em ở đâu rồi (em ở đâu rồi)\nLặng nhìn bờ vai xưa tựa đầu mình hỏi rằng khổ chưa\nĐành lòng chặn đường giờ đừng đi đừng đi đừng đi vì câu hứa (đừng đi đừng đi đừng đi vì câu hứa)\nTrời ban ánh sáng năm tháng tư bề dáng ai về chung lối\nNgười mang tia nắng nhưng cớ sao còn tăm tối\nMột mai em lỡ vấp ngã trên đời thay đổi\nNhìn về anh người chẳng khiến em lẻ loi\nNgày buồn giờ áo ai khâu vá quàng rồi\nLặng nhìn dòng nước con sông phút bồi hồi\nMột lần này hỡi em ơi ở lại đi\nVạn trùng cơn đau ngoài kia chỉ là bão tố\nTrời ban ánh sáng năm tháng tư bề dáng ai về chung lối (chung lối)\nNgười mang tia nắng nhưng cớ sao còn tăm tối\nMột mai em lỡ vấp ngã trên đời thay đổi\nNhìn về anh người chẳng khiến em lẻ loi\nNgười thì vẫn ở đây người thì cách vạn dậm ngàn mây không say không về\nRượu nào mà chả đắng đoạn đường dài giờ này quạnh vắng ai buông câu thề\nChỉ còn lại nỗi nhớ ngày nào chuyện tình mình vụn vỡ tơ duyên lỡ làng\nLùi lại về đằng xa cuộc đời mình chẳng bằng người ta tiếng lòng thở than"
     },
-    // --- CHILL & LOFI ---
-    {
-        id: "chill_1",
-        title: "Chill Vibes",
-        artist: "Various Artists",
-        img: "../img/ChillVibes.jpeg",
-        src: "../mp3/chill1.mp3",
-        lyrics: "(Nhạc không lời)"
-    },
-    {
-        id: "lofi_1",
-        title: "Lofi Study",
-        artist: "Lofi Fruits",
-        img: "../img/LofiStudy.jpeg",
-        src: "../mp3/lofi1.mp3",
-        lyrics: "(Nhạc không lời)"
+  //Hà Anh Tuấn 
+     {
+        id: "HAT_1",
+        title: "Cơn Mưa Tình Yêu",
+        artist: "Hà Anh Tuấn",
+        img: "../img/conMuaTinhYeu.png",
+        src: "../mp3/conMuaTinhYeu.mp3",
+        lyrics:  "Người yêu ơi cỏ mềm đã héo khô\nMặt hồ lá xác xơ những con đường vắng sương mờ\nTừng bước chân cuốn đi mùa thu xa lắm\nĐể nỗi buồn cứ thế đến bao giờ?\n\nVà cơn mưa ngoài trời đêm gió lạnh\nGiật mình nhớ tới anh hãy chờ em anh nhé\nVà hãy cho nhau sát lại nụ hôn như bất ngờ\nNgọt ngào như vô tình, yêu anh ngàn lần hơn nữa.\n\nMột phút anh ngẩn ngơ, một phút em thầm mơ\nĐừng vội làm cơn mưa dâng kín trong lòng em\nĐể trái tim ngủ quên, để nỗi đau triền miên\nTừng giọt buồn đánh rơi trên hàng mi ướt mềm.\n\nThổn thức ta nhìn nhau, hẹn ước cho ngày sau\nTrọn đời mình bên nhau đi nhé anh tình yêu\nVì chính em mà thôi, vì yêu anh mất rồi\nSớm mai dành cho nhau tia nắng đầu tiên rạng ngời.\n\nMưa xa dần hàng cây\nHạt mưa mơn man giây phút này\nÁnh sao đưa ta về bên nhau."
     },
     {
-        id: "ballad_1",
-        title: "Ballad",
-        artist: "Hoàng Dũng...",
-        img: "../img/ChoAnhNhe.jpeg",
-        src: "../mp3/can.mp3",
-        lyrics: "(Nhạc không lời)"
+        id: "HAT_2",
+        title: "Dành Hết Xuân Thì Để Chờ Nhau",
+        artist: "Hà Anh Tuấn",
+        img: "../img/danhHetXuanThiDeChoNhau.png",
+        src: "../mp3/danhHetXuanThiDeChoNhau.mp3",
+        lyrics:   "Nếu em còn một giấc mộng đẹp\nCho anh được gần em suy tư thêm 1 chút\nAnh nhìn em, anh chờ em\nCả 2 ta như cuốn lấy nhau rồi phải không? Phải không?\n\nNếu em còn đôi mắt đượm buồn\nCho anh được chạm vào khung cửa đã cũ\nAnh bên em, anh nghe em\nLời bài hát như chiếc lá rơi bên thềm ngày mùa đông\n\nNgày còn tim còn thương chờ mùa hoa tới\nChờ từng nỗi ngây ngô tuổi trẻ\nChờ những vòng tay, chờ những con đường, chờ những nụ hôn\nChúng ta dành hết xuân thì để say mê đôi bờ mi\n\nChờ mùa mưa tới, chờ từng giấc chiêm bao ngày hè\nChờ những lời ru, chờ những giai điệu, chờ những vầng trăng\nChúng ta dành hết xuân thì để chờ nhau\nNếu em còn đôi mắt đượm buồn\n\nCho anh được chạm vào khung cửa đã cũ\nAnh bên em, anh nghe em\nLời bài hát như chiếc lá rơi bên thềm ngày mùa đông\nNgày còn tim còn thương chờ mùa hoa tới\n\nChờ từng nỗi ngây ngô tuổi trẻ\nChờ những vòng tay, chờ những con đường, chờ những nụ hôn\nChúng ta dành hết xuân thì để say mê đôi bờ mi\n\nChờ mùa mưa tới, chờ từng giấc chiêm bao ngày hè\nChờ những lời ru, chờ những giai điệu, chờ những vầng trăng\nChúng ta dành hết xuân thì để chờ nhau"
     },
     {
-        id: "vu_1",
-        title: "Bảo tàng của tiếc nuối",
+        id: "HAT_3",
+        title: "Nhà Tôi Có Treo Một Lá Cờ",
+        artist: "Hà Anh Tuấn",
+        img: "../img/nhaToiCoTreoMotLaCo.png",
+        src: "../mp3/nhaToiCoTreoMotLaCo.mp3",
+        lyrics:    "Nhà tôi có treo một lá cờ\nĐỏ thắm những câu chuyện xưa\nTừng dãy phố mang sắc cờ\nĐẹp như hoa bay giữa trời\nCụ ông đứng nghiêm dưới cờ\nNhìn lên nhớ đồng đội xưa\nTrẻ con nô đùa dưới cờ\nNgày sau điểm tô thêm sắc cờ\n\nTrong tôi vang vọng quốc ca Việt Nam\nĐi theo Tổ quốc tiếng gọi: \"Sẵn sàng!\"\nCùng vươn mình, vươn mình ra tận năm châu\nCờ không ngại, không ngại bốn bề nông sâu\nNơi đâu tôi cũng bên mình lá cờ\n\nNgày xưa có muôn nghìn lá cờ\nNằm xuống giữ quê bình yên\nGiờ đây vút bay chiếc lá cờ\nĐể quê hương ta vững bền\nĐảo xa phất cao lá cờ\nNgười lính hát khúc trường ca\nGiữ nước cũng như giữ nhà\nDù phong ba luôn vững dạ\n\nTrong tôi vang vọng quốc ca Việt Nam\nĐi theo Tổ quốc tiếng gọi: \"Sẵn sàng!\"\nCùng vươn mình, vươn mình ra tận năm châu\nCờ không ngại, không ngại bốn bề nông sâu\nNơi đâu tôi cũng bên mình lá cờ\n\nNhà tôi có treo một lá cờ\nLàng tôi có mấy trăm ngọn cờ\nViệt Nam có trăm triệu lá cờ\nVà tôi chính là một ngọn cờ\n\nCờ bay đỏ rực khán đài (Việt Nam!)\nViệt Nam, tiến lên Việt Nam (Việt Nam!)\nTriệu con tim đang vỡ òa\nNhìn theo ngôi sao nước nhà\nVòng tay lớn ôm đất trời (Việt Nam!)\n(Ôm đất trời)\nViệt Nam, tiến lên Việt Nam (Việt Nam!)\n(Tiến lên Việt Nam!)\nHòa chung tiếng ca giữa đời\nRền vang non sông sáng ngời\n\nViệt Nam có một lá cờ\nĐể biết chúng ta tự do\nDù ai xuôi ngược chốn nào\nNhìn lên sẽ thấy tự hào."
+    },
+    {
+        id: "HAT_4",
+        title: "Tháng Mấy Em Nhớ Anh",
+        artist: "Hà Anh Tuấn",
+        img: "../img/thangMayEmNhoAnh.png",
+        src: "../mp3/thangMayEmNhoAnh.mp3",
+        lyrics:    "Tháng Tư về, cánh hoa phai tàn.\nMắt ướt nhòe nỗi đau vô lường.\nTháng Năm buồn vương những phố phường, thấp thoáng bóng người thương.\nBước trong cơn mưa rào tháng Sáu, chợt nhớ tới khi xưa tháng Bảy mưa ngâu.\nTừ bao lâu rồi ta .... đã quen không nhìn thấy nhau?\nLá thư tình gửi chiều tháng Tám còn dấu vết môi son của ngày thu qua.\nĐể rồi như tháng Chín hoa buồn tím tương tư.\nLá xác xơ tháng Mười vẫn thế, còn lây lất trong tim Mười Một vẫn thế.\nĐể lại cơn mưa cuối đông ...muộn màng...\n\nMột lần xa, bao lần nhớ.\nMười Hai đi qua tim vụn vỡ.\nTháng Giêng đợi chờ, tháng Hai ngu ngơ, tháng Ba chơ vơ.\nMột lần xa là bao lần nhớ.\nChừng đơn sơ nhưng sao buồn ngẩn ngơ.\nBước thật chậm dưới cánh hoa rơi, tháng Tư về...\n\nLá thư tình gửi chiều tháng Tám còn dấu vết môi son của ngày thu qua.\nĐể rồi như tháng Chín hoa buồn tím tương tư.\nLá xác xơ tháng Mười vẫn thế, còn lây lất trong tim Mười Một vẫn thế.\nĐể lại cơn mưa cuối đông ...muộn màng...\n\nMột lần xa, bao lần nhớ.\nMười Hai đi qua tim vụn vỡ.\nTháng Giêng đợi chờ, tháng Hai ngu ngơ, tháng Ba chơ vơ.\nMột lần xa là bao lần nhớ.\nChừng đơn sơ nhưng sao buồn ngẩn ngơ.\nBước thật chậm dưới cánh hoa rơi, tháng Tư về...\n\nMột lần xa, bao lần nhớ.\nTình yêu đi qua tim vụn vỡ...\nCó khi đợi chờ, có khi ngu ngơ, có khi chơ vơ.\nMột lần xa là bao lần nhớ.\nChừng đơn sơ nhưng sao buồn ngẩn ngơ.\nBước thật chậm dưới cánh hoa rơi, tháng Tư về...\nBước thật chậm dưới cánh hoa rơi.\nAnh nhớ Em..."
+    },
+    {
+        id: "HAT_5",
+        title: "Xuân Thì",
+        artist: "Hà Anh Tuấn",
+        img: "../img/xuanThi.png",
+        src: "../mp3/xuanThi.mp3",
+        lyrics:    "Gặp em trong những người bạn thân quen một ngày mùa đông\nNhiều năm xa cách kể từ lúc ấy chẳng còn chờ mong\nVà thời gian đã nhuốm màu trên ta nên giờ mình khác xưa\nĐôi nếp nhăn đầu mùa\nGiờ thôi xao xuyến nhưng còn bâng khuâng như chuyện vừa qua\nChuyện thời thương mến chỉ bằng đan tay hôn vội vài giây\nVà rồi ta cũng có niềm chia phôi mất ngàn ngày để vơi\nNhưng đã qua cả rồi khi vui hẵng nhớ\nTình buồn không phải lúc nào cũng chỉ để quên đi\nTình buồn lưu giữ bao nhiêu mộng mơ lúc xuân thì\nTại mưa tại nắng hay muôn niềm thương đã vấn vương rồi như sương\nMột hôm mãi xa\nĐể rồi nghĩ tới ta đau nhẹ tênh giữa trái tim\nNụ cười nước mắt sau những bão giông đã ngủ yên\nVà nhìn lại xem ta có hạnh phúc với chính ta ngày hôm nay\nCó khi bước không chung đường vậy lại hay\nCảnh xưa nơi cũ những miền ta qua cũng nhiều đổi thay\nMộng mơ hoa tuyết khắp trời trắng xoá đôi tà áo bay\nGiờ còn bóng dáng hai người an nhiên sau không ít những chênh vênh\nMỉm cười với nhau lần đầu kể từ nỗi đau\nTình buồn không phải lúc nào cũng chỉ để quên đi\nTình buồn lưu giữ bao nhiêu mộng mơ lúc xuân thì\nTại mưa tại nắng hay muôn niềm thương đã vấn vương rồi như sương\nMột hôm mãi xa\nĐể rồi nghĩ tới ta đau nhẹ tênh giữa trái tim\nNụ cười nước mắt sau những bão giông đã ngủ yên\nVà nhìn lại xem ta có hạnh phúc với chính ta ngày hôm nay\nCó khi bước không chung đường vậy lại hay\nTình buồn không phải lúc nào cũng chỉ để quên đi\nTình buồn lưu giữ bao nhiêu mộng mơ lúc xuân thì (lúc xuân thì)\nTại mưa tại nắng hay muôn niềm thương đã vấn vương rồi như sương\nMột hôm mãi xa hah\nĐể rồi nghĩ tới ta đau nhẹ tênh giữa trái tim (giữa trái tim)\nNụ cười nước mắt sau những bão giông đã ngủ yên\nVà nhìn lại xem ta có hạnh phúc với chính ta ngày hôm nay\nCó khi bước không chung đường vậy lại hay\nCó khi bước không chung đường có khi mất nhau\nCó khi bước không chung đường vậy lại hay"
+    },
+
+    // ----Vũ-----
+    {
+        id: "Vu_1",
+        title: "Bình Yên",
         artist: "Vũ",
-        img: "../img/NhungLoiHuaBoQuen.jpeg",
-        src: "../mp3/nlhbq.mp3",
-        lyrics: "..."
+        img: "../img/binhYen.png",
+        src: "../mp3/binhYen.mp3",
+        lyrics:    "Em như dòng nước trong veo\nBăng qua ngọn núi vòng vèo\nChỉ cần có em hàn huyên\nCùng anh kể chuyện\nCơn mưa rơi bất chợt dần tan\nĐể nhường cho ánh nắng nghiêng\nĐoạn đường em bước đi ngang qua đây\nHửng nắng\nKhi hai ta gần lại một chút\nHai dòng sông\nChiếu sáng ánh trăng vàng\nÁnh mắt thướt tha như có đôi lời\nVới anh\nEm như dòng nước trong veo\nXoá hết ưu phiền\nBăng qua ngọn núi vòng vèo\nBạn đồng hành chỉ cần có em hàn huyên\nCùng anh kể chuyện\nChỉ cần có em\nAnh tìm một thoáng bình yên\nVang lên trong đầu\nGiờ đang ở đâu tìm ở đâu\nGiữa thế giới bao la\nGiữ lấy trong tầm tay\nĐể gió cuốn không thổi bay\nVì anh đã tìm thấy bình yên\nĐạp xe bên hoàng hôn\nVà em luôn ngồi sau\nTay ôm bụng anh\nVu vơ bài ca em hay quên lời\nVà đôi khi là những câu hỏi trên trời\nAnh ơi trẻ con chơi kìa vui nhỉ\nAnh ơi ở bên kia là hoa gì\nƠ hay tại sao chim được bay\nTại sao cây màu xanh\nSao nhìn ai cũng vội vã vậy\nĐôi khi anh nghĩ bình yên thật xa xỉ\nCó lẽ lúc đó bên cạnh chưa là em\nCho đến khi anh thấy\nĐôi mắt đen lay láy\nThầm nhìn anh\nMột buổi sáng anh ngủ quên\nChưa ai bao giờ nói cho anh\nTình yêu là gì\nAnh cứ ngỡ như những cơn sóng ầm ĩ\nNhưng thật ra em dịu êm như mặt hồ\nVà tĩnh như màn đêm\nĐôi lúc khiến anh thầm nghĩ\nLiệu không phải em\nLòng tin là thứ anh không đặt cược\nNếu không phải em\nBình yên là thứ anh không chạm được\nBởi vì cách em nhìn\nVà cảm giác em hôn\nHơn tất cả những gì\nAnh có thể định nghĩa\nAnh cảm ơn nỗi đau\nĐã cho em đến sau\nVì mọi điều anh tìm kiếm là đây\nKhi hai ta gần lại một chút\nHai dòng sông chiếu sáng ánh trăng vàng\nÁnh mắt thướt tha như có đôi lời\nVới anh\nEm như dòng nước trong veo\nXoá hết ưu phiền\nBăng qua ngọn núi vòng vèo\nBạn đồng hành\nChỉ cần có em hàn huyên\nCùng anh kể chuyện\nChỉ cần có em\nAnh tìm một thoáng bình yên\nVang lên trong đầu\nGiờ đang ở đâu tìm ở đâu\nGiữa thế giới bao la\nGiữ lấy trong tầm tay\nĐể gió cuốn không thổi bay\nVì anh đã tìm thấy bình yên"
     },
     {
-        id: "vpop_1",
-        title: "Nhạc Hot Nhất VPop",
-        artist: "Hiếu Thứ Hai, Dương Domic...",
-        img: "../img/HitVpop.jpg",
-        src: "../mp3/lofi1.mp3",
-        lyrics: "(Nhạc không lời)"
+        id: "Vu_2",
+        title: "Nếu Những Tiếc Nuối",
+        artist: "Vũ",
+        img: "../img/neuNhungTiecNuoi.png",
+        src: "../mp3/neuNhungTiecNuoi.mp3",
+        lyrics:     "Có khi nào hai đứa mình cùng chạy trốn trên chuyến xe ngày xưa\nMà đôi ta khi mới bắt đầu ngày gặp nhau đôi còn có đôi\nCó khi nào hai đứa mình cùng lang thang và bâng khuâng ngày mưa\nDấu chân còn đây, đôi mắt này, ngày gặp nhau liệu còn như xưa?\n\n\nNếu những tiếc nuối nay không còn thì có chăng bây giờ mình mới có được nhau\nCó lẽ chuyện tình đôi chúng mình tình cờ như vô hình từ bao lần gặp gỡ\nNếu những kí ức kia quay về thì chắc anh sẽ buồn vì đôi mắt của em\nCó lẽ phút giây gặp nhau giống như mùa thu đang đợi cơn gió đông sang vụt qua\n\nCó khi nào hai đứa mình cùng lang thang và bâng khuâng ngày mưa\nDấu chân còn đây, đôi mắt này, ngày gặp nhau liệu còn như xưa?\n\n\nNếu những tiếc nuối nay không còn thì có chăng bây giờ mình mới có được nhau\nCó lẽ chuyện tình đôi chúng mình tình cờ như vô hình từ bao lần gặp gỡ\nNếu những kí ức kia quay về thì chắc anh sẽ buồn vì đôi mắt của em\nCó lẽ phút giây gặp nhau giống như mùa thu đang đợi cơn gió đông sang vụt qua\n\n\nNhắc đến lúc xưa trước khi gặp em, anh như cuộc phim mang hai màu\nVề nỗi đau mà ta đã trải qua, đang nhận ra anh và em chia xa hai lối\n\n\nNếu những tiếc nuối nay không còn\nNếu những tiếc nuối nay không còn\nThì có chăng bây giờ mình mới có được nhau\nCó lẽ chuyện tình đôi chúng mình tình cờ như vô hình từ bao lần gặp gỡ\nNếu những kí ức kia quay về thì chắc anh sẽ buồn vì đôi mắt của em\nCó lẽ phút giây gặp nhau giống như mùa thu đang đợi cơn gió đông sang vụt qua"
     },
     {
-        id: "christmas_1",
-        title: "Last Christmas",
-        artist: "Modric...",
-        img: "../img/LastChristmas.jpeg",
-        src: "../mp3/lcm.mp3",
-        lyrics: "(Nhạc không lời)"
-    },
-    // Có thể bạn sẽ thích
-    // 
-    {
-        id: "fav_1",
-        title: "1 Phút",
-        artist: "ANDIEZ",
-        img: "../img/1Phut.jpeg",
-        src: "../mp3/1p.mp3",
-        lyrics: "(Nhạc không lời)"
+        id: "Vu_3",
+        title: "Bước Qua Mùa Cô Đơn",
+        artist: "Vũ",
+        img: "../img/buocQuaMuaCoDon.png",
+        src: "../mp3/buocQuaMuaCoDon.mp3",
+        lyrics:      "Chào cơn mưa\nLàm sao cứ kéo ta quay lại\nNhững rung động con tim\nLần đầu hai ta gặp gỡ\n\nChào hàng cây\nLàm sao cố níu tay nhau lại\nĐể thấy nồng nàn\nĐang về trên đôi mắt em\n\nChợt nhìn đôi bàn tay em run nắm lấy bờ vai rất lâu\nCuối thu với anh là ngày khiến hai hàng mi rối bời\nVì ngày ấy gặp nhau không ai *** nói 1 câu, chào nhau\nCứ đắm đuối, cứ thế hát bài hát chia xa\n\nMùa thu rơi vào em vào trong giấc mơ hôm qua\nMùa thu ôm mình em chạy xa vòng tay vội vã\nLời em nói ngày xưa đâu đây vẫn âm thầm chìm vào trong mây\nĐến bao giờ, dặn lòng anh không mong nhớ\n\nMùa thu rơi vào em vào trong chiếc hôn ngây thơ\nMùa thu không cần anh vì em sẽ đây còn mãi hững hờ\nNgày mai kia nếu có phút giây vô tình thấy nhau sẽ nói câu gì\nHay ta chỉ nhìn lặng lẽ đi qua\n\nChào cơn mưa\nLàm sao cứ kéo ta quay lại\nNhững rung động con tim\nLần đầu hai ta gặp gỡ\n\nChào hàng cây\nLàm sao cố níu tay nhau lại\nĐể thấy nồng nàn\nĐang về trên đôi mắt em\n\nChợt nhìn đôi bàn tay em run nắm lấy bờ vai rất lâu\nCuối thu với anh là ngày khiến hai hàng mi rối bời\nVì ngày ấy gặp nhau không ai *** nói 1 câu chào nhau\nCứ đắm đuối chẳng thể chia xa\n\nMùa thu rơi vào em vào trong giấc mơ hôm qua\nMùa thu ôm mình em rời xa vòng tay vội vã\nLời em nói ngày xưa đâu đây vẫn âm thầm chìm vào trong mây\nĐến bao giờ, dặn lòng anh không mong nhớ\n\nMùa thu rơi vào em vào trong chiếc hôn ngây thơ\nMùa thu không cần anh vì em giờ đây còn mãi hững hờ\nNgày mai kia nếu có phút giây vô tình thấy nhau sẽ nói câu gì\nHay ta chỉ nhìn lặng lẽ đi qua"
     },
     {
-        id: "fav_2",
-        title: "Ghé Qua",
-        artist: "Modric...",
-        img: "../img/GheQua.jpeg",
-        src: "../mp3/gq.mp3",
-        lyrics: "(Nhạc không lời)"
+        id: "Vu_4",
+        title: "Lạ Lùng",
+        artist: "Vũ",
+        img: "../img/laLung.png",
+        src: "../mp3/laLung.mp3",
+        lyrics:      "Kìa màn đêm hiu hắt mang tên em\nQuay về trong ký ức của anh qua thời gian\nChiều lặng im nghe gió đung đưa cây\nNhư là bao nỗi nhớ cuốn anh trôi về đâu\nNày gió đừng hát\nVà mang nỗi nhớ chạy đi\nQuên âu lo quên hết suy tư một đời\nMưa trong anh sẽ vơi\nNhưng đôi môi đang vấn vương\nChỉ tình cờ nhìn em rồi mang theo những cơn đau thét gào\nLạ lùng em tới\nHãy tới bên anh trong chiều đông xa vắng\nMà sao giờ đây nhìn lại chẳng còn thấy em?\nLạ lùng em với...\nGió hát lên câu ca làm anh thao thức\nMà bao say mê nồng nàn giờ đã phai mau\nKìa nắng ngập tràn\nNhưng giấc mơ lại vừa bay đi\nGạt hết cuộc đời lẻ loi\nThôi mình anh, lại ngồi nhớ em\n♪\nKìa màn đêm hiu hắt mang tên em\nQuay về trong kí ức của anh qua thời gian\nChiều lặng im nghe gió đung đưa cây\nNhư là bao nỗi nhớ cuốn anh trôi về đâu\nNày gió đừng hát và mang nỗi nhớ chạy đi\nQuên âu lo quên hết suy tư một đời\nMưa trong anh sẽ vơi\nNhưng đôi môi đang vấn vương\nChỉ tình cờ nhìn em rồi mang theo những cơn đau thét gào\nLạ lùng em tới\nHãy tới bên anh trong chiều đông xa vắng\nMà sao giờ đây nhìn lại chẳng còn thấy em?\nLạ lùng em với gió hát lên câu ca làm anh thao thức\nMà bao say mê nồng nàn giờ đã phai mau\nKìa nắng ngập tràn\nNhưng giấc mơ lại vừa bay đi\nGạt hết cuộc đời lẻ loi\nThôi mình anh\nLại ngồi nhớ em"
     },
+
+    // --- CHILL & LOFI ---
+    {
+        id: "chill_1",
+        title: "Chill Vibes",
+        artist: "Various Artists",
+        img: "../img/ChillVibes.jpeg",
+        src: "../mp3/Nhạc Chill Không Lời.mp3", 
+        lyrics: "(Nhạc không lời)"
+    },
+    {
+        id: "lofi_1",
+        title: "Lofi Study",
+        artist: "Lofi Fruits",
+        img: "../img/LofiStudy.jpeg",
+        src: "../mp3/Mellow Vibes.mp3", 
+        lyrics: "(Nhạc không lời)"
+    },
+    {
+        id: "ballad_1",
+        title: "Chờ Anh Nhé(violin)",
+        artist: "Hoàng Dũng...",
+        img: "../img/ChoAnhNhe.jpeg",
+        src: "../mp3/Chờ Anh Nhé.mp3", 
+        lyrics: "violin không lời"
+    },
+    {
+        id: "vu_1",
+        title: "Những Lời Hứa Bỏ Quên",
+        artist: "Vũ",
+        img: "../img/NhungLoiHuaBoQuen.jpeg",
+        src: "../mp3/Những Lời Hứa Bỏ Quên.mp3", 
+        lyrics: "Nếu hai ta không quên ngàу ấу, ngàу những đôi môi trao nhau không lời\nThì niềm đau cũng đã trôi hết đi qua bao tháng năm anh với em\nLúc gặp nhau con tim nói không nên lời và khi thời gian trôi như mâу baу về trời\nAnh đem theo giấc mơ nàу để rồi mong ngàу ta chung đôi\n\nAnh sẽ nhớ mong một người là chính em\nSẽ nhớ thương thật nhiều điều vấn vương\nĐôi mắt xưa còn đượm buồn\nTheo vệt thời gian đã hóa tan theo làn sương\nHai ta có trên đường đời nhìn thấу nhau\nTrong phút giâу nghẹn ngào thì anh chẳng thể bước tới\nChào em như trong giấc mơ, giấc mơ ta được có nhau\n\nThức giấc lúc khi trời mưa\nChuуện уêu thương ùa về khiến anh nhận ra\nKí ức đón đưa ngàу xưa\nChuуện đôi ta nghẹn ngào tình cờ\nĐợi chờ để được quaу lại giâу phút đầu\n\nAnh sẽ nhớ mong một người là chính em\nSẽ nhớ thương thật nhiều điều vấn vương\nĐôi mắt xưa còn đượm buồn\nTheo vệt thời gian đã hóa tan theo làn sương\nHai ta có trên đường đời nhìn thấу nhau\nTrong phút giâу nghẹn ngào thì anh chẳng thể bước tới\nChào em như trong giấc mơ, giấc mơ ta được có nhau"
+    },
+    {
+        id: "christmas_1",
+        title: "Last Christmas",
+        artist: "Wham!",
+        img: "../img/LastChristmas.jpeg",
+        src: "../mp3/Last Christmas.mp3", 
+        lyrics: "Last Christmas\nI gave you my heart\nBut the very next day you gave it away.\nThis year\nTo save me from tears\nI'll give it to someone special.\n\nOnce bitten and twice shy\nI keep my distance\nBut you still catch my eye.\nTell me, baby,\nDo you recognize me?\nWell,\nIt's been a year,\nIt doesn't surprise me\n(Merry Christmas)\n\nI wrapped it up and sent it\nWith a note saying, \"I love you,\"\nI meant it\nNow I know what a fool I've been.\nBut if you kissed me now\nI know you'd fool me again.\n\n[Chorus 2x]\n\nOh, oh, baby.\n\nA crowded room,\nFriends with tired eyes.\nI'm hiding from you\nAnd your soul of ice.\nMy god I thought you were someone to rely on.\nMe? I guess I was a shoulder to cry on.\n\nA face on a lover with a fire in his heart.\nA man under cover but you tore me apart, ooh-hoo.\nNow I've found a real love, you'll never fool me again.\n\n[Chorus 2x]\n\nA face on a lover with a fire in his heart (I gave you my heart)\nA man under cover but you tore him apart\nMaybe next year I'll give it to someone\nI'll give it to someone special.\n\nSpecial...\nSomeone..."
+    },
+
+    // --- CÓ THỂ BẠN SẼ THÍCH ---
+    {
+        id: "fav_1",
+        title: "1 Phút",
+        artist: "ANDIEZ",
+        img: "../img/1Phut.jpeg",
+        src: "../mp3/1 Phút.mp3", 
+        lyrics: "Đã bao lâu lòng này anh chẳng nói\nNói với em ngàn lời anh cất giữ trong tim\nLần này đến lần khác, đôi môi cứ lãng phí chẳng nói gì\nChỉ biết cạnh em\nDù cho em chẳng để ý\nVà rồi em đã có người em yêu\nMỉm cười cho qua hết đi\nPhải chăng là do người đến sau yêu em thật nhiều\nNói thay anh những lời anh mong ước\nVẫn chúc cho em thật vui mặc anh bên lề của hạnh phúc\nNhững phút giây ta đã qua, anh sẽ giữ như thước phim\nĐể khi nhớ em, anh xem và ước rằng thực tế sẽ như vậy\nỞ nơi đó, thời gian như ngừng trôi\nHỡi em\nMột phút đứng trước mặt em, một phút nói ra lời chưa nói\nMột phút mạnh mẽ từ anh, ta vẫn sẽ chung lối đi\nAnh chẳng thể nào quay lại để bây giờ chẳng nói giá như\nGiá như em hiểu rằng\nGiá như em một lần nhìn được từ ánh mắt anh\nMà giờ em đã có người em yêu\nMỉm cười cho qua hết đi\nPhải chăng là do người đến sau yêu em thật nhiều\nNói thay anh những lời anh mong ước\nVẫn chúc cho em thật vui mặc anh bên lề của hạnh phúc\nNhững phút giây ta đã qua, anh sẽ giữ như thước phim\nĐể khi nhớ em, anh xem và ước rằng thực tế sẽ như vậy\nỞ nơi đó, thời gian như ngừng trôi\nHỡi em\nMột phút đứng trước mặt em, một phút nói ra lời chưa nói\nMột phút mạnh mẽ từ anh, ta vẫn sẽ chung lối đi\nAnh chẳng thể nào quay lại để bây giờ chẳng nói giá như\nGiá như em hiểu rằng\nGiá như em một lần nhìn được...\nVì trái tim anh cần em\nVì với anh, em là duy nhất\nThế nhưng bây giờ đây chẳng thể đến được với nhau\nAnh đã sai thật rồi, anh sai thật rồi\nVì cứ mãi giữ lời yêu em trong trái tim\nHoo-oh\nMột phút đứng trước mặt em, một phút nói ra lời chưa nói\nMột phút mạnh mẽ từ anh, ta vẫn sẽ chung lối đi\nAnh, anh chẳng thể nào quay lại để bây giờ chẳng nói giá như\nGiá như em hiểu rằng\nGiá như em một lần nhìn được từ ánh mắt anh"
+    },
+    {
+        id: "fav_2",
+        title: "Ghé Qua",
+        artist: "PC, Tofu",
+        img: "../img/GheQua.jpeg",
+        src: "../mp3/Ghé Qua.mp3",
+        lyrics: "Anh lại muốn cùng em đi về nơi bình yên vàng nắng chiều\nPhía hoàng hôn vẫn còn sương mai còn chưa hòa tan vào cánh diều\nNgồi cạnh nhau, trên đồi hoa, thoảng mùi vị phấn hoa\nChân trời hiện rõ qua ánh kẽ tay, ánh đèn đường thị trấn xa\nTháng 11 vẫn chờ hoài đông chí, có đôi khi mình gắt gọng\nGửi tặng em vài ba thỏi son, tô duyên tình và sắc mộng\nNếu như yêu nhau mà luôn kề nhau thì có lẽ điều đó là quá dễ\nNên anh chọn cách đoạn tuyệt nhau chia đôi ta trở thành cá thể\nTháng 12, mưa nặng hạt dù tiết trời hoe nắng cháy\nSao không còn khoảng cách anh được ngồi cùng em, trên chiếc xe gắn máy\nVỡ tan hết, những khao khát được cùng em đi thật xa\nQua rừng xà biếc tựa bên vách núi bầy chim hót vang mật hoa\nAnh còn nhớ, có lần tưởng chừng ta không sánh duyên\nTa tìm thấy điểm tương đồng phía bên trong ánh kim\nAnh tìm kiếm chuỗi ngày đầu, khi chuông cửa vang lên\nVà anh nhìn ngắm đóa hoa tươi thắm, tặng em giữa ban đêm\n\n[PC]:\nLùi về sau em mãi, tiếc nuối chiếc hôn trên bờ môi êm ái\nLòng còn đang say giấc, say giấc chiêm bao tôi cùng em lâu dài\nĐể đời anh lại có em, mình cùng nhau sớt chia\nThôi rồi\nSao em đi vội?\nCho anh 1 mình, lang thang phố nghiêng\n\n[Tofu]:\nXa xăm cuối trời, sau dãy đồi nơi tia nắng vàng đang hấp hối\nNgày muộn màng rồi tàn lụi áng mây, gió đông đưa đi khắp lối\nAnh lặng im nghe tim mình đập có bình yên nào đó chốn đây\nMột chút kỷ niệm, chút hơi ấm còn vương lại trên kẽ ngón tay\nTừ lúc nào anh đã thôi không muốn chỉnh tề vì vẫn đang cô đơn\nEm bận với những riêng tư cuộc sống vui cười môi điểm trang tô son\nAnh vẫn 1 mình\nVẫn thường xuyên ghé ngang qua bưu điện\nHay tới thư viện để tìm lại những hình ảnh trong anh còn lưu niệm\nRồi đã lâu không được nghe em nói em đang cảm thấy thật tệ tối nay\nAnh vội gác lại những công việc, em ở đâu anh tới ngay\nAnh lại ngồi sau nghịch ngợm chiếc kẹp tóc em, màu cánh gián\nNgoài ô cửa mưa lăn thành dòng, vệt sấm chớp vụt lên ánh sáng\nMột ngày cứ thế bình thường rồi cứ cuốn trôi theo gió mùa đông\nTháng 12 lạnh hơn nhiều lắm, nhưng giờ chẳng biết áo mới em có vừa không?\nTưởng như sương rơi mãi trên lối ai về phố nghiêng\nAnh nhớ em và cứ vui mà cứ xem như ta đã từng có duyên\nVà em\nXin hãy quên đi những, tháng ngày cũ đã xa xưa\nXin hãy thôi nuối tiếc, những điều gì mà ta chưa\nTa chưa từng cho nhau một thứ nào khác ngoài chân tình\nNhưng thôi với anh như vậy là đủ chỉ mong em luôn được an bình\nTây nguyên chiều lộng gió, chân trời vỗ cánh đàn chim\nNếu ngày sau gặp lại đó, cho anh ngồi cùng hàn huyên\nTa lật lại những trang tuổi trẻ nhật ký cũ loang màu\nVà chả biết cảm xúc thế nào khi đọc lại những chữ ban đầu\n\n[PC]:\nLùi về sau em mãi, tiếc nuối chiếc hôn trên bờ môi êm ái\nLòng còn đang say giấc, say giấc chiêm bao tôi cùng em lâu dài\nĐể đời anh lại có em, mình cùng nhau sớt chia\nThôi rồi\nSao em đi vội?\nCho anh 1 mình, lang thang phố nghiêng"
+    },
     {
         id: "fav_3",
         title: "10 Ngàn Năm",
-        artist: "Modric...",
+        artist: "PC",
         img: "../img/10NganNam.jpeg",
-        src: "../mp3/10nn.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/10ngannam.mp3",
+        lyrics: "[Ver 1:]\nSao không là ta của những lúc thường ngày?\nHm sao hôm nay anh buồn vầy?\nVì có những nỗi niềm lặng thầm\nThôi xin em đừng nặng tâm\nVậy coi như mình không thể sống chung, là sự chia ly của nhau trong đời người\nThì em yêu thương hãy, hãy cứ vui để mai đây em nhớ lại chợt cười\nMình sẽ bên nhau ở muôn kiếp sau hay sẽ không biết nhau?\nTim là sỏi đá thì cũng phải biết đau, yêu thương làm gì anh không luyến tiếc đâu.\nBiết có không em, mình sẽ lại tương phùng, tái ngộ bên trong hình hài khác\nGặp nhau nhưng mà chỉ cảm thấy lòng mơ hồ man máng như lời một bài hát\nCó biết không em, từ những sai sót đó anh chỉ mong em gặp được ai tốt số\nNgười sẽ rước em bằng những dải mây hồng, mà không phải thay lòng vì một ai chót nhớ.\nHay phận trời, ta phải cứ vâng lời\nEm sẽ chờ đến, đến một kiếp luân hồi\nĐể mình tìm nhau tự nhiên như cảm hứng\nĐòi hòa vào nhau như một sự phản ứng\nHay lúc đó mình sẽ không nhận ra\nUch biết được đâu, em ơi duyên phận mà\nAnh sẽ cố nhớ em từng là ai đây, từ cử chỉ, giọng nói từng chi tiết\nHãy là sao trời, mây trắng hoặc mùa thu, hoặc phiêu linh trong anh mỗi khi viết\nNếu là thánh thần anh biết mình toàn năng\nNguyện giới hạn cuộc tình đến 10 ngàn năm.\n\n[Bridge:]\nNgười tình hỡi dẫu có mấy lúc biết phải chia ly\nDù buồn đau cũng chẳng thế giúp ta giải quyết gì\nCảm nhận nhau qua từng nhịp thở hmmm\nLê đôi anh đi tìm gì ở cuối chân trời\nChờ đợi điều diệu kỳ để mình mãn kiếp luần hồi\nHẹn em đời sau mình sẽ tìm nhau thêm một lần vẹn duyên\n\n[Ver 2:]\nGiữ em lại sâu nơi tiềm thức, xác thịt này một lần được mang\nThôi anh không hờn trách bởi vì đời người vốn dĩ là hợp tan\nMình lỡ làng đến khi vãn kiếp, em ơi xin hãy là gì hiện hữu\nEm sẽ lại đến rồi em sẽ lại đi, anh vẫn kể lại những câu chuyện cũ\nRằng mình ngây thơ thế nào, ngu ngơ đến cười, muốn mai này nên người vợ người chồng\nĐể tay bế và bồng đứa bé đầu lòng, với chúng ta đó là mặt trời hồng\nNếu về một nhà càng mong mình đơn giản, sáng mỗi ngày em cài cho khuyên áo\nRa trước hiên em rót một cóc trà, xà vào lòng nhau ngắm dòng đời huyên náo\nHay là bờ cát và tiếng sóng dờn vàng, em có nghe thấy lớp nhỏ cười dòn tan\nEm muốn ở đâu? Khuất sâu nơi địa đàn hay là một căn nhà trên chốn đồi hoang\nVòng luân hồi làm người ta mệt mỏi có em rồi đời sống này khỏe hơn\nLàm người nội trợ cực nhọc đi ít nhiều, vì anh muốn nuôi mèo, nhà có cả trẻ con\nMà đúng phải lẽ ra, anh cần trách nhiệm, trưởng thành, vươn cao cho gia đình dựa bóng\nDẫu sai lầm thì vẫn là kết quả của thời thanh niên mình tràn trề nhựa sống\nCũng chẳng mơ tình đẹp như vườn hông, sẽ úa tan vội vàng chẳng mấy lâu\nAnh chỉ mong mình sẽ mãi trường tồn, để nghìn đời vẫn muốn tìm thấy nhau"
     },
     {
         id: "fav_4",
         title: "Lối Nhỏ",
-        artist: "Modric...",
+        artist: "Đen Vâu",
         img: "../img/LoiNho.jpeg",
-        src: "../mp3/ln.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Lối Nhỏ.mp3", 
+        lyrics: "Em vào đời bằng đại lộ còn anh vào đời bằng lối nhỏ\nAnh nhớ mình đã từng thổ lộ, anh nhớ rằng em đã chối bỏ\nAnh nhớ chuyến xe buổi tối đó, trên xe chỉ có một người ngồi\nAnh thấy thật buồn nhưng nhẹ nhõm, anh nhớ mình đã mỉm cười rồi\nAnh nghĩ anh cần cảm ơn em, vì những gì mà anh đã nếm trải\nKỷ niệm sẽ là thứ duy nhất, đi theo anh cả cuộc đời dài\nNếu không có gì để nhớ về, anh sợ lòng mình khô nứt nẻ\nHình dung em như là Nữ Oa, có thể vá tâm hồn này sứt mẻ\nAnh thường một mình, tìm đến nơi có nhiều cây cối (Yeah)\nNghĩ về những ngày tàn, đã trôi qua theo chiều tay với\nCũng chẳng nghĩ nhiều, anh không mong những điều may tới\nVài nỗi buồn đã cũ, sao bỗng nhiên giữa chiều nay mới (Ah)\nAnh vẫn thường nghe, thời Trống vắng hay là Kiếp ve sầu\nNhững giấc mộng non, như tán lá cây xanh biếc che đầu\nTình yêu thật ra đơn giản như là một cái bánh bao chay\nThắp lên lửa nhỏ, hơn là cứ đi tìm hái ánh sao bay\nĐường xa quá, lắm lúc thấy mình lẻ loi\nNgười đã đến, vui đấy, nhưng rồi cũng đi\nChạm lên trái tim thấy cơn mơ còn cháy nồng\nNhiều đêm trắng xoá bay, lòng như có gió đầu mùa (Ay)\n\nEm vào đời từ cao tầng còn anh vào đời từ mái lá\nThế nên những điều anh mong cầu, không bao giờ là thái quá\nNhững thứ anh làm thường đơn giản, nên không hay được đánh giá cao\nVài người thường ăn hải sản, rồi lại chê bai mùi cá ao\nGiống như con người anh, dễ nắm bắt và dễ chịu\nBài hát này không sâu xa, rất dễ nghe và dễ hiểu\nAnh không có nhiều lưu ý, anh cảm thấy mình dễ chiều\nĐây không phải là nhạc buồn, đây thứ nhạc để chill\nEm vào đời bằng náo nhiệt\nAnh vào đời bằng âm thầm\nEm đi tìm nốt thăng hoa\nLòng anh lại là âm trầm\nEm đi tìm lời phố thị\nAnh đi tìm tiếng ghi-ta\nEm đưa anh vào trong náo nhiệt\nAnh lắc đầu và đi ra\nEm vào đời bằng vang đỏ\nAnh vào đời bằng nước trà\nBằng cơn mưa thơm mùi đất và bằng hoa dại mọc trước nhà\nEm vào đời bằng kế hoạch\nAnh vào đời bằng mộng mơ\nLý trí em là công cụ còn trái tim anh là động cơ\nEm vào đời nhiều đồng nghiệp\nAnh vào nhiều thân tình\nAnh chỉ muốn chân mình đạp đất\nKhông muốn đạp ai dưới chân mình\nEm vào đời bằng mây trắng\nEm vào đời bằng nắng xanh\nEm vào đời bằng đại lộ và con đường đó giờ vắng anh\nĐường xa quá, lắm lúc thấy mình lẻ loi\nNgười đã đến, vui đấy, nhưng rồi cũng đi\nChạm lên trái tim thấy cơn mơ còn cháy nồng\nNhiều đêm trắng xoá bay, lòng như có gió đầu mùa\nĐường xa quá, lắm lúc thấy mình lẻ loi\nNgười đã đến, vui đấy, nhưng rồi cũng đi\nChạm lên trái tim thấy cơn mơ còn cháy nồng\nNhiều đêm trắng xoá bay, lòng như có gió đầu mùa"
     },
     {
         id: "fav_5",
         title: "Cảm Ơn Và Xin Lỗi",
-        artist: "Modric...",
+        artist: "Chillies",
         img: "../img/CamOnVaXinLoi.jpeg",
-        src: "../mp3/covxl.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Cảm Ơn Và Xin Lỗi.mp3",
+        lyrics: "Đôi tim ngân nhiều câu xót xa\nHai ta mong chờ đêm thứ tha\nTheo chân ta hàng vạn những nghĩ suy mang về đây\nĐể được thấy người vẫn nhớ tôi một ngày\n\nĐêm mang em về trong giấc mơ\nTôi hát lên trăm lời vu vơ\nVẫn những khuôn mặt cười dù biết sẽ không hề vui\nDù hôm nay dẫu đúng sai , vẫn yêu hơn ngày mai\n\nXin lỗi người vì những điều chưa nói ra thành câu\nXin lỗi người vì bao ngày qua đã trôi về đâu\nMất bao lâu để ta tạm quên u sầu\nĐể tim này vơi cơn đau\nNhững ký ức mệt nhoài chợt tan vào sớm mai\n\nCám ơn người vì luôn cạnh bên sớt chia buồn vui\nCám ơn người vì đôi bàn tay không đành buông xuôi\nNước mắt nào rồi cũng sẽ trôi rất nhanh\nVề nơi ấm êm vô cùng\nTa xin để lại nụ hôn một lần với ai"
     },
     {
         id: "fav_6",
-        title: "Chờ Anh Nhé",
-        artist: "Modric...",
-        img: "../img/ChoAnhNhe.jpeg",
-        src: "../mp3/can.mp3",
-        lyrics: "(Nhạc không lời)"
+        title: "Phép Màu",
+        artist: "Nguyễn Hùng",
+        img: "../img/PhepMau.jpeg",
+        src: "../mp3/Phép Màu.mp3", 
+        lyrics: "Ngày thay đêm, vội trôi giấc mơ êm đềm\nTôi lênh đênh trên biển vắng\nHoàng hôn chờ em chưa buông nắng\nĐừng tìm nhau\nVào hôm gió mưa tơi bời\nSợ lời sắp nói vỡ tan thương đau\nHẹn kiếp sau có nhau trọn đời\n\nLiệu người có còn ở đây với tôi thật lâu\nNgày rộng tháng dài sợ mai không còn thấy nhau\nNgày em đến áng mây xanh thêm\nNgày em đi nắng vương cuối thềm\nThiếu em tôi sợ bơ vơ, vắng em như tàn cơn mơ\nChẳng phải phép màu vậy sao chúng ta gặp nhau\nMột người khẽ cười, người kia cũng dịu nỗi đau\nGọi tôi thức giấc cơn ngủ mê\nDìu tôi đi lúc quên lối về\nQuãng đời mai sau luôn cạnh nhau\n\nRồi ngày mai\nCòn ai với ai ở lại\nVẫn căng buồm ra khơi\nTheo làn gió mới\nVì biết đâu mọi thứ chưa bắt đầu\n\nLiệu người có còn ở đây với tôi thật lâu\nNgày rộng tháng dài sợ mai không còn thấy nhau\nNgày em đến áng mây xanh thêm\nNgày em đi nắng vương cuối thềm\nThiếu em tôi sợ bơ vơ, vắng em như tàn cơn mơ\nChẳng phải phép màu vậy sao chúng ta gặp nhau\nMột người khẽ cười, người kia cũng dịu nỗi đau\nGọi tôi thức giấc cơn ngủ mê\nDìu tôi đi lúc quên lối về\nQuãng đời thanh xuân, sao em cho tôi giữ lấy, giữ lấy.\n\nChẳng phải phép màu vậy sao chúng ta gặp nhau\nMột người khẽ cười, người kia cũng dịu nỗi đau\nGọi tôi thức giấc cơn ngủ mê\nDìu tôi đi lúc quên lối về\nQuãng đời mai sau luôn cạnh nhau\nQuãng đời mai sau luôn cạnh nhau."
     },
     {
-        id: "fav_7",
-        title: "Phép Màu",
-        artist: "Modric...",
-        img: "../img/PhepMau.jpeg",
-        src: "../mp3/pm.mp3",
-        lyrics: "(Nhạc không lời)"
+        id: "fav_7", 
+        title: "Chờ Anh Nhé",
+        artist: "Hoàng Dũng",
+        img: "../img/ChoAnhNhe.jpeg",
+        src: "../mp3/Chờ Anh Nhé Beat.mp3",
+        lyrics: "Ở lại em nhé, ngày mai anh sẽ về\nAnh chỉ mang nỗi nhớ em thêm xa\nMang đợi chờ, thêm dài ngắn\nAnh chỉ thêm kỉ niệm là những chuyến đi\nRồi có lúc em sẽ khóc tựa vai gió\nTựa bóng mây ngập ngừng trôi\nVì anh biết vắng anh phố quen rất buồn\nVắng anh em vắng một bờ vai\nAnh đâu muốn xa con phố ta đã yêu\nNơi ấy hẹn hò đôi ta chuyện trò\nNơi ấy đã từng đón đưa em từng chiều tới trường\nKhi ấy em còn tóc xanh\nAnh đâu muốn xa bóng dáng anh yêu thương\nĐôi vai hao gầy mỏng manh tâm hồn\nAnh hứa sẽ về với em như lời hứa anh từng\nXin em hãy chờ anh về\nỞ lại em nhé, ngày mai anh sẽ về\nAnh chỉ mang nỗi nhớ em thêm xa\nMang đợi chờ, thêm dài ngắn\nAnh chỉ thêm kỉ niệm là những chuyến đi\nRồi có lúc em sẽ khóc tựa vai gió\nTựa bóng mây ngập ngừng trôi\nVì anh biết vắng anh phố quen rất buồn\nVắng anh, em vắng một bờ vai\nAnh đâu muốn xa con phố ta đã yêu\nNơi ấy hẹn hò đôi ta chuyện trò\nNơi ấy đã từng đón đưa em từng chiều tới trường\nKhi ấy em còn tóc xanh\nAnh đâu muốn xa bóng dáng anh yêu thương\nĐôi vai hao gầy mỏng manh tâm hồn\nAnh hứa sẽ về với em như lời hứa anh từng\nXin em hãy chờ anh về\nAnh đâu muốn xa con phố ta đã yêu\nNơi ấy hẹn hò đôi ta chuyện trò\nNơi ấy đã từng đón đưa em từng chiều tới trường\nKhi ấy em còn tóc xanh\nAnh đâu muốn xa bóng dáng anh yêu thương\nĐôi vai hao gầy mỏng manh tâm hồn\nAnh hứa sẽ về với em như lời hứa anh từng\nXin em hãy chờ anh về\nAnh hứa sẽ về với em như lời hứa anh từng\nXin em hãy chờ anh về"
     },
-    // Mới Phát Hành
+
+    // --- MỚI PHÁT HÀNH ---
     {
         id: "new_1",
         title: "Tháng Tư Là Lời Nối Dối Của Em",
         artist: "Ca sĩ: Hà Anh Tuấn",
         img: "../img/Thang4LaLoiNoiDoi.jpeg",
-        src: "../mp3/ttllndce.mp3",
-        lyrics: "Mùa xuân có em như chưa bắt đầu\nVà cơn gió đang khẽ mơn man\nLay từng nhành hoa rơi\nEm đã bước tới như em đã từng\nChạy trốn với anh trên cánh đồng xanh\nKhúc nhạc hòa cùng\nNắng chiều dịu dàng\nĐể mình gần lại mãi\nNói lời thì thầm\nNhững điều thật thà\nĐã giữ trong tim mình\nNhững chặng đường dài\nNgỡ mình mệt nhoài\nĐã một lần gục ngã\nTháng tư có em ở đây\nNhìn tôi mỉm cười\nNhững cánh hoa phai tàn thật nhanh\nEm có bay xa em có đi xa mãi\nTháng tư đôi khi thật mong manh\nĐể mình nói ra những câu chân thật\nGiá như tôi một lần tin em\nCô gái tôi thương\nNay hóa theo mây gió\nĐể lại tháng tư ở đó\nMùa xuân có em như chưa bắt đầu\nVà cơn gió đang khẽ vô tình\nLay từng nhành hoa rơi\nEm vội xa khuất theo tia nắng chiều\nĐể lại dấu chân giữa cánh đồng xanh\nKhúc nhạc thầm lặng\nGiữa chiều muộn \nĐể mình gần lại mãi\nNói lời thì thầm\nNhững điều thật thà\nĐã giữ trong tim mình\nNhững chặng đường dài\nNgỡ mình mệt nhoài\nĐã một lần gục ngã\nTháng tư ánh sao phía xa\nBỗng nhiên dần tàn\nNhững cánh hoa phai tàn thật nhanh\nEm có bay xa em có đi xa mãi\nTháng tư đôi khi thật mong manh\nĐể mình nói ra những câu chân thật\nGiá như tôi một lần tin em\nCô gái tôi thương\nNay hóa theo mây gió\nĐể lại tháng tư ở đó\nVà tôi sẽ sống như\nNhững gì em thầm mơ\nVà tôi sẽ bước tiếp trên\nCon đường mình đã chọn\nVà khi tôi chết\nSẽ mỉm cười khi gặp em\nKhẽ chào cô gái tháng tư của tôi\nNhững kỷ niệm phai tàn thật nhanh\nEm đã bay xa em đã đi xa mãi\nTháng tư đôi khi thật mong manh\nĐể mình nói ra\nGiá như tôi một lần tin em\nCô gái tôi thương\nNay hóa theo mây gió\nĐể lại tháng tư xa mãi\nĐể lại tháng tư mình anh"
+        src: "../mp3/thangtulaloinoidoicuaem.mp3", 
+        lyrics: "Mùa xuân có em như chưa bắt đầu\nVà cơn gió như khẽ mươn nam lay từng nhành hoa rơi\nEm đã bước tới như em đã từng\nChạy trốn với anh trên cánh đồng xanh\n\nKhúc nhạc hòa cùng nắng chiều dịu dàng để mình gần lại mãi\nNói lời thì thầm những điều thật thà đã giữ trong tim mình\nNhững chặng đường dài ngỡ mình mệt nhoài đã một lần gục ngã\nTháng tư có em ở đây nhìn tôi mỉm cười\n\nNhững cánh hoa phai tàn thật nhanh, em có bay xa, em có đi xa mãi\nTháng tư đôi khi thật mong manh để mình nói ra những câu chân thật\nGiá như tôi một lần tin em cô gái tôi thương nay hóa theo mây gió\nĐể lại tháng tư ở đó\n\nMùa xuân mất em như đã bắt đầu\nVà cơn gió như khẽ vô tình lay từng nhành hoa rơi\nEm vội xa khuất theo tia nắng chiều\nĐể lại dấu chân giữa cánh đồng xanh\nKhúc nhạc thầm lặng giữa chiều muộn màng để mình gần lại mãi\n\nNói lời thì thầm những điều thật thà đã giữ trong tim mình\nNhững chặng đường dài ngỡ mình mệt nhoài đã nhiều lần gục ngã\nTháng tư ánh sao phía xa bỗng nhiên dần tàn\nNhững cánh hoa phai tàn thật nhanh em có bay xa em có đi xa mãi\n\nTháng tư đôi khi thật mong manh để mình nói ra những câu chân thật\nGiá như tôi một lần tin em cô gái tôi thương nay hóa theo mây gió\nĐể lại tháng tư ở đó\n\nVà tôi sẽ sống như những gì em thầm mơ\nVà tôi sẽ bước tiếp trên con đường mình đã chọn\nVà khi tôi chết sẽ mỉm cười khi gặp em\nKhẽ chào cô gái tháng tư của tôi\n\nNhững kỉ niệm phai tàn thật nhanh em đã bay xa em đã đi xa mãi\nTháng tư đôi khi thật mong manh để mình nói ra\nGiá như tôi một lần tin em cô gái tôi thương nay hóa theo mây gió\nĐể lại tháng tư xa mãi\nĐể lại tháng tư mình anh"
     },
     {
         id: "new_2",
         title: "Nơi Tình Yêu Kết Thúc",
-        artist: "Modric...",
+        artist: "Bùi Anh Tuấn",
         img: "../img/NoiTinhYeuKetThuc.jpeg",
-        src: "../mp3/ntykt.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Nơi Tình Yêu Kết Thúc.mp3",
+        lyrics: "Người yêu ơi ngoài kia mùa đông đã rơi,\nLạnh không em lẻ loi bàn tay rã rời,\nLạc mất nhau từ đâu mà bao yêu dấu vẫn nơi này,\nđể nhớ thương đầy vơi vương trên môi mắt cay.\n\nNày mùa đông ơi!\nNgoài kia người tôi yêu lẻ loi...\nxin hãy gom mây, đừng để mưa mãi rơi lối ấy...\nMuốn đến bên người cầm tay và sưởi ấm đôi vai gầy...\nnhưng người người vẫn đi mưa mãi rơi đầy.\n\nLạc mất lối làm sao tìm nhau giữa một trời trắng xóa,\nVì những ân tình người mang theo thành băng giá\nNgười yêu ơi ! Đừng đi xin em hãy một lần nhìn lại phía sau...\nHãy một lần dù chỉ nhìn thấy nhau xin hãy một lần..."
     },
     {
         id: "new_3",
         title: "Em Đồng Ý",
-        artist: "Modric...",
+        artist: "Đức Phúc",
         img: "../img/EmDongY.jpeg",
-        src: "../mp3/edy.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Em Đồng Ý (I Do).mp3",
+        lyrics: "My whole world changed from the moment I met you\nAnd it would never be the same\nIt’s felt like I knew that I always love you\nFrom the moment I heard your name\n\nGiây phút ấy thật tuyệt vời, khoảnh khắc ta có nhau trong đời\nĐiều anh ước muốn bây giờ ngay đây rồi\nDù cho trái đất có vỡ đôi, anh vẫn đứng nơi đây thôi\nVẫn mãi thôi để con tim anh cất lời\n\nI’ll be by your side till the day I die\nI’ll be waiting till I hear you say, \"I do\"\nSomething old, something new\nSomething borrowed, something blue\nI’ll be waiting till I hear you say, \"I do\"\n\nHãy lau khô giọt nước mắt, gạt hết đi lòng rối bời\nĐể anh được thấy em luôn mỉm cười\nHãy luôn siết chặt tay nhé, mọi khó khăn cùng đương đầu\nMột hạnh phúc giữ gìn cho nhau\n\nNow everything is perfect, I know this love is worth it\nOur miracle in the making\nUntil this world stops turning\nI’ll still be here waiting and waiting to make that vow that I\n\nI’ll be by your side, till the day I die\nI’ll be waiting till I hear you say, \"I do\"\nSomething old, something new\nSomething borrowed, something blue\nI’ll be waiting till I hear you say, \"I do\"\n\nChỉ cần mình cùng bên nhau, bao gian nan sẽ qua mau\nAnh sẽ mãi luôn che chở em cuộc đời mai sau\n\nI do love you, yes I do love you\nI’ll be waiting till hear you say, \"I do\"\nCause I love you, love you\nI’ll be by your side till the day I die\nI’ll be waiting till I hear you say, \"I do\"\n\nSomething old, something new\nSomething borrowed, something blue\nI'll be waiting till I hear you say, \"I do\"\n\nWe’re shining like a diamond, just look at us now\nI wanna hear you say, \"I do\""
     },
     {
         id: "new_4",
         title: "Những Kẻ Mộng Mơ",
-        artist: "Modric...",
+        artist: "Noo Phước Thịnh",
         img: "../img/NhungKeMongMo.jpeg",
-        src: "../mp3/nkmm.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Những Kẻ Mộng Mơ.mp3",
+        lyrics: "Biển, vẫn cứ thế trông về nơi xa\nKìa hoàng hôn rực rỡ và lấp lánh những nơi biển qua\nBờ cát vẫn nằm đợi sóng xô về, nhưng biển kia chẳng thể\nLại nhìn phía chân trời, cuộn làn sóng kia vội\nTìm hoàng hôn xa để kết đôi\nĐừng mộng mơ nữa, hỡi biển ơi\nChân trời xa lắm, chẳng có ai đợi\nPhía bên kia đại dương cũng chỉ có bờ cát nâng niu biển thôi\nĐừng mộng mơ nữa, hỡi kẻ mộng mơ\nMặt trời tận nơi góc vũ trụ bao la\nHoàng hôn đó chỉ là từng tia sáng mong manh từ nơi xa\nVà chỉ có anh bên em kế bên em khi gục ngã\n♪\nThủy triều vẫn thế đầy rồi lại vơi\nVà lại mang biển sóng ngày đến tối đi lạnh lùng vậy thôi\nBờ cát giữ biển lại mỗi khi về, nhưng biển kia chẳng thể\nLại nhìn phía chân trời, cuộn làn sóng kia vội\nTìm hoàng hôn xa để kết đôi\nĐừng mộng mơ nữa, hỡi biển ơi\nChân trời xa lắm, chẳng có ai đợi\nPhía bên kia đại dương cũng chỉ có bờ cát nâng niu biển thôi\nĐừng mộng mơ nữa, hỡi kẻ mộng mơ\nMặt trời tận nơi góc vũ trụ bao la\nHoàng hôn đó chỉ là từng tia sáng mong manh từ nơi xa\nVà chỉ có anh bên em kế bên em khi gục ngã\nÔm em thế nhưng em yêu lại đi\nĐừng lặng im như thế, biết sẽ đớn đau sao em lại đi?\nPhía bên kia đại dương cũng chỉ có bờ cát lặng im\nHoàng hôn ánh sáng xa tận ngút ngàn\nTừ góc vũ trụ lặng yên\nĐừng mộng mơ nữa, hỡi biển ơi\nChân trời xa lắm, chẳng có ai đợi\nPhía bên kia đại dương cũng chỉ có bờ cát nâng niu biển thôi\nĐừng mộng mơ nữa, hỡi kẻ mộng mơ\nMặt trời tận nơi góc vũ trụ bao la\n♪\nHoàng hôn đó chỉ là từng tia sáng mong manh từ nơi xa\nVà chỉ có anh bên em kế bên em khi gục ngã"
     },
     {
         id: "new_5",
         title: "Suýt Nữa Thì",
-        artist: "Modric...",
+        artist: "Andiez",
         img: "../img/SuytNuaThi.jpeg",
-        src: "../mp3/snt.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Suýt Nữa Thì....mp3",
+        lyrics: "Anh có thể nói muôn vàn lời muốn nói\nSuýt nữa thì\nCó thể đèo em qua từng hàng phố quen\nDòng lưu bút năm xưa viết vội\nHay còn nhớ nhau đến những ngày sau\nTình yêu đầu tiên anh giữ\nVẫn vẹn nguyên nơi con tim này\nAnh còn nhớ\nMỗi lúc tan trường ngại ngùng theo em\nLà con phố có hoa bay anh mãi theo sau\nKhoảng cách ấy mà sao xa quá\nChẳng thể nào để tới bên em\nThời thanh xuân anh có là những nỗi niềm nuối tiếc\nLời chưa nói\nAnh thả vào trong cơn gió nhắn với mây trời\nTình yêu đó\nChỉ riêng anh biết anh cũng chẳng mong hơn nhiều\nLiệu rằng em còn ai đưa đón\nAnh ơ thờ dõi theo em\nNếu có thể trở về hôm ấy\nAnh sẽ chẳng để phí cơ hội\nTừng vòng quay trên chiếc xe đạp anh đón đưa em ngang qua\nThời thanh xuân mà ta cùng nhau viết lên những giấc mơ đẹp\nMột buổi chiều ngập tràn mảnh vỡ\nRơi ra từ hạnh phúc riêng anh\nSuýt nữa thì người đã biết\nYêu thương một thời anh đã tương tư\nHuh huh\nQuả chò bay\nMuốn nhắc anh rằng hãy đừng nuối tiếc (nuối tiếc)\nVậy mà sao chính anh vẫn cứ mãi hy vọng (vẫn cứ mãi hy vọng)\nĐể rồi trên đoạn đường phía trước\nTa vô tình nhìn thấy nhau\nLiệu bây giờ anh sẽ nói\nNhững tình yêu cất giữ bấy lâu\nAi cũng phải\nGói cho mình khoảng trời ký ức (anh nhớ đến)\nAi cũng phải có trong tim một vài vết thương\nThời gian trôi chẳng chờ đợi ai\nEm đã được người đón ai đưa\nTình yêu anh vẫn thế\nVẫn mãi chôn vùi nơi đây\nLời chưa nói\nAnh thả vào trong cơn gió nhắn với mây trời (mây trời)\nTình yêu đó\nChỉ riêng anh biết anh cũng chẳng mong hơn nhiều\nLiệu rằng em còn ai đưa đón\nAnh ơ thờ dõi theo em (dõi theo em)\nNếu có thể trở về hôm ấy\nAnh sẽ chẳng để phí cơ hội\nTừng vòng quay trên chiếc xe đạp anh đón đưa em ngang qua\nThời thanh xuân mà ta cùng nhau viết lên những giấc mơ đẹp\nMột buổi chiều ngập tràn mảnh vỡ\nRơi ra từ hạnh phúc riêng anh\nSuýt nữa thì người đã biết\nYêu thương một thời anh đã tương tư\nHuh\nSuýt nữa thì người đã biết\nAnh yêu em"
     },
     {
         id: "new_6",
         title: "Đau Để Trưởng Thành",
-        artist: "Modric...",
+        artist: "Only C",
         img: "../img/DauDeTruongThanh.jpeg",
-        src: "../mp3/ddtt.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Đau Để Trưởng Thành.mp3",
+        lyrics: "Yêu ai mà chẳng có lúc buồn\nThương ai rồi cũng đến lúc buông\nỪ thì anh phải đứng dậy thôi\nNhật ký cất đi rồi\nThôi nói ra làm gì lại càng thêm đau\nNếu quay thời gian đến lúc đầu\nĐể nói rằng này chàng trai hãy nhớ cho\nNgười con gái cô đơn lắm đấy\nTại sao không níu lấy\nĐể mất đi một người chỉ vì vô tâm\nCó những điều mà anh muốn nói\nKhông kịp đâu đã quá muộn rồi\nCó những điều mà anh từng ngó lơ\nLại là ước mơ bao người\nLà tại anh nỗi đau đi đến suốt đời\nKhi yêu chỉ cần như thế\nChia tay có khi làm mình lớn lên\nMỗi khi buồn thì em cứ khóc\nKhóc thật to mỗi anh nghe thôi\nMỗi khi đau niềm đau cũng xé đôi\nVì anh vẫn yêu em nhiều\nDòng thời gian sẽ trôi để anh thấy rằng\nChia tay thì ta mới thấu mình đã sai từ đâu\nNếu quay thời gian đến lúc đầu\nĐể nói rằng này chàng trai hãy nhớ cho\nNgười con gái yếu đuối lắm đấy\nTại sao không níu lấy\nĐể mất đi một người chỉ vì vô tâm uh uh\nCó những điều mà anh muốn nói\nKhông kịp đâu đã quá muộn rồi\nCó những điều mà anh từng ngó lơ\nLại là ước mơ bao người\nLà tại anh nỗi đau đi đến suốt đời\nKhi yêu chỉ cần như thế\nChia tay có khi làm mình lớn lên\nMỗi khi buồn thì em cứ khóc\nKhóc thật to mỗi anh nghe thôi\nMỗi khi đau niềm đau cũng xé đôi\nVì anh vẫn yêu em nhiều\nDòng thời gian sẽ trôi để anh thấy rằng\nChia tay thì ta mới thấu mình đã sai từ đâu\nCó những điều mà anh muốn nói\nKhông kịp đâu đã quá muộn rồi\nCó những điều mà anh từng ngó lơ\nLại là ước mơ bao người\nLà tại anh nỗi đau đi đến suốt đời\nKhi yêu chỉ cần như thế\nChia tay có khi làm mình lớn lên woh\nMỗi khi buồn thì em cứ khóc\nKhóc thật to mỗi anh nghe thôi\nMỗi khi đau niềm đau cũng xé đôi\nVì anh vẫn yêu em nhiều\nDòng thời gian sẽ trôi để anh thấy rằng\nChia tay thì ta mới thấu mình đã sai từ đâu\nDòng thời gian\nSẽ trôi để anh thấy rằng\nChia tay thì ta mới thấu mình đã sai từ đâu"
     },
-    // Bảng xếp hạng tuần
+
+    // --- BẢNG XẾP HẠNG TUẦN ---
     {
         id: "r1",
         title: "W/n 3107-2",
-        artist: "Modric...",
+        artist: "W/n,Duongg,Nâu",
         img: "../img/3107-2.jpeg",
-        src: "../mp3/31072.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/3107-2.mp3",
+        lyrics: "Đến bao giờ mới có thể quên đi những con đường mà ta đã qua\nĐến bao giờ mới có thể yêu một người đến sau\nĐến bao giờ mới có thể quên đi những kỷ niệm mà ta đã trao\nVà nếu hôm nay là ngày, mà chũng ta đã rời xa\n\nChorus:\nChỉ cần ai đó cạnh bên dừng lại, và níu lấy em chỉ một phút giây\nDù là có đúng hay sai\nVẫn cứ yêu thêm một lần chẳng cần nghi ngại\nNgày dài vẫn thế cứ thế trôi hoài\nLạc mất nhau sao mình còn đi mãi\nNơi anh đến sẽ là\nMột nơi chẳng còn có anh\n\nRap:\nAnh có bàn tay để nắm tất cả nhưng không thể nắm được tay em\nAnh có niềm tin là thứ duy nhất ở lại cuối cùng\nAnh đã từng có khoảng trời của mình nhưng giờ chỉ toàn đám mây đen\nLà những quán quen mà mình thường ghé vào dịp cuối tuần\nAnh thấy không ổn\nNhưng vẫn cố tỏ ra không sao\nĐiều tệ nhất là em đi mất - chỉ còn điếu thuốc cuối cùng trong bao\nMưa cũng chẳng giúp anh được gì ngoài việc làm ướt đi áo sơ mi\nThắt cà vạt chỉnh chu lại áo nhưng cuối cùng vẫn bị anh lơ đi\n\nVerse 1\nRadio voice\n\"Đến bao giờ mới có thể quên đi những con đường mà ta đã qua\nĐến bao giờ mới có thể yêu một người đến sau\"\n\"Đến bao giờ mới có thể quên đi những câu chuyện mà ta đã trao\nVà nếu hôm nay là ngày, mà chũng ta đã rời xa\"\n\nChorus:\nChỉ cần ai đó cạnh bên dừng lại, và níu lấy em chỉ một phút giây\nDù là có đúng hay sai\nVẫn cứ yêu thêm một lần chẳng cần nghi ngại\nNgày dài vẫn thế cứ thế trôi hoài\nLạc mất nhau sao mình còn đi mãi\nNơi anh đến sẽ là\nMột nơi chẳng còn có anh\n\nVerse 2\nGiờ giọt nước mắt cứ thế lăng dài, ngày tháng trôi đi chẳng thể níu ai\nRồi ngày mai đến ra sao, khi cứ trông mong một người sẽ còn ở lại?\nNgày hạ năm ấy còn nhớ những gì, và chúng ta đã là hai thế giới?\nThế giới ấy bây giờ, chẳng còn điều gì giống anh"
     },
     {
         id: "r2",
         title: "Cảm Ơn và Xin Lỗi",
-        artist: "Modric...",
+        artist: "Chillies",
         img: "../img/CamOnVaXinLoi.jpeg",
-        src: "../mp3/covxl.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Cảm Ơn Và Xin Lỗi.mp3",
+        lyrics: "Đôi tim ngân nhiều câu xót xa\nHai ta mong chờ đêm thứ tha\nTheo chân ta hàng vạn những nghĩ suy mang về đây\nĐể được thấy người vẫn nhớ tôi một ngày\n\nĐêm mang em về trong giấc mơ\nTôi hát lên trăm lời vu vơ\nVẫn những khuôn mặt cười dù biết sẽ không hề vui\nDù hôm nay dẫu đúng sai , vẫn yêu hơn ngày mai\n\nXin lỗi người vì những điều chưa nói ra thành câu\nXin lỗi người vì bao ngày qua đã trôi về đâu\nMất bao lâu để ta tạm quên u sầu\nĐể tim này vơi cơn đau\nNhững ký ức mệt nhoài chợt tan vào sớm mai\n\nCám ơn người vì luôn cạnh bên sớt chia buồn vui\nCám ơn người vì đôi bàn tay không đành buông xuôi\nNước mắt nào rồi cũng sẽ trôi rất nhanh\nVề nơi ấm êm vô cùng\nTa xin để lại nụ hôn một lần với ai"
     },
     {
         id: "r3",
         title: "Chờ Ngày Mưa Tan",
-        artist: "Modric...",
+        artist: "Noo Phước Thịnh,Tonny Việt",
         img: "../img/ChoNgayMuaTan.jpeg",
-        src: "../mp3/cnmt.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Chờ Ngày Mưa Tan.mp3",
+        lyrics: "Một ngày mưa và em khuất xa nơi anh, bóng dáng cứ phai dần\nPhải bao lâu anh mới quên được em?\nTừng ngày cứ lặng lẽ bước qua đời anh, thế nhưng giờ tim vẫn đau nhói\nVì em...nỗi đau không nhạt phai\nVà dòng ký ức khẽ qua, mỗi đêm dài cạnh bên với anh\nTỉnh dậy, đôi mắt hoen đi vì khóc...\nƯớc mơ của chúng ta...chỉ một cơn mưa đã cuốn trôi tất cả\nChiều mưa ...chiều khiến yêu thương lạnh giá.\n\nTại sao em lại quay bước đi?\nTại sao không thể ngừng nhớ em?\nDù cho em...chính em rời xa anh\nVà anh sẽ chờ một giấc mơ\nNắng sẽ về khiến mưa trôi xa...nhẹ nhàng\nCơn gió khẽ mang em về bên anh\n\n[Rap]\nSao mưa vươn trên mắt tới mi\nRồi thoáng những phút giây, có nhau gần kề\nLại cơn mưa đẩy anh đi về, nơi những mơ mộng\nChợt vụn vỡ theo những giọt mưa\nMau trôi đêm mưa tan nắng đưa em về níu em 1 lần\nTrọn từng giấc mơ...cho tin yêu đầy vơi khi em quay lưng đi\n\nHát\nVà dòng ký ức khẽ qua, mỗi đêm dài cạnh bên với anh\nTỉnh dậy, đôi mắt hoen đi vì khóc...\nƯớc mơ của chúng ta...chỉ một cơn mưa đã cuốn trôi tất cả\nChiều mưa ...chiều khiến yêu thương lạnh giá.\n\n[ĐK]\nTại sao em lại quay bước đi?\nTại sao không thể ngừng nhớ em?\nDù cho em...chính em rời xa anh\nVà anh sẽ chờ một giấc mơ\nNắng sẽ về khiến mưa trôi xa...nhẹ nhàng\nCơn gió khẽ mang em về bên anh\n\n[RAP]\nSao nước vươn trên mắt em sao thời gian không hong khô\nKhoảng cách giữa nhiều hơi thở thật gần nhưng mà nó dài không ngờ\nChỉ mong chờ: trong giấc mơ ngắn đưa em về\nĐêm vẫn còn dài vì anh thao thức cùng tới với những giọt lệ để ê chề\nMọi thứ từ đâu vỡ tan, trong hoang man, lí do còn khiến anh ngỡ ngàng\nThật bất tàn nhiều phũ phàng chỉ xin 1 lần chờ người ấy\nXóa tan cơn mưa mang những điều ước hình ảnh mơ mộng với dòng kí ức\nCơn mưa ngọt ngào trăm ngàn nỗi đau\n\n[Hát]\nTại sao em lại quay bước đi?\nTại sao không thể ngừng nhớ em?\nDù cho em...chính em rời xa anh\nVà anh sẽ chờ một giấc mơ\nNắng sẽ về xua tan băng giá....\nVà em ngỡ như không rời xa..."
     },
     {
         id: "r4",
         title: "Gạt Đi Nước Mắt",
-        artist: "Modric...",
+        artist: "Noo Phước Thịnh",
         img: "../img/GatDiNuocMat.jpeg",
-        src: "../mp3/gatdinuocmat.mp3",
-        lyrics: "Anh ngóng trông mãi\nMôi hôn vụng dại\nAnh khát khao mãi\nđôi tay ngày nào\nLà dĩ vãng\nQuá khứ mà thôi\nNay anh phải quên\nYêu dấu nay đã\nTrôi xa thật rồi\nTheo gió mây đến\nNơi phương trời nào\nChỉ còn anh và em với bao\nYêu thương nhạt nhoà\nNay giấc mơ ấy\nChia đôi ngả đường\nNay tiếng yêu ấy\nCất riêng mình ta\nLà dĩ vãng quá khứ mà thôi\nNay anh phải quên\nVì ai đã bước\nđi mãi không về\nVì ai lỡ quên\nBao câu ước thề\nNíu kéo chi người\nMuốn ra đi chẳng tiếc thương\nNgày trôi qua sẽ\nVùi lấp hy vọng\nChẳng còn dấu yêu\nCho anh mơ mộng\nXoá hết nỗi buồn\nGạt đi giọt nước mắt\nBaby Baby, I wanna go oh oh\nBaby Baby, I don't need to know oh oh\nNo trust, to cry\nNo love against\nBaby Baby, I wanna go oh oh\nBaby Baby, I don't need to know oh oh\nNo trust, to cry\nNo love against\nAnh sẽ làm quen với những niềm đau\nDần quên môi hôn sâu đành gạt nước mắt đi\nDẫu không biết bao nhiêu lâu\nđể mãi chôn sâu\nÁnh mắt đã nhạt khi\nEm vội đi rồi sớm mai\nChẳng có anh đây\nUh ho ah ha ah\nTrả lại em bao nhiêu yêu thương bấy lâu\nKhi chẳng còn nhau nơi đây ta phân ly\nLý do buông tay vì đâu you wanna go\nCó lẽ em hay biết nhưng anh siết\nTừng nỗi đau hằn sâu\nLẽ nào yêu thương là\nChỉ đợi chờ một ngày về hai lối\nLẽ nào cũng chỉ là đoạn đường gian dối\nXé ngang kỷ niệm tìm lại nơi đâu\nLẽ nào cũng chỉ là lời hẹn ước\nKhuất xa theo đợi chờ\nĐành vậy thôi gạt đi nước mắt còn vương\nVì ai đã bước\nđi mãi không về\nVì ai lỡ quên\nBao câu ước thề\nNíu kéo chi người\nMuốn ra đi chẳng tiếc thương\nNgày trôi qua sẽ\nVùi lấp hy vọng\nChẳng còn dấu yêu\nCho anh mơ mộng\nXoá hết nỗi buồn\nGạt đi giọt nước mắt\nVì ai đã bước\nđi mãi không về\nVì ai lỡ quên\nBao câu ước thề\nNíu kéo chi người\nMuốn ra đi chẳng tiếc thương\nNgày trôi qua sẽ\nVùi lấp hy vọng\nChẳng còn dấu yêu\nCho anh mơ mộng\nXoá hết nỗi buồn\nGạt đi giọt nước mắt"
+        src: "../mp3/Gạt Đi Nước Mắt.mp3",
+        lyrics: "Anh đếm bao nỗi cô đơn từng ngày\nAnh đếm giây phút nhớ em từng giờ\nLàm sao xoá đi bao vết thương sâu trong lòng anh\nAnh ngóng trông mãi môi hôn vụng dại\nAnh khát khao mãi đôi tay ngày nào\nLà dĩ vãng quá khứ mà thôi nay anh phải quên\nYêu dấu nay đã trôi xa thật rồi\nTheo gió mây đến nơi phương trời nào\nChỉ còn anh và em với bao yêu thương nhạt nhoà\nNay giấc mơ ấy chia đôi ngả đường\nNay tiếng yêu ấy cất riêng mình ta\nLà dĩ vãng quá khứ mà thôi để anh phải quên\nVì ai đã bước đi mãi không về\nVì ai lỡ quên bao câu ước thề\nNíu kéo chi người muốn ra đi trong tiếc thương\nNgày trôi qua sẽ vùi lấp hy vọng\nChẳng còn dấu yêu cho anh mơ mộng\nXoá hết nỗi buồn, gạt đi giọt nước mắt\nAnh đếm bao nỗi cô đơn từng ngày\nAnh đếm giây phút nhớ em từng giờ\nLàm sao xoá đi bao vết thương sâu trong lòng anh\nAnh ngóng trông mãi môi hôn vụng dại\nAnh khát khao mãi đôi tay ngày nào\nLà dĩ vãng quá khứ mà thôi nay anh phải quên\nYêu dấu nay đã trôi xa thật rồi\nTheo gió mây đến nơi phương trời nào\nChỉ còn anh và em với bao yêu thương nhạt nhoà\nNay giấc mơ ấy chia đôi ngả đường\nNay tiếng yêu ấy cất riêng mình ta\nLà dĩ vãng quá khứ đã qua nay anh phải quên\nVì ai đã bước đi mãi không về\nVì ai lỡ quên bao câu ước thề\nNíu kéo chi người muốn ra đi trong tiếc thương\nNgày trôi qua sẽ vùi lấp hy vọng\nChẳng còn dấu yêu cho anh mơ mộng\nXoá hết nỗi buồn, gạt đi giọt nước mắt\nVì ai đã bước đi mãi không về\nVì ai lỡ quên bao câu ước thề\nNíu kéo chi người muốn ra đi trong tiếc thương\nNgày trôi qua sẽ vùi lấp hy vọng\nChẳng còn dấu yêu cho anh mơ mộng\nXoá hết nỗi buồn, gạt đi giọt nước mắt"
     },
     {
         id: "r5",
         title: "Khó Vẽ Nụ Cười",
         artist: "ĐạtG, DuUyên",
         img: "../img/KhoVeNuCuoi.jpeg",
-        src: "../mp3/khovenucuoi.mp3",
-        lyrics: "Anh sẽ chờ em\nDù biển xanh kia có cạn khô\nDù qua thêm bao kiếp\nAnh vẫn sẽ chờ\nNhân thế khổ đau\nTìm hoài sao không thấy nhau\nNgười thương chẳng thương mình\nCòn người không thương\nCứ theo ta cả một đời\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống\nPhía Tây nghẹn ngào\nUống chén tình say\nHọa người thương trong bức tranh\nHọa ánh mắt anh buồn\nHọa nụ cười thêm trên nét môi\nNhưng sao không được\nNhiều lần em muốn anh vui mà thôi\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống\nPhía Tây nghẹn ngào\nLỡ chén tình say\nHọa người thương trong bức tranh\nHọa ánh mắt anh buồn\nTìm nụ cười anh trên nét môi\nNhưng sao chẳng thấy\nNhiều lần em muốn anh vui mà thôi\nHọa vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\nKhóc thật nhiều\nNgồi khóc thật nhiều\nKhóc cho đời phong ba\nLắm đau mà chẳng nói ra\nĐến khi già\nBuồn hết một đời\nĐớn đau này của anh\nSẽ cao hơn trời\nNhiều lần em muốn anh vui mà thôi\nHọa vào nét môi em nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\nLòng thì đau đớn trong em khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn họa thêm chiếc môi cười tiếp theo\nNhưng đau ai thấu\nVẫn họa thêm chiếc môi cười lần nữa\nNhưng đau ai thấu?"
+        src: "../mp3/Khó Vẽ Nụ Cười.mp3",
+        lyrics: "Anh sẽ chờ em\nDù biển xanh kia có cạn khô\nDù qua thêm bao kiếp\nAnh vẫn sẽ chờ\n\nNhân thế khổ đau\nTìm hoài sao không thấy nhau\nNgười thương chẳng thương mình\nCòn người không thương cứ theo ta cả một đời\n\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống phía tây nghẹn ngào\n\nUống chén tình say\nHoạ người thương trong bức tranh\nHoạ ánh mắt anh buồn\nHoạ nụ cười thêm trên nét môi\nNhưng sao không được..\n\nNhiều lần em muốn anh vui mà thôi\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\n\nLòng thì đau đớn trông anh khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn hoạ thêm chiếc môi cười tiếp theo,\nSao đau thấu trời\n\nCây đã già nua\nChờ ngày chết cách xa cõi đời\nChiều hoàng hôn buông xuống phía tây nghẹn ngào\n\nLỡ chén tình say\nHoạ người thương trong bức tranh\nHoạ ánh mắt anh buồn\nTìm nụ cười anh trên nét môi\nNhưng sao chẳng thấy\n\nNhiều lần em muốn anh vui mà thô\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy\n\nLòng thì đau đớn trông anh khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn hoạ thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời\n\nKhóc thật nhiều,ngồi khóc thật nhiều\nKhóc cho đời phong ba lắm đau mà chẳng nói ra\nĐến khi già,buồn hết một đời\nĐớn đau này của em sẽ cao hơn trời...\n\nNhiều lần em muốn anh vui mà thôi\nHoạ vào nét môi anh nở cười tươi\nDòng lệ rớt rơi phai màu\nNhoè đi nụ cười khi ấy,\n\nLòng thì đau đớn trông anh khổ đau\nMà chẳng dám khóc đâu ai hiểu thấu\nVẫn hoạ thêm chiếc môi cười tiếp theo\nNhưng đau thấu trời."
     },
     {
         id: "r6",
         title: "Lễ Đường",
-        artist: "Modric...",
+        artist: "Kai Đinh",
         img: "../img/LeDuong.jpeg",
-        src: "../mp3/ld.mp3",
-        lyrics: "(Nhạc không lời)"
+        src: "../mp3/Lễ Đường.mp3",
+        lyrics: "Người là nắng thiếu thời\nCướp đi hồn anh\nBằng một thoáng môi cười\nTháng năm học trò ấy\nDù muốn bên người\nChẳng dám tỏ tình\nVì sợ sẽ mất nhau\nRồi năm tháng trôi dần\nVẫn là bạn của nhau\nDù chẳng ở gần\nNhưng tình đầu trong anh\nThì vẫn chưa nguôi\nLần nắm tay đầu như mới đây thôi\nChẳng thể ngờ tình đầu giấc mơ thiếu thời\nGiờ trong màu trắng tinh khôi\nEm là người đầu tiên mà anh yêu\nAnh muốn là người cuối cùng mà em yêu\nKhoảnh khắc thấy em trên lễ đường\nCùng ánh mắt bóng dáng thân thương\nNhiều năm ấy chớp mắt trôi qua\nĐể ta giờ đây về chung một nhà\nVà anh hứa yêu em suốt đời\nLời thiêng liêng anh hứa với trời\nDù đau ốm nghèo khó sóng gió tổn thương\nThì anh vẫn luôn ở đây\nMình già đi cùng nhau có nhau\nChàng trai khiến em cười\nĐôi khi chẳng cần em phải nói ra lời\nVẫn luôn hiểu từng điều\nEm giữ âm thầm\nPhải chăng anh là tương lai của em\nỞ bên người khiến em luôn thấy an toàn\nĐể em là chính em\nKhông phải sợ già đi hay cô đơn\nVì từng ngày trôi anh luôn yêu em hơn\nKhoảnh khắc thấy em trên lễ đường\nCùng ánh mắt bóng dáng thân thương\nNhiều năm ấy chớp mắt trôi qua\nĐể ta giờ đây về chung một nhà\nVà em hứa yêu anh suốt đời\nLời thiêng liêng em hứa với trời\nDù đau ốm nghèo khó sóng gió tổn thương\nThì em vẫn luôn ở đây\nMình già đi cùng nhau có nhau\nGiờ ta có thêm một gia đình\nHạnh phúc có thêm một sinh linh\nNhiều năm ấy chớp mắt trôi qua\nVà con giờ đây lớn lên từng ngày\nVà ta hứa yêu con suốt đời\nLời thiêng liêng ta hứa với trời\nDù đau ốm nghèo khó sóng gió tổn thương\nThì ba mẹ luôn ở đây\nMình già đi cùng nhau có nhau"
     }
 ];
 
 
 // 2. CẤU TRÚC HIỂN THỊ TRANG HOME (SECTIONS)
-// Bây giờ ở đây ta chỉ cần khai báo ID bài hát thôi.
-// Code sẽ tự động dùng ID này mò vào 'songsData' để lấy Ảnh, Tên, Link nhạc...
 const sectionsData = [
     // MỤC 1
     {
         title: "Dành riêng cho bạn",
         items: ["chill_1", "ballad_1", "lofi_1", "vpop_1", "vu_1", "christmas_1"] 
-        // (Lưu ý: Các ID này phải có thật trong songsData ở trên, nếu chưa có bạn phải khai báo thêm)
     },
 
     // MỤC 2
@@ -388,7 +440,7 @@ const sectionsData = [
     // MỤC 3
     {
         title: "Mới phát hành",
-        items: ["new_1", "new_2", "new_3", "new_4", "new_5","new-6"]
+        items: ["new_1", "new_2", "new_3", "new_4", "new_5","new_6"]
     },
 
     // MỤC 4
@@ -400,11 +452,11 @@ const sectionsData = [
     // MỤC 5
     {
         title: "Sơn Tùng M-TP",
-        items: ["st_1", "st_2", "st_3", "st_4", "st_5", "st_6", "st_7", "st_8"]
+        items: ["st_1", "st_2", "st_3", "st_4", "st_5", "st_6", "st_7"]
     }
 ];
 
-// 3. DỮ LIỆU NGHỆ SĨ (Chỉ để hiển thị tròn tròn, không cần phát nhạc nên giữ nguyên)
+// 3. DỮ LIỆU NGHỆ SĨ
 const artistsData = [
     { name: "Sơn Tùng M-TP", img: "../img/SonTung.jpeg" },
     { name: "Jack97", img: "../img/Jack.jpeg" },
@@ -414,6 +466,6 @@ const artistsData = [
     { name: "Hà Anh Tuấn", img: "../img/HaAnhTuan.jpeg" }
 ];
 // 4. BẢNG XẾP HẠNG TUẦN 
-    const chartsData = ["r1", "r2", "r3", "r4", "r5","r6"];
+const chartsData = ["r1", "r2", "r3", "r4", "r5","r6"];
 // 5. DỮ LIỆU THỂ LOẠI
-    const genresData = ["Tất cả", "V-Pop", "K-Pop", "Ballad", "Lofi", "Rap"];
+const genresData = ["Tất cả", "V-Pop", "K-Pop", "Ballad", "Lofi", "Rap"];
