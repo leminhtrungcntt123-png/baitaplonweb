@@ -1,510 +1,351 @@
+/* ==============================================
+   1. QUY TẮC CHUNG VÀ CẤU TRÚC DESKTOP
+   ============================================== */
 body {
-  font-family: "Lobster", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #660666 0%, #3e9ed6 100%);
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  color: #333;
-  position: relative;
+    font-family: "Lobster", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #660666 0%, #3e9ed6 100%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #333;
+    position: relative;
+    /* padding-bottom sẽ được thêm ở @media mobile nếu dùng mobile-nav-bar */
 }
+
 .main-container {
-  display: flex;
-  flex: 1;
-  box-shadow: 0 4px 20px rgba(242, 242, 242, 0.1);
-  background: linear-gradient(135deg, hsl(301, 86%, 39%) 0%, #284bc0 100%),
-    linear-gradient(#008cff, #021403);
+    display: flex;
+    flex: 1;
+    box-shadow: 0 4px 20px rgba(242, 242, 242, 0.1);
+    background: linear-gradient(135deg, hsl(301, 86%, 39%) 0%, #284bc0 100%),
+        linear-gradient(#008cff, #021403);
+    padding: 20px; /* Thêm padding cho Desktop */
+    gap: 20px; /* Thêm gap cho Desktop */
 }
+
+/* PLAYER SECTION */
 .player-section {
-  flex: 2;
-  padding: 30px;
-  text-align: center;
-  background: linear-gradient(135deg, #d41575 1%, #2860ee 99%);
-  border: 2px solid #021403;
-  border-radius: 10px;
+    flex: 2;
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #d41575 1%, #2860ee 99%);
+    border: 2px solid #021403;
+    border-radius: 10px;
 }
 .album-art {
-  width: 350px;
-  height: 350px;
-  background-image: url("https://via.placeholder.com/350");
-  background-size: cover;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 5px solid #db1b1bb0;
-  animation: spin 6s linear infinite;
-  animation-play-state: paused; /* Lúc đầu không quay */
+    width: 350px;
+    height: 350px;
+    background-image: url("https://via.placeholder.com/350");
+    background-size: cover;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 5px solid #db1b1bb0;
+    animation: spin 6s linear infinite;
+    animation-play-state: paused;
 }
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 .song-title {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #c2efb4;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c2efb4;
 }
 .controls {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 button {
-  background: linear-gradient(45deg, #3484d9, #4b5662);
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  cursor: pointer;
-  border-radius: 25px;
-  font-size: 16px;
-  transition: transform 0.2s;
-  box-shadow: #171717 0px 2px 4px, rgba(17, 29, 201, 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  text-shadow: #008cff 2px 2px 5px;
+    background: linear-gradient(45deg, #3484d9, #4b5662);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: transform 0.2s;
+    box-shadow: #171717 0px 2px 4px, rgba(17, 29, 201, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-shadow: #008cff 2px 2px 5px;
 }
 button:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
+
+/* PLAYLIST SECTION */
 .playlist-section {
-  flex: 1;
-  padding: 25px;
-  background: linear-gradient(45deg, #10c29b7a, #cb20c8);
-  overflow-y: auto;
-  box-shadow: inset 0 0 10px rgba(173, 1, 2, 0.2);
-  border-radius: 20px;
-  border-left: 2px solid #021403;
+    flex: 1;
+    padding: 25px;
+    background: linear-gradient(45deg, #10c29b7a, #cb20c8);
+    overflow-y: auto;
+    box-shadow: inset 0 0 10px rgba(173, 1, 2, 0.2);
+    border-radius: 20px;
+    border-left: 2px solid #021403;
 }
 .playlist-section h2 {
-  margin-bottom: 20px;
-  color: #333;
-  text-size-adjust: 100px;
-  color: #2bf03e;
-  text-shadow: 0 0 5px #99d8a2;
-  font-weight: bold;
+    margin-bottom: 20px;
+    color: #2bf03e;
+    text-shadow: 0 0 5px #99d8a2;
+    font-weight: bold;
 }
 .playlist-item {
-  display: flex;
-  align-items: center;
-  padding: 18px; /* TĂNG PADDING */
-  border-bottom: 1px solid #d8e374;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    border-bottom: 1px solid #d8e374;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #fff;
 }
 .playlist-item:hover {
-  background-color: #67abe6;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-  text-decoration: #055f73 underline;
-  text-shadow: #ffc107 2px 2px 5px;
+    background-color: #67abe6;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    text-decoration: #055f73 underline;
+    text-shadow: #ffc107 2px 2px 5px;
 }
 .playlist-item img {
-  width: 55px; /* TĂNG WIDTH */
-  height: 55px; /* TĂNG HEIGHT */
-  margin-right: 20px; /* TĂNG KHOẢNG CÁCH */
-  border-radius: 8px; /* Làm bo góc ảnh đẹp hơn */
-  object-fit: cover;
+    width: 55px;
+    height: 55px;
+    margin-right: 20px;
+    border-radius: 8px;
+    object-fit: cover;
 }
+
+/* INFO / LYRIC SECTION */
 .info-section {
-  padding: 20px;
-  background: linear-gradient(45deg, #0e7994, #fa5aed);
-  border-top: 2px solid #21cab6;
-  display: flex; /* Kích hoạt Flexbox */
-  justify-content: space-around; /* Phân bổ đều các cột */
-  align-items: flex-start; /* Căn trên cùng */
-  margin: 5px;
-  border-radius: 20px;
-}
-
-.song-info {
-  flex: 1; /* Chiếm 1 phần */
-  max-width: 250px;
-  padding-right: 20px;
-}
-
-.lyric-section {
-  flex: 2; /* Chiếm 2 phần (rộng hơn) */
-  max-width: 400px;
-  padding: 0 20px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3); /* Đường phân cách */
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-}
-
-.lyric-section h3 {
-  color: #ffc107; /* Màu vàng nổi bật cho tiêu đề Lyric */
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 20px;
-  text-shadow: 0 0 5px #dfa4a4, 0 0 10px #eeacf0, 0 0 20px #13d3c6;
-}
-
-#song-lyrics {
-  font-size: 16px;
-  line-height: 1.6;
-  white-space: pre-wrap; /* Quan trọng để giữ định dạng xuống dòng của Lyric */
-  max-height: 200px; /* Giới hạn chiều cao Lyric */
-  overflow-y: auto; /* Thêm thanh cuộn nếu Lyric quá dài */
-  font-style: italic;
-  text-shadow: linear-gradient(45deg, #fbfbfb, #f1f1f4) 0 0 5px;
-}
-
-/* Ẩn thanh cuộn Lyric trên Webkit */
-.lyric-section::-webkit-scrollbar {
-  display: none;
-  border-radius: 20%;
-}
-.lyric-section {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* Cập nhật Responsive cho Mobile (quan trọng) */
-@media (max-width: 767px) {
-  .info-section {
-    flex-direction: column !important;
-    gap: 20px;
-  }
-  .song-info,
-  .lyric-section,
-  nav {
-    flex: none !important;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    border-left: none;
-    border-right: none;
-  }
-  .lyric-section {
-    order: 2; /* Đặt Lyric nằm giữa Info và Tape trên mobile */
-  }
-  .song-info {
-    order: 1;
-  }
-  nav {
-    order: 3;
-  }
-  #song-lyrics {
-    max-height: 150px;
-  }
-}
-.info-section strong {
-  font-size: 20px;
-  color: #ffffff;
-  text-shadow: #171717 0px 2px 4px, rgba(17, 29, 201, 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  font-style: italic;
-}
-.info-section span {
-  display: inline-block;
-  font-size: 20px;
-  color: #fffafe;
-  text-decoration: dotted underline;
-  text-shadow: #f5ecd4 2px 2px 5px;
-  transform: ease-in-out;
-  font-style: italic;
-}
-/* --- CODE RAINBOW MỚI (Áp dụng cho tất cả kích thước) --- */
-
-.artist,
-.song-name {
-  /* Quan trọng: Cần display: inline-block để background-clip hoạt động */
-  display: inline-block;
-
-  /* Font Size Mặc định (Desktop/Tablet) */
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 1.2;
-
-  /* HIỆU ỨNG RAINBOW */
-  background: linear-gradient(
-    90deg,
-    #d50e0ef1,
-    #e99612,
-    #f8f81cdb,
-    #26e84a,
-    #1cc7f7,
-    #f01ddb,
-    #cb1ee6,
-    #17fa23
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  /* RẤT QUAN TRỌNG: ÉP màu trong suốt để gradient hiển thị */
-  color: transparent !important;
-  text-shadow: none !important; /* Xóa text-shadow cũ */
-
-  animation: rainbow 3s linear infinite;
-}
-
-/* KEYFRAMES RAINBOW (Animation chuyển màu mượt mà) */
-@keyframes rainbow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-/* --- TÙY CHỈNH FONT CHO MOBILE (Ghi đè style chung) --- */
-@media (max-width: 767px) {
-  .artist,
-  .song-name {
-    font-size: 3.5rem; /* Kích thước lớn hơn cho Mobile */
-    width: 100%;
-    display: block;
-  }
+    padding: 20px;
+    background: linear-gradient(45deg, #0e7994, #fa5aed);
+    border-top: 2px solid #21cab6;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 5px;
+    border-radius: 20px;
 }
 .song-info {
-  flex: 1;
-}
-.rating {
-  display: flex;
-  margin-top: 10px;
-}
-.star {
-  font-size: 24px;
-  color: #ddd;
-  cursor: pointer;
-  margin: 0 2px;
-  transition: color 0.2s;
-}
-.star.selected {
-  color: #ffc107;
-  transform: scale(1.5);
-}
-
-/* From Uiverse.io by zjssun */
-.btn2 {
-  padding: 10px 20px;
-  text-transform: uppercase;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #a217a780;
-  text-shadow: none;
-  background: transparent;
-  cursor: pointer;
-  box-shadow: transparent;
-  border: 2px solid #4c1cc580;
-  transition: 0.5s ease;
-  user-select: none;
-}
-
-#btn2:hover,
-:focus {
-  color: #ffffff;
-  background: #ce55e6;
-  border: 1px solid #a689a7;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-  box-shadow: 0 0 5px #e995ed, 0 0 20px #caa4eb, 0 0 50px #9b57bc,
-    0 0 100px #008cff;
-}
-
-/* Mobile - Nhỏ hơn 768px */
-@media (max-width: 767px) {
-  body {
-    height: auto;
-    flex-direction: column;
-  }
-
-  .main-container {
-    flex-direction: column !important;
-    gap: 15px;
-    padding: 10px;
-    height: auto;
-  }
-
-  .player-section {
-    flex: none !important;
-    width: 100%;
-    padding: 15px;
-    border-right: none;
-    border-bottom: 2px solid #ddd;
-  }
-
-  .album-art {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 15px;
-  }
-
-  .song-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .controls {
-    gap: 5px;
-    margin-bottom: 10px;
-  }
-
-  .controls button {
-    padding: 8px 12px;
-    font-size: 12px;
     flex: 1;
-    min-width: 60px;
-  }
-
-  .playlist-section {
-    flex: none !important;
-    width: 100%;
-    padding: 15px;
-    max-height: 250px;
-    border-radius: 10px;
-  }
-
-  .playlist-item {
-    padding: 10px;
-    font-size: 13px;
-  }
-
-  .playlist-item img {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
-  }
-
-  .info-section {
-    flex-direction: column !important;
-    gap: 20px;
-    padding: 15px;
-  }
-
-  .song-info {
-    width: 100%;
-  }
-
-  .song-info p {
-    font-size: 14px;
-    margin: 5px 0;
-  }
-
-  .rating {
+    max-width: 250px;
+    padding-right: 20px;
+}
+.lyric-section {
+    flex: 2;
+    max-width: 400px;
+    padding: 0 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+.lyric-section h3 {
+    color: #ffc107;
+    margin-top: 0;
+    margin-bottom: 10px;
     font-size: 20px;
-  }
+    text-shadow: 0 0 5px #dfa4a4, 0 0 10px #eeacf0, 0 0 20px #13d3c6;
+}
+#song-lyrics {
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
+    font-style: italic;
+    text-shadow: linear-gradient(45deg, #fbfbfb, #f1f1f4) 0 0 5px;
+}
+.lyric-section::-webkit-scrollbar {
+    display: none;
+}
+.lyric-section {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
-  .card {
-    width: 250px;
-    height: 160px;
-    margin: 0 auto;
-  }
+/* CÁC QUY TẮC CHO CASSETTE/CARD */
+.card {
+    width: 300px;
+    height: 200px;
+    background: #252525;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+/* Các quy tắc chi tiết của Cassette (screw, card1, yl, roll, wheel, v.v.)
+   được giữ nguyên như trong file gốc của bạn. */
 
-  .screw2 {
-    margin-left: 13em;
-  }
+@keyframes run {
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
-  .screw4 {
-    margin-left: 13.35em;
-  }
+/* ==============================================
+   2. MEDIA QUERIES (RESPONSIVE)
+   ============================================== */
 
-  .card1 {
-    width: 200px;
-  }
+/* Desktop - 1024px trở lên (Đặt lại quy tắc mặc định) */
+@media (min-width: 1024px) {
+    .main-container {
+        flex-direction: row !important;
+        gap: 20px;
+        padding: 20px;
+    }
 
-  .line1 {
-    width: 170px;
-  }
+    .player-section {
+        flex: 2 !important;
+        width: auto;
+        border-right: 2px solid #ddd;
+    }
 
-  .line2 {
-    width: 170px;
-  }
+    .playlist-section {
+        flex: 1 !important;
+        width: auto;
+    }
 
-  .yl {
-    width: 198px;
-  }
+    .info-section {
+        flex-direction: row !important;
+        gap: 40px;
+    }
 }
 
 /* Tablet - 768px đến 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .main-container {
-    flex-direction: column !important;
-    gap: 20px;
-    padding: 15px;
-    height: auto;
-  }
+    /* Main container xếp cột */
+    .main-container {
+        flex-direction: column !important;
+        gap: 20px;
+        padding: 15px;
+        height: auto;
+    }
 
-  .player-section {
-    flex: none !important;
-    width: 100%;
-    padding: 20px;
-    border-right: none;
-    border-bottom: 2px solid #ddd;
-  }
+    /* Player chiếm 100% chiều rộng */
+    .player-section {
+        flex: none !important;
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
 
-  .album-art {
-    width: 280px;
-    height: 280px;
-  }
+    .album-art {
+        width: 280px;
+        height: 280px;
+    }
 
-  .song-title {
-    font-size: 24px;
-  }
+    .song-title {
+        font-size: 24px;
+    }
 
-  .controls button {
-    padding: 10px 18px;
-    font-size: 14px;
-  }
+    /* Playlist chiếm 100% chiều rộng */
+    .playlist-section {
+        flex: none !important;
+        width: 100%;
+        padding: 20px;
+        max-height: 300px;
+        border-left: none; /* Xóa border phân cách */
+    }
 
-  .playlist-section {
-    flex: none !important;
-    width: 100%;
-    padding: 20px;
-    max-height: 300px;
-  }
-
-  .info-section {
-    flex-direction: column !important;
-    gap: 25px;
-    padding: 20px;
-  }
-
-  .card {
-    width: 280px;
-    height: 180px;
-  }
+    /* Info section xếp cột */
+    .info-section {
+        flex-direction: column !important;
+        gap: 25px;
+        padding: 20px;
+    }
+    
+    /* Cassette Card */
+    .card {
+        width: 280px;
+        height: 180px;
+    }
 }
 
-/* Desktop - 1024px trở lên */
-@media (min-width: 1024px) {
-  .main-container {
-    flex-direction: row !important;
-    gap: 20px;
-    padding: 20px;
-  }
+/* Mobile - Nhỏ hơn 768px */
+@media (max-width: 767px) {
+    
+    /* 1. TỐI ƯU CẤU TRÚC PLAYER/PLAYLIST (Khắc phục lỗi tràn) */
+    .main-container {
+        flex-direction: column !important; /* Buộc xếp dọc */
+        gap: 0;
+        padding: 0;
+        height: auto;
+        min-height: auto;
+    }
 
-  .player-section {
-    flex: 2 !important;
-    width: auto;
-    border-right: 2px solid #ddd;
-  }
+    .player-section {
+        flex: none !important;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 0;
+        border: none;
+    }
+    
+    .album-art {
+        width: 200px; /* Giảm kích thước đĩa nhạc */
+        height: 200px;
+    }
+    
+    .playlist-section {
+        flex: none !important;
+        width: 100%;
+        padding: 15px;
+        max-height: 400px; 
+        border-left: none;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+    
+    .info-section {
+        flex-direction: column !important; /* Thông tin bài hát và lyric xếp dọc */
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    /* 2. KHẮC PHỤC LỖI KHUNG TRÀN TRÊN TRANG LỊCH SỬ */
+    .search-controls { 
+        display: flex;
+        flex-direction: column; 
+        gap: 10px;
+        margin-bottom: 15px;
+    }
 
-  .playlist-section {
-    flex: 1 !important;
-    width: auto;
-  }
-
-  .info-section {
-    flex-direction: row !important;
-    gap: 40px;
-  }
+    .history-action-buttons { 
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 5px; /* Đã giảm gap */
+        width: 100%;
+        box-sizing: border-box; 
+        margin-bottom: 10px;
+    }
+    
+    .history-action-buttons label,
+    .history-action-buttons button:not(.btn-export-data) {
+        /* Chia 3 nút nhỏ thành 3 cột */
+        flex-basis: calc(33.33% - 3.33px); /* Tính toán lại gap 5px */
+        max-width: calc(33.33% - 3.33px);
+        box-sizing: border-box;
+        font-size: 12px; /* Đã giảm font để chứa vừa chữ */
+        padding: 6px 2px; /* Đã giảm padding */
+        text-align: center;
+    }
+    
+    .history-action-buttons .btn-export-data { 
+        /* Nút Xuất dữ liệu chiếm trọn 1 hàng */
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-top: 5px; 
+    }
 }
-/* From Uiverse.io by Praashoo7 */
-.card {
+card {
   width: 300px;
   height: 200px;
   background: #252525;
@@ -687,7 +528,7 @@ button:hover {
   background-color: rgb(241, 90, 37);
   margin-top: 0.4em;
   margin-left: 0em;
-  border-bottom-left-radius: 4px;
+border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   align-items: center;
   justify-content: center;
@@ -769,4 +610,351 @@ button:hover {
   100% {
     transform: rotate(360deg);
   }
+}
+/* ==============================================
+   1. QUY TẮC CHUNG VÀ CẤU TRÚC DESKTOP
+   ============================================== */
+body {
+    font-family: "Lobster", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #660666 0%, #3e9ed6 100%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #333;
+    position: relative;
+    /* padding-bottom sẽ được thêm ở @media mobile nếu dùng mobile-nav-bar */
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    box-shadow: 0 4px 20px rgba(242, 242, 242, 0.1);
+    background: linear-gradient(135deg, hsl(301, 86%, 39%) 0%, #284bc0 100%),
+        linear-gradient(#008cff, #021403);
+    padding: 20px; /* Thêm padding cho Desktop */
+    gap: 20px; /* Thêm gap cho Desktop */
+}
+
+/* PLAYER SECTION */
+.player-section {
+    flex: 2;
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #d41575 1%, #2860ee 99%);
+    border: 2px solid #021403;
+    border-radius: 10px;
+}
+.album-art {
+    width: 350px;
+    height: 350px;
+    background-image: url("https://via.placeholder.com/350");
+    background-size: cover;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 5px solid #db1b1bb0;
+    animation: spin 6s linear infinite;
+    animation-play-state: paused;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.song-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c2efb4;
+}
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+button {
+    background: linear-gradient(45deg, #3484d9, #4b5662);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: transform 0.2s;
+    box-shadow: #171717 0px 2px 4px, rgba(17, 29, 201, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-shadow: #008cff 2px 2px 5px;
+}
+button:hover {
+    transform: scale(1.05);
+}
+
+/* PLAYLIST SECTION */
+.playlist-section {
+    flex: 1;
+    padding: 25px;
+    background: linear-gradient(45deg, #10c29b7a, #cb20c8);
+    overflow-y: auto;
+    box-shadow: inset 0 0 10px rgba(173, 1, 2, 0.2);
+    border-radius: 20px;
+    border-left: 2px solid #021403;
+}
+.playlist-section h2 {
+    margin-bottom: 20px;
+    color: #2bf03e;
+    text-shadow: 0 0 5px #99d8a2;
+    font-weight: bold;
+}
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    border-bottom: 1px solid #d8e374;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+.playlist-item:hover {
+    background-color: #67abe6;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    text-decoration: #055f73 underline;
+    text-shadow: #ffc107 2px 2px 5px;
+}
+.playlist-item img {
+    width: 55px;
+    height: 55px;
+    margin-right: 20px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* INFO / LYRIC SECTION */
+.info-section {
+    padding: 20px;
+    background: linear-gradient(45deg, #0e7994, #fa5aed);
+    border-top: 2px solid #21cab6;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 5px;
+    border-radius: 20px;
+}
+.song-info {
+    flex: 1;
+    max-width: 250px;
+    padding-right: 20px;
+}
+.lyric-section {
+    flex: 2;
+    max-width: 400px;
+    padding: 0 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+.lyric-section h3 {
+    color: #ffc107;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-shadow: 0 0 5px #dfa4a4, 0 0 10px #eeacf0, 0 0 20px #13d3c6;
+}
+#song-lyrics {
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
+    font-style: italic;
+    text-shadow: linear-gradient(45deg, #fbfbfb, #f1f1f4) 0 0 5px;
+}
+.lyric-section::-webkit-scrollbar {
+    display: none;
+}
+.lyric-section {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* CÁC QUY TẮC CHO CASSETTE/CARD */
+.card {
+    width: 300px;
+    height: 200px;
+    background: #252525;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+/* Các quy tắc chi tiết của Cassette (screw, card1, yl, roll, wheel, v.v.)
+   được giữ nguyên như trong file gốc của bạn. */
+
+@keyframes run {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==============================================
+   2. MEDIA QUERIES (RESPONSIVE)
+   ============================================== */
+
+/* Desktop - 1024px trở lên (Đặt lại quy tắc mặc định) */
+@media (min-width: 1024px) {
+    .main-container {
+        flex-direction: row !important;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .player-section {
+        flex: 2 !important;
+        width: auto;
+        border-right: 2px solid #ddd;
+    }
+
+    .playlist-section {
+        flex: 1 !important;
+        width: auto;
+    }
+
+    .info-section {
+        flex-direction: row !important;
+        gap: 40px;
+    }
+}
+
+/* Tablet - 768px đến 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Main container xếp cột */
+    .main-container {
+        flex-direction: column !important;
+        gap: 20px;
+        padding: 15px;
+        height: auto;
+    }
+
+    /* Player chiếm 100% chiều rộng */
+    .player-section {
+        flex: none !important;
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .album-art {
+        width: 280px;
+        height: 280px;
+    }
+
+    .song-title {
+        font-size: 24px;
+    }
+
+    /* Playlist chiếm 100% chiều rộng */
+    .playlist-section {
+        flex: none !important;
+        width: 100%;
+        padding: 20px;
+        max-height: 300px;
+        border-left: none; /* Xóa border phân cách */
+    }
+
+    /* Info section xếp cột */
+    .info-section {
+        flex-direction: column !important;
+        gap: 25px;
+        padding: 20px;
+    }
+    
+    /* Cassette Card */
+    .card {
+        width: 280px;
+        height: 180px;
+    }
+}
+
+/* Mobile - Nhỏ hơn 768px */
+@media (max-width: 767px) {
+    
+    /* 1. TỐI ƯU CẤU TRÚC PLAYER/PLAYLIST (Khắc phục lỗi tràn) */
+    .main-container {
+        flex-direction: column !important; /* Buộc xếp dọc */
+        gap: 0;
+        padding: 0;
+        height: auto;
+        min-height: auto;
+    }
+
+    .player-section {
+        flex: none !important;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 0;
+        border: none;
+    }
+    
+    .album-art {
+        width: 200px; /* Giảm kích thước đĩa nhạc */
+        height: 200px;
+    }
+    
+    .playlist-section {
+        flex: none !important;
+        width: 100%;
+        padding: 15px;
+        max-height: 400px; 
+        border-left: none;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+    
+    .info-section {
+        flex-direction: column !important; /* Thông tin bài hát và lyric xếp dọc */
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    /* 2. KHẮC PHỤC LỖI KHUNG TRÀN TRÊN TRANG LỊCH SỬ */
+    .search-controls { 
+        display: flex;
+        flex-direction: column; 
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .history-action-buttons { 
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 5px; /* Đã giảm gap */
+        width: 100%;
+        box-sizing: border-box; 
+        margin-bottom: 10px;
+    }
+    
+    .history-action-buttons label,
+    .history-action-buttons button:not(.btn-export-data) {
+        /* Chia 3 nút nhỏ thành 3 cột */
+        flex-basis: calc(33.33% - 3.33px); /* Tính toán lại gap 5px */
+        max-width: calc(33.33% - 3.33px);
+        box-sizing: border-box;
+        font-size: 12px; /* Đã giảm font để chứa vừa chữ */
+        padding: 6px 2px; /* Đã giảm padding */
+        text-align: center;
+    }
+    
+    .history-action-buttons .btn-export-data { 
+        /* Nút Xuất dữ liệu chiếm trọn 1 hàng */
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-top: 5px; 
+    }
 }
