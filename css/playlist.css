@@ -73,7 +73,7 @@ body {
 /* Thêm đoạn này vào cuối file ../css/playlist.css */
 
 /* --- RESPONSIVE CHO TRANG PLAYLIST (Max-width: 768px) --- */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1100px) {
     /* 1. Thay đổi Padding chung */
     .playlist-header-container {
         padding: 80px 20px 30px 20px; /* Giảm padding ngang */

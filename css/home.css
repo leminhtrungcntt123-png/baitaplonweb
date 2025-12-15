@@ -761,7 +761,7 @@ body::before {
   }
 }
 /* Thêm/Kiểm tra đoạn này trong file ../css/home.css */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   /* ... các phần responsive khác ... */
 
   /* Ẩn thanh tìm kiếm */
@@ -789,7 +789,7 @@ body::before {
   /* Hiện tại navbar.css đã ẩn nav-center-links ở 1100px nên không cần lo lắng */
 }
 /* Trong file ../css/home.css (hoặc khối CSS đầu tiên của bạn) */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   /* ... (Giữ nguyên các thiết lập Responsive khác) ... */
 
   /* Ẩn thanh tìm kiếm */
@@ -825,7 +825,7 @@ body::before {
     display: none; /* Mặc định ẩn trên Desktop */
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1100px) {
     .mobile-nav-bar {
         display: flex; /* Hiển thị trên Mobile */
         position: fixed;

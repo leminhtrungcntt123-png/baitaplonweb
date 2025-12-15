@@ -166,7 +166,7 @@ button:hover {
 }
 
 /* Cập nhật Responsive cho Mobile (quan trọng) */
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   .info-section {
     flex-direction: column !important;
     gap: 20px;
@@ -256,7 +256,7 @@ button:hover {
 }
 
 /* --- TÙY CHỈNH FONT CHO MOBILE (Ghi đè style chung) --- */
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   .artist,
   .song-name {
     font-size: 3.5rem; /* Kích thước lớn hơn cho Mobile */
@@ -311,7 +311,7 @@ button:hover {
 }
 
 /* Mobile - Nhỏ hơn 768px */
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   body {
     height: auto;
     flex-direction: column;
